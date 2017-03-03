@@ -16,4 +16,6 @@ This is the backend website for the LA Computer Company. In the future, there wi
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployment instructions:
+
+* To update changes, run "rails assets:clobber" and "rails assets:precompile".
