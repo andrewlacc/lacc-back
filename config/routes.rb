@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  get 'sale/sale_index'
+
+  get 'service/service_index'
+
   get 'back/rmaindex'
   get 'back/display'
   get 'back/computer'
