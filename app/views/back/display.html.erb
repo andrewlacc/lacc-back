@@ -1,17 +1,18 @@
-<table width="700" height="80" border="0" cellpadding="0" cellspacing="0">
+<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
   <tr>
-    <td width="81"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
-
-    <td width="619" valign="baseline"> <span class="style2">Pre-owned  Display Specifications</span></td>
+    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
+    <td align="center" colspan="5" valign="baseline" class="style2">Pre-owned Display Specifications</td>
   </tr>
-</table>
-<p><%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %></p>
-<table width="700" border="0" cellspacing="0" cellpadding="5">
   <tr>
-    <td width="52" height="30"> <div align="left">Brand:</div></td>
-    <td width="129"><label>
-
-      <select name="Computer Class" id="Computer Class">
+    <td colspan="6" align="center" valign="middle" class="Label">
+      <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
+    </td>
+  </tr>
+  </tr>
+  <tr>
+    <td width="52" height="30">Brand:</td>
+    <td width="129">
+      <select>
         <option>Apple</option>
         <option>Samsung</option>
         <option>Sony</option>
@@ -19,12 +20,11 @@
         <option>LG</option>
         <option>Gateway</option>
         <option>HP</option>
-		<option selected="selected">Select</option>
+        <option selected="selected">Select</option>
       </select>
-    </label></td>
-
-    <td width="125"> <div align="center">Monitor Type: </div></td>
-    <td width="125"><label>
+    </td>
+    <td width="125">Monitor Type:</td>
+    <td width="125">
       <select name="CPUs" id="CPUs">
 	  	<option>CRT</option>
 	  	<option>ADC Display</option>
@@ -33,20 +33,15 @@
 	  	<option>4:3</option>
 	  	<option selected="selected">Select</option>
       </select>
-    </label></td>
+    </td>
   </tr>
-</table>
-<table width="700" border="0" cellspacing="0" cellpadding="0">
-
   <tr>
     <td>&nbsp;</td>
   </tr>
-</table>
-<table width="700" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="82">Size:</td>
-    <td width="185"><label>
-      <select name="select" id="select">
+    <td width="185">
+      <select>
         <option>15</option>
         <option>16</option>
         <option>17</option>
@@ -69,54 +64,27 @@
         <option>34</option>
         <option selected="selected">Select</option>
       </select>
-    </label></td>
+    </td>
     <td width="137">Optimal Resolution:</td>
     <td width="296">
-      <input name="textfield3" type="text" id="textfield3" size="4" maxlength="4" />
+      <input size="4" maxlength="4" />
       x
-      <input name="textfield4" type="text" id="textfield4" size="4" maxlength="4" /></td>
-  </tr>
-</table>
-<table width="700" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-</table>
-<table width="700" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><table width="700" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="154"><table width="700" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-        </table>
-        <table width="700" border="0" cellpadding="0" cellspacing="0">
-          <tr>
-          </tr>
-        </table></td>
-        <td width="538"><form id="form1" name="form1" method="post" action="">
-            <label></label>
-        </form></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-<table width="700" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="154">Serial Number: </td>
-    <td width="546"><input name="textfield2" type="text" id="textfield2" size="20" maxlength="20" /></td>
+      <input size="4" maxlength="4" />
+    </td>
   </tr>
   <tr>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Serial Number: </td>
+    <td><input type="text" class="form-control" placeholder="Serial #" size="50"></td>
+  </tr>
+  <tr>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Notes: </td>
-    <td><label>
-      <input name="textfield" type="text" id="textfield" size="50" maxlength="50" />
-    </label></td>
+    <td>Notes:</td>
+    <td colspan="6"><input type="text", class="form-control", size="100" /></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -124,21 +92,18 @@
   </tr>
   <tr>
     <td>Cleaned/Checked by:</td>
-    <td><textarea name="textfield" cols="50" id="textfield"></textarea></td>
+    <td colspan="6"><textarea cols="90" ></textarea></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
-</table>
-<p>&nbsp;</p>
-<table width="693" height="20" border="0" align="left" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="687"><p> All pre-owned computers include a 90 day parts and labor warranty.*<br />
-      All batteries are considered ASIS and do not carry any warranty.</p></td>
+    <td colspan="6" align="center" valign="middle" class="Footer">All pre-owned displays include a 90 day parts and labor warranty.*<br />
+      All batteries are considered AS IS and do not carry any warranty.</td>
   </tr>
   <tr>
-    <td><h6>*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</h6></td>
+    <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
+      Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
   </tr>
 </table>
-<br />

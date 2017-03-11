@@ -8,6 +8,6 @@ class BackController < ApplicationController
   def computer
   end
 
-  def progress
+  def computer_trade_in
   end
 end

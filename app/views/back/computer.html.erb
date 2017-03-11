@@ -1,8 +1,6 @@
 <table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
   <tr>
-    <td align="center">
-      <%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %>
-    </td>
+    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
     <td align="center" colspan="5" valign="baseline" class="style2">Pre-owned Computer Specifications</td>
   </tr>
   <tr>
@@ -14,7 +12,7 @@
     <td><u><b>Model</b></u></td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Type:</td>
+    <td align="center" valign="middle" class="Label">Type: </td>
     <td><select>
       <option>Desktops:</option>
       <option>iMac Aluminum</option>
@@ -66,12 +64,15 @@
     </td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">OP #:</td>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Original Part #:</td>
     <td><input type="text" class="form-control" placeholder="Original Part #", size="20"></td>
     <td align="center" valign="middle" class="Label">Serial #:</td>
     <td><input type="text" class="form-control" placeholder="Serial #", size="20"></td>
     <td align="center" valign="middle" class="Label">Code:</td>
-    <td><input type="text" class="form-control" placeholder="Code", size="20"></td>
+    <td><input type="text" class="form-control" size="20"></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -139,21 +140,23 @@
         <option selected="selected">Select</option>
       </select>
     </td>
-    <td align="center" valign="middle" class="Label">Screen Size:</td>
-    <td><select name="select7" id="select7">
-      <option>N/A</option>
-      <option>11 in.</option>
-      <option>12 in.</option>
-      <option>13 in.</option>
-      <option>15 in.</option>
-      <option>17 in.</option>
-      <option>20 in.</option>
-      <option>21.5 in.</option>
-      <option>24 in.</option>
-      <option>27 in.</option>
-      <option>other: _________________</option>
-      <option selected="selected">Select</option>
-    </select></td>
+    <td align="center" valign="middle" class="Label">Screen Size: </td>
+    <td>
+      <select name="select7" id="select7">
+        <option>N/A</option>
+        <option>11 in.</option>
+        <option>12 in.</option>
+        <option>13 in.</option>
+        <option>15 in.</option>
+        <option>17 in.</option>
+        <option>20 in.</option>
+        <option>21.5 in.</option>
+        <option>24 in.</option>
+        <option>27 in.</option>
+        <option>other: _________________</option>
+        <option selected="selected">Select</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -252,34 +255,38 @@
         </select>
     </td>
     <td align="center" valign="middle" class="Label">Open Slots:</td>
-    <td><select name="select12" id="select12">
-      <option selected="selected">Select</option>
-      <option>none</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-</select></td>
+    <td>
+      <select name="select12" id="select12">
+        <option selected="selected">Select</option>
+        <option>none</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
     <td align="center" valign="middle" class="Label">OS:</td>
-    <td><select>
-      <option selected="selected">Select</option>
-      <option>Snow Leopard 10.6.8</option>
-      <option>Lion 10.7.5</option>
-      <option>Mountain Lion 10.8.5</option>
-      <option>Mavericks 10.9.5</option>
-      <option>Yosemite 10.10.5</option>
-      <option>El Capitan 10.11.6</option>
-      <option>Sierra 10.12.x</option>
-    </select></td>
+    <td>
+      <select>
+        <option selected="selected">Select</option>
+        <option>Snow Leopard 10.6.8</option>
+        <option>Lion 10.7.5</option>
+        <option>Mountain Lion 10.8.5</option>
+        <option>Mavericks 10.9.5</option>
+        <option>Yosemite 10.10.5</option>
+        <option>El Capitan 10.11.6</option>
+        <option>Sierra 10.12.x</option>
+      </select>
+    </td>
     <td align="center" valign="middle" class="Label">Max OS</td>
     <td><select>
       <option selected="selected">Select</option>
@@ -289,13 +296,15 @@
       <option>Sierra - 10.12</option>
     </select></td>
     <td align="center" valign="middle" class="Label">Batt. Test Results:</td>
-    <td><select>
-	  <option selected="selected">Select</option>
-      <option>N/A</option>
-      <option>Good</option>
-      <option>Consumed</option>
-      <option>Bad</option>
-</select></td>
+    <td>
+      <select>
+        <option selected="selected">Select</option>
+        <option>N/A</option>
+        <option>Good</option>
+        <option>Consumed</option>
+        <option>Bad</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -400,7 +409,8 @@
         </select>
     </td>
     <td align="center" valign="middle" class="Label">Video Port:</td>
-    <td><select>
+    <td>
+      <select>
         <option>DVI</option>
         <option>DVI x 2</option>
         <option>DVI & Mini-DisplayPort</option>
@@ -418,7 +428,8 @@
         <option>----------</option>
         <option>other: ___________________</option>
         <option selected="selected">Select</option>
-    </select></td>
+      </select>
+    </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -426,7 +437,7 @@
   <tr>
     <td align="center" valign="middle" class="Label">WiFi:</td>
     <td>
-    	<select name="select5" id="select5">
+    	<select>
         <option>Yes</option>
         <option>No</option>
         <option selected="selected">Select</option>
@@ -442,6 +453,9 @@
     </td>
   </tr>
   <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
     <td align="center" valign="middle" class="Label">Notes:</td>
     <td colspan="6"><input type="text", class="form-control", size="100"></td>
   </tr>
@@ -450,10 +464,10 @@
   </tr>
   <tr>
     <td colspan="6" align="center" valign="middle" class="Footer">All pre-owned computers include a 90 day parts and labor warranty.*<br />
-    All batteries are considered AS IS and do not carry any warranty.</td>
+      All batteries are considered AS IS and do not carry any warranty.</td>
   </tr>
   <tr>
     <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
-Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
+      Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
   </tr>
 </table>
