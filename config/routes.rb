@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sale/sale_index'
 
   get 'service/service_index'
+  get 'service/onsite'
 
   get 'back/rmaindex'
   get 'back/computer_trade_in'
