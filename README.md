@@ -12,6 +12,7 @@ This is the backend website for the LA Computer Company. As of today, it include
 - Trade-In Progress report: removed
 
 * To upload to server, run git push then on server run following commands
-- $bundle install --deployment --without development test
-- $bundle exec rails assets:precompile RAILS_ENV=production
-- $passenger-config restart-app
+<pre><code>$bundle install --deployment --without development test
+  $bundle exec rails assets:precompile RAILS_ENV=production
+  $passenger-config restart-app
+</code></pre>

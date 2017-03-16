@@ -63,23 +63,11 @@
     </td>
     <td align="center" valign="middle" class="Label">Optical Drive:</td>
     <td>
-    	<select name="OpticalDrive" id="OpticalDrive">
-      	<option>N/A</option>
-      	<option>SuperDrive SL</option>
-      	<option>SuperDrive DL</option>
-        <option>Dual SuperDrive SL</option>
-        <option>Dual SuperDrive DL</option>
-        <option selected="selected">Select</option>
-      </select>
+    	<%= select_tag :optical_drive, options_for_select(optical_drive), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Card Slot:</td>
     <td>
-        <select name="CardSlot" id="CardSlot">
-          <option>N/A</option>
-          <option>ExpressCard/34</option>
-          <option>SD</option>
-          <option selected="selected">Select</option>
-        </select>
+      <%= select_tag :card_slot, options_for_select(card_slot), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -88,58 +76,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Installed RAM:</td>
     <td>
-        <select>
-          <option>1 GB</option>
-          <option>2 GB</option>
-          <option>3 GB</option>
-          <option>4 GB</option>
-          <option>5 GB</option>
-          <option>6 GB</option>
-          <option>8 GB</option>
-          <option>10 GB</option>
-          <option>12 GB</option>
-          <option>16 GB</option>
-          <option>20 GB</option>
-          <option>24 GB</option>
-          <option>32 GB</option>
-          <option>64 GB</option>
-          <option selected="selected">Select</option>
-        </select>
+      <%= select_tag :installed_ram, options_for_select(ram), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Max RAM:</td>
     <td>
-        <select>
-          <option>1 GB</option>
-          <option>2 GB</option>
-          <option>3 GB</option>
-          <option>4 GB</option>
-          <option>5 GB</option>
-          <option>6 GB</option>
-          <option>8 GB</option>
-          <option>10 GB</option>
-          <option>12 GB</option>
-          <option>16 GB</option>
-          <option>32 GB</option>
-          <option>64 GB</option>
-          <option>96 GB</option>
-          <option>128 GB</option>
-          <option selected="selected">Select</option>
-        </select>
+      <%= select_tag :max_ram, options_for_select(max_ram), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Open Slots:</td>
     <td>
-      <select name="select12" id="select12">
-        <option selected="selected">Select</option>
-        <option>none</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-      </select>
+      <%= select_tag :open_slots, options_for_select(open_slots), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -148,34 +93,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">OS:</td>
     <td>
-      <select>
-        <option selected="selected">Select</option>
-        <option>Snow Leopard 10.6.8</option>
-        <option>Lion 10.7.5</option>
-        <option>Mountain Lion 10.8.5</option>
-        <option>Mavericks 10.9.5</option>
-        <option>Yosemite 10.10.5</option>
-        <option>El Capitan 10.11.6</option>
-        <option>Sierra 10.12.x</option>
-      </select>
+      <%= select_tag :os, options_for_select(osx), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Max OS</td>
-    <td><select>
-      <option selected="selected">Select</option>
-      <option>Snow Leopard - 10.6</option>
-      <option>Lion - 10.7</option>
-      <option>El Capitan - 10.11</option>
-      <option>Sierra - 10.12</option>
-    </select></td>
+    <td>
+      <%= select_tag :max_os, options_for_select(max_os), include_blank: "Select" %>
+    </td>
     <td align="center" valign="middle" class="Label">Batt. Test Results:</td>
     <td>
-      <select>
-        <option selected="selected">Select</option>
-        <option>N/A</option>
-        <option>Good</option>
-        <option>Consumed</option>
-        <option>Bad</option>
-      </select>
+      <%= select_tag :battery_test, options_for_select(battery), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -184,123 +110,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Video Card:</td>
     <td>
-        <select>
-          <option>NVIDIA</option>
-          <option>GeForce 320M</option>
-          <option>GeForce 7300GT</option>
-          <option>GeForce 7600GT</option>
-          <option>GeForce 8600M GT</option>
-          <option>GeForce 8800GS</option>
-          <option>GeForce 8800GT</option>
-          <option>GeForce 9400M</option>
-          <option>GeForce 9600M GT</option>
-          <option>GeForce GT 120</option>
-          <option>GeForce GT 130</option>
-          <option>GeForce GT 330M &amp; IHD</option>
-          <option>GeForce GT 640M</option>
-          <option>GeForce GT 650M</option>
-          <option>GeForce GT 650M &amp; IHD 4000</option>
-          <option>GeForce GT 750M</option>
-          <option>GeForce GT 750M &amp; Iris 5200</option>
-          <option>GeForce GT755M</option>
-          <option>GeForce GTX 660M</option>
-          <option>GeForce GTX 675MX</option>
-          <option>GeForce GTX 680MX</option>
-          <option>GeForce GTX 775M</option>
-          <option>GeForce GTX 780M</option>
-          <option>Quadro FX 4500</option>
-          <option>Quadro FX 5600</option>
-          <option>----------</option>
-          <option>AMD/ATI</option>
-          <option>FirePro D300 X2</option>
-          <option>FirePro D500 X2</option>
-          <option>FirePro D700 X2</option>
-          <option>Radeon HD 2400XT</option>
-          <option>Radeon HD 2600 Pro</option>
-          <option>Radeon HD 2600XT</option>
-          <option>Radeon HD 4670</option>
-          <option>Radeon HD 4850</option>
-          <option>Radeon HD 4870</option>
-          <option>Radeon HD 5670</option>
-          <option>Radeon HD 5750</option>
-          <option>Radeon HD 5770</option>
-          <option>Radeon HD 5870</option>
-          <option>Radeon HD 6490M &amp; IHD 3000</option>
-          <option>Radeon HD 6630M</option>
-          <option>Radeon HD 6750M</option>
-          <option>Radeon HD 6750M &amp; IHD 3000</option>
-          <option>Radeon HD 6770M</option>
-          <option>Radeon HD 6770M &amp; IHD 3000</option>
-          <option>Radeon HD 6970M</option>
-          <option>Radeon X1600</option>
-          <option>Radeon X1900XT</option>
-          <option>Radeon R9 M290</option>
-          <option>Radeon R9 M290X</option>
-          <option>Radeon R9 M295X</option>
-          <option>Radeon R9 M370X</option>
-          <option>----------</option>
-          <option>Intel</option>
-          <option>GMA 950</option>
-          <option>GMA X3100</option>
-          <option>HD Graphics</option>
-          <option>HD Graphics 3000</option>
-          <option>HD Graphics 4000</option>
-          <option>HD Graphics 5000</option>
-          <option>HD Graphics 5300</option>
-          <option>HD Graphics 6000</option>
-          <option>Iris 5100</option>
-          <option>Iris 6100</option>
-          <option>Iris Pro 5200</option>
-          <option>----------</option>
-          <option>other: ___________________</option>
-          <option selected="selected">Select</option>
-      </select>
+      <%= select_tag :video_card, options_for_select(video_card), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Video RAM:</td>
     <td>
-        <select>
-          <option>64 MB Shared</option>
-          <option>128 MB</option>
-          <option>144 MB Shared</option>
-          <option>256 MB</option>
-          <option>256 MB Shared</option>
-          <option>256 MB / 256 MB Shared</option>
-          <option>256 MB / 384 MB Shared</option>
-          <option>288 MB Shared</option>
-          <option>384 MB Shared</option>
-          <option>512 MB</option>
-          <option>512 MB / 256 MB Shared</option>
-          <option>1 GB</option>
-          <option>1 GB / 384 MB Shared</option>
-          <option>1.5 GB</option>
-          <option>2 GB</option>
-          <option>3 GB</option>
-          <option>4 GB</option>
-          <option>6 GB</option>
-          <option selected="selected">Select</option>
-        </select>
+      <%= select_tag :video_ram, options_for_select(video_ram), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Video Port:</td>
     <td>
-      <select>
-        <option>DVI</option>
-        <option>DVI x 2</option>
-        <option>DVI & Mini-DisplayPort</option>
-        <option>DVI & Mini-DisplayPort x 2</option>
-        <option>Mini-DVI</option>
-        <option>Mini-DVI & Mini-DisplayPort</option>
-        <option>Mini-DisplayPort</option>
-        <option>Mini-DisplayPort & HDMI</option>
-        <option>ThunderBolt</option>
-        <option>ThunderBolt x 2</option>
-        <option>ThunderBolt & HDMI</option>
-        <option>ThunderBolt x 2 & HDMI</option>
-        <option>ThunderBolt 2 x 6 & HDMI</option>
-        <option>USB-C</option>
-        <option>----------</option>
-        <option>other: ___________________</option>
-        <option selected="selected">Select</option>
-      </select>
+      <%= select_tag :video_port, options_for_select(video_port), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
