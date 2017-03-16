@@ -9,11 +9,11 @@
     </td>
   </tr>
   <tr>
-    <td>Brand:</td>
+    <td class="Label">Brand:</td>
     <td colspan="2">
       <%= select_tag :brand, options_for_select(brand), include_blank: "Select" %>
     </td>
-    <td>Monitor Type:</td>
+    <td class="Label">Monitor Type:</td>
     <td>
       <%= select_tag :monitor_type, options_for_select(monitor_types), include_blank: "Select" %>
     </td>
@@ -22,11 +22,11 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Size:</td>
+    <td class="Label">Size:</td>
     <td colspan="2">
       <%= select_tag :display_size, options_for_select(display_sizes), include_blank: "Select" %>
     </td>
-    <td width="137">Optimal Resolution:</td>
+    <td width="137" class="Label">Optimal Resolution:</td>
     <td width="296">
       <input size="4" maxlength="4">
       x
@@ -37,14 +37,14 @@
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Serial Number: </td>
+    <td class="Label">Serial Number: </td>
     <td><input type="text" class="form-control" placeholder="Serial #" width="296"></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>Notes:</td>
+    <td class="Label">Notes:</td>
     <td colspan="6"><input type="text" class="form-control" size="100"></td>
   </tr>
   <tr>
