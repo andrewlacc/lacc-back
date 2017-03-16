@@ -11,35 +11,11 @@
   <tr>
     <td>Brand:</td>
     <td colspan="2">
-      <select>
-        <option>Apple</option>
-        <option>Acer</option>
-        <option>Asus</option>
-        <option>Dell</option>
-        <option>Gateway</option>
-        <option>HP</option>
-        <option>LG</option>
-        <option>Samsung</option>
-        <option>Sony</option>
-        <option>other: ________________</option>
-        <option selected="selected">Select</option>
-      </select>
+      <%= select_tag :brand, options_for_select(brand), include_blank: "Select" %>
     </td>
     <td>Monitor Type:</td>
     <td>
-      <select>
-	  	<option>CRT</option>
-	  	<option>ADC Display</option>
-	  	<option>Aluminum Display</option>
-	  	<option>Widescreen</option>
-	  	<option>4:3</option>
-      <option>4K / 2K Monitors</option>
-      <option>Touchscreen Monitors</option>
-      <option>UltraWide Monitors</option>
-      <option>Curved Monitors</option>
-      <option>other: ________________</option>
-	  	<option selected="selected">Select</option>
-      </select>
+      <%= select_tag :monitor_type, options_for_select(monitor_types), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -48,29 +24,7 @@
   <tr>
     <td>Size:</td>
     <td colspan="2">
-      <select>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-        <option>21</option>
-        <option>22</option>
-        <option>23</option>
-        <option>24</option>
-        <option>25</option>
-        <option>26</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-        <option>32</option>
-        <option>33</option>
-        <option>34</option>
-        <option selected="selected">Select</option>
-      </select>
+      <%= select_tag :display_size, options_for_select(display_sizes), include_blank: "Select" %>
     </td>
     <td width="137">Optimal Resolution:</td>
     <td width="296">
