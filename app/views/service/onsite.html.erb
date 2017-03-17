@@ -18,30 +18,28 @@
     <td><u><b>Customer</b></u></td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Name:</td>
-    <td><input type="text" class="form-control" size="20"></td>
-    <td align="center" valign="middle" class="Label">Company Name:</td>
-    <td colspan="2"><input type="text" class="form-control" size="20"></td>
+    <td align="center" valign="middle">Name:</td>
+    <td colspan="2"><input type="text" size="30"></td>
+    <td align="center" valign="middle">Company Name:</td>
+    <td colspan="2"><input type="text" size="30"></td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Phone Number:</td>
-    <td><input type="text" class="form-control" size="20"></td>
-    <td align="center" valign="middle" class="Label">Alt Phone Number:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td align="center" valign="middle">Phone Number:</td>
+    <td colspan="2"><input type="text" size="30"></td>
+    <td align="center" valign="middle">Alt Phone Number:</td>
+    <td colspan="2"><input type="text" size="30"></td>
   </tr>
-  <td align="center" valign="middle" class="Label">E-Mail:</td>
-  <td colspan="4"><input type="text" class="form-control" size="20"></td>
+  <td align="center" valign="middle">E-Mail:</td>
+  <td colspan="4"><input type="text" size="50"></td>
   <tr>
-    <td align="center" valign="middle" class="Label">Address:</td>
-    <td colspan="2"><input type="text" class="form-control" size="20"></td>
-    <td align="center" valign="middle" class="Label">
-      St:
-      <select>
-        <option>CA</option>
-      </select>
+    <td align="center" valign="middle">Address:</td>
+    <td colspan="3"><input type="text" size="50"></td>
+    <td valign="middle" colspan="3">
+      State:
+      <%= select_tag :state, options_for_select(states), include_blank: "Select" %>
+      Zip:
+      <input type="text" size="6">
     </td>
-    <td align="center" valign="middle" class="Label">Zip:</td>
-    <td><input type="text" class="form-control" size="20"></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -52,93 +50,14 @@
   <tr>
     <td colspan="3">
       Date:
-      <select>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
-        <option selected="selected">Select</option>
-      </select>
-      <select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-        <option>20</option>
-        <option>21</option>
-        <option>22</option>
-        <option>23</option>
-        <option>24</option>
-        <option>25</option>
-        <option>26</option>
-        <option>27</option>
-        <option>28</option>
-        <option>29</option>
-        <option>30</option>
-        <option>31</option>
-        <option selected="selected">Select</option>
-      </select>
+      <%= select_tag :month, options_for_select(months), include_blank: "Select" %>
+      <%= select_tag :day, options_for_select(days), include_blank: "Select" %>
     </td>
     <td colspan="3">
       Time:
-      <select>
-        <option>12</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option selected="selected">Select</option>
-      </select>
-      <select>
-        <option>5</option>
-        <option>10</option>
-        <option>15</option>
-        <option>20</option>
-        <option>25</option>
-        <option>30</option>
-        <option>35</option>
-        <option>40</option>
-        <option>45</option>
-        <option>50</option>
-        <option>55</option>
-        <option>00</option>
-        <option selected="selected">Select</option>
-      </select>
-      <select>
-        <option>AM</option>
-        <option>PM</option>
-        <option selected="selected">Select</option>
-      </select>
+      <%= select_tag :hour, options_for_select(hours), include_blank: "Select" %>
+      <%= select_tag :minute, options_for_select(minutes), include_blank: "Select" %>
+      <%= select_tag :am_pm, options_for_select(am_pm), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -155,27 +74,27 @@
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Part:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Price: $</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Part:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Price: $</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Part:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Price: $</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td><input type="text"  size="20"></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -187,13 +106,13 @@
     <td>Notes:</td>
   </tr>
   <tr>
-    <td colspan="4"><textarea cols="60" rows="8"></textarea></td>
-    <td colspan="2">
-      OnSite: __________________<br /><br />
-      Parts: ___________________<br /><br />
-      Subtotal: ________________<br /><br />
-      Tax: _____________________<br /><br />
-      Total: ___________________<br /><br />
+    <td colspan="5"><textarea cols="80" rows="8"></textarea></td>
+    <td align="right">
+      OnSite:<input type="text"  size="15"><br />
+      Parts: <input type="text"  size="15"><br />
+      Subtotal: <input type="text"  size="15"><br />
+      Tax: <input type="text"  size="15"><br />
+      Total: <input type="text"  size="15"><br />
     </td>
   </tr>
   <tr>
@@ -208,7 +127,7 @@
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" colspan="3">Print Name ________________________________</td>
-    <td align="center" valign="middle" colspan="3">Signature and Date ________________________________</td>
+    <td align="center" valign="middle" colspan="3">Signature ________________________________</td>
+    <td align="center" valign="middle" colspan="3">Date ________________________________</td>
   </tr>
   </table>
