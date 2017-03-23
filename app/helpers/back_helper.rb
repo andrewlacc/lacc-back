@@ -34,23 +34,6 @@ module BackHelper
     ]
   end
 
-  def year
-    [
-      2018,
-      2017,
-      2016,
-      2015,
-      2014,
-      2013,
-      2012,
-      2011,
-      2010,
-      2009,
-      2008,
-      "other: _________"
-    ]
-  end
-
   def processor_speed
     [
       "1.1 Ghz",

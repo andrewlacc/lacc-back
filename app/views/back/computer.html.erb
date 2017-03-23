@@ -19,7 +19,7 @@
     <td align="center" valign="middle" class="Label">Year: </td>
     <td colspan="3">
     	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
-      <%= select_tag :year, options_for_select(year), include_blank: "Select" %>
+      <%= date_select('year_make', "year_make", {discard_day: true, discard_month: true, start_year: 2008}) %>
     </td>
   </tr>
   <tr>
