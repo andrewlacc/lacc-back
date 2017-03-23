@@ -48,16 +48,9 @@
     <td colspan="2"><u><b>On-Site Information</b></u></td>
   </tr>
   <tr>
-    <td colspan="3">
-      Date:
-      <%= select_tag :month, options_for_select(months), include_blank: "Select" %>
-      <%= select_tag :day, options_for_select(days), include_blank: "Select" %>
-    </td>
-    <td colspan="3">
-      Time:
-      <%= select_tag :hour, options_for_select(hours), include_blank: "Select" %>
-      <%= select_tag :minute, options_for_select(minutes), include_blank: "Select" %>
-      <%= select_tag :am_pm, options_for_select(am_pm), include_blank: "Select" %>
+    <td colspan="6">
+      Date and Time:
+      <%= datetime_select 'onsite_time', 'onsite_time', {prompt: true, ampm: true, minute_step: 5} %>
     </td>
   </tr>
   <tr>

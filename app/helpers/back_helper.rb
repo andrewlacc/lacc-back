@@ -34,23 +34,6 @@ module BackHelper
     ]
   end
 
-  def year
-    [
-      2018,
-      2017,
-      2016,
-      2015,
-      2014,
-      2013,
-      2012,
-      2011,
-      2010,
-      2009,
-      2008,
-      "other: _________"
-    ]
-  end
-
   def processor_speed
     [
       "1.1 Ghz",
@@ -263,12 +246,12 @@ module BackHelper
       "GeForce 9600M GT",
       "GeForce GT 120",
       "GeForce GT 130",
-      "GeForce GT 330M &amp; IHD",
+      "GeForce GT 330M & IHD",
       "GeForce GT 640M",
       "GeForce GT 650M",
-      "GeForce GT 650M &amp; IHD 4000",
+      "GeForce GT 650M & IHD 4000",
       "GeForce GT 750M",
-      "GeForce GT 750M &amp; Iris 5200",
+      "GeForce GT 750M & Iris 5200",
       "GeForce GT755M",
       "GeForce GTX 660M",
       "GeForce GTX 675MX",
@@ -292,12 +275,12 @@ module BackHelper
       "Radeon HD 5750",
       "Radeon HD 5770",
       "Radeon HD 5870",
-      "Radeon HD 6490M &amp; IHD 3000",
+      "Radeon HD 6490M & IHD 3000",
       "Radeon HD 6630M",
       "Radeon HD 6750M",
-      "Radeon HD 6750M &amp; IHD 3000",
+      "Radeon HD 6750M & IHD 3000",
       "Radeon HD 6770M",
-      "Radeon HD 6770M &amp; IHD 3000",
+      "Radeon HD 6770M & IHD 3000",
       "Radeon HD 6970M",
       "Radeon X1600",
       "Radeon X1900XT",
