@@ -1,5 +1,5 @@
 class BackController < ApplicationController
-  def rmaindex
+  def index
   end
 
   def display
@@ -9,5 +9,8 @@ class BackController < ApplicationController
   end
 
   def computer_trade_in
+  end
+
+  def onsite
   end
 end

@@ -40,7 +40,7 @@
     </td>
     <td valign="middle" colspan="2">
       State:
-      <%= select_tag :state, options_for_select(states), include_blank: "Select" %>
+      <%= text_field('state', 'state', {size: 3, value: "CA"}) %>
       Zip:
       <input type="text" size="6">
     </td>
