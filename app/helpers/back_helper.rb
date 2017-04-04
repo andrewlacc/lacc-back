@@ -102,8 +102,10 @@ module BackHelper
       "17 in.",
       "20 in.",
       "21.5 in.",
+      "21.5 in. 4K",
       "24 in.",
       "27 in.",
+      "27 in. 5K",
       "other: _________________"
     ]
   end
