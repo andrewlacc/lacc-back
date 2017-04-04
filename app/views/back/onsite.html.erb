@@ -15,41 +15,41 @@
     </td>
   </tr>
   <tr>
-    <td><u><b>Customer</b></u></td>
+    <td class="Title">Customer</td>
   </tr>
   <tr>
     <td align="center" valign="middle">Name:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'name', nil, {size: 30} %></td>
     <td align="center" valign="middle">Company Name:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'co_name', nil, {size: 30} %></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Phone Number:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'phone_num', nil, {size: 30} %></td>
     <td align="center" valign="middle">Alt Phone Number:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'alt_phone_num', nil, {size: 30} %></td>
   </tr>
   <td align="center" valign="middle">E-Mail:</td>
-  <td colspan="4"><input type="text" size="50"></td>
+  <td colspan="4"><%= text_field 'email', nil, {size: 50} %></td>
   <tr>
     <td align="center" valign="middle">Address:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'address', nil, {size: 30} %></td>
     <td>
       City:
       <input type="text" size="15">
     </td>
     <td valign="middle" colspan="2">
       State:
-      <%= text_field('state', 'state', {size: 3, value: "CA"}) %>
+      <%= text_field 'state', 'state', {size: 3, value: "CA"} %>
       Zip:
-      <input type="text" size="6">
+      <%= text_field 'state', nil, {size: 6} %>
     </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="2"><u><b>On-Site Information</b></u></td>
+    <td colspan="2" class="Title">On-Site Information</td>
   </tr>
   <tr>
     <td colspan="6">
@@ -61,13 +61,13 @@
     <td>Symptoms:</td>
   </tr>
   <tr>
-    <td colspan="6"><textarea cols="100" rows="3"></textarea></td>
+    <td colspan="6"><%= text_area 'symptoms', nil, {size: "100x3"} %></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="6"><u><b>Parts Needed</b></u></td>
+    <td colspan="6" class="Title">Parts Needed</td>
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
@@ -97,13 +97,13 @@
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="6"><u><b>Resolution</b></u></td>
+    <td colspan="6" class="Title">Resolution</td>
   </tr>
   <tr>
     <td>Notes:</td>
   </tr>
   <tr>
-    <td colspan="5"><textarea cols="80" rows="8"></textarea></td>
+    <td colspan="5"><%= text_area 'notes', nil, {size: "80x8"} %></td>
     <td align="right">
       OnSite:<input type="text"  size="15"><br />
       Parts: <input type="text"  size="15"><br />
