@@ -260,7 +260,7 @@ module BackHelper
       "GeForce GT 650M & IHD 4000",
       "GeForce GT 750M",
       "GeForce GT 750M & Iris 5200",
-      "GeForce GT755M",
+      "GeForce GT 755M",
       "GeForce GTX 660M",
       "GeForce GTX 675MX",
       "GeForce GTX 680MX",
