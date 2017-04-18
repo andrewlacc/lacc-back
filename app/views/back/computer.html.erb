@@ -19,11 +19,8 @@
     <td align="center" valign="middle" class="Label">Year: </td>
     <td colspan="3">
     	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
-<<<<<<< HEAD
       <%= date_select('year_make', "year_make", {discard_day: true, discard_month: true, start_year: 2008}) %>
-=======
       <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: 2017, prompt: true} %>
->>>>>>> 2ad30acc591694633df2e43481294ad18ed47b24
     </td>
   </tr>
   <tr>
