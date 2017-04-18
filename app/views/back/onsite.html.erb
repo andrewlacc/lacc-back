@@ -15,39 +15,44 @@
     </td>
   </tr>
   <tr>
-    <td><u><b>Customer</b></u></td>
+    <td class="Title">Customer</td>
   </tr>
   <tr>
     <td align="center" valign="middle">Name:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'name', nil, {size: 30} %></td>
     <td align="center" valign="middle">Company Name:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'co_name', nil, {size: 30} %></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Phone Number:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'phone_num', nil, {size: 30} %></td>
     <td align="center" valign="middle">Alt Phone Number:</td>
-    <td colspan="2"><input type="text" size="30"></td>
+    <td colspan="2"><%= text_field 'alt_phone_num', nil, {size: 30} %></td>
   </tr>
   <td align="center" valign="middle">E-Mail:</td>
-  <td colspan="4"><input type="text" size="50"></td>
+  <td colspan="4"><%= text_field 'email', nil, {size: 50} %></td>
   <tr>
     <td align="center" valign="middle">Address:</td>
-    <td colspan="3"><input type="text" size="50"></td>
-    <td valign="middle" colspan="3">
+    <td colspan="2"><%= text_field 'address', nil, {size: 30} %></td>
+    <td>
+      City:
+      <input type="text" size="15">
+    </td>
+    <td valign="middle" colspan="2">
       State:
-      <%= select_tag :state, options_for_select(states), include_blank: "Select" %>
+      <%= text_field 'state', 'state', {size: 3, value: "CA"} %>
       Zip:
-      <input type="text" size="6">
+      <%= text_field 'state', nil, {size: 6} %>
     </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="2"><u><b>On-Site Information</b></u></td>
+    <td colspan="2" class="Title">On-Site Information</td>
   </tr>
   <tr>
+<<<<<<< HEAD:app/views/service/onsite.html.erb
     <td colspan="3">
       Date:
       <%= date_select('onsite_date', "onsite_date", discard_year: true) %>
@@ -55,19 +60,24 @@
     <td colspan="3">
       Time:
       <%= time_select('onsite_time', "onsite_time", {ampm: true, minute_step: 5}) %>
+=======
+    <td colspan="6">
+      Date and Time:
+      <%= datetime_select 'onsite_time', 'onsite_time', {prompt: true, ampm: true, minute_step: 5} %>
+>>>>>>> 2ad30acc591694633df2e43481294ad18ed47b24:app/views/back/onsite.html.erb
     </td>
   </tr>
   <tr>
     <td>Symptoms:</td>
   </tr>
   <tr>
-    <td colspan="6"><textarea cols="100" rows="3"></textarea></td>
+    <td colspan="6"><%= text_area 'symptoms', nil, {size: "100x3"} %></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="6"><u><b>Parts Needed</b></u></td>
+    <td colspan="6" class="Title">Parts Needed</td>
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
@@ -97,13 +107,13 @@
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="6"><u><b>Resolution</b></u></td>
+    <td colspan="6" class="Title">Resolution</td>
   </tr>
   <tr>
     <td>Notes:</td>
   </tr>
   <tr>
-    <td colspan="5"><textarea cols="80" rows="8"></textarea></td>
+    <td colspan="5"><%= text_area 'notes', nil, {size: "80x8"} %></td>
     <td align="right">
       OnSite:<input type="text"  size="15"><br />
       Parts: <input type="text"  size="15"><br />
