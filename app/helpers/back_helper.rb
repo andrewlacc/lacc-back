@@ -144,10 +144,8 @@ module BackHelper
   def optical_drive
     [
       "N/A",
-      "SuperDrive SL",
-      "SuperDrive DL",
-      "Dual SuperDrive SL",
-      "Dual SuperDrive DL"
+      "SuperDrive",
+      "Dual SuperDrive"
     ]
   end
 
@@ -155,7 +153,7 @@ module BackHelper
     [
       "N/A",
       "ExpressCard/34",
-      "SD"
+      "SD/SDXC"
     ]
   end
 
@@ -200,6 +198,7 @@ module BackHelper
   def open_slots
     [
       "none",
+      "Non-Upgradeable",
       "1",
       "2",
       "3",
@@ -297,6 +296,9 @@ module BackHelper
       "Radeon R9 M295X",
       "Radeon R9 M370X",
       "Radeon R9 M395X",
+      "Radeon Pro 450",
+      "Radeon Pro 455",
+      "Radeon Pro 460",
       "---------------------",
       "Intel",
       "GMA 950",
@@ -307,9 +309,12 @@ module BackHelper
       "HD Graphics 5000",
       "HD Graphics 5300",
       "HD Graphics 6000",
+      "HD Graphics 530",
       "Iris 5100",
       "Iris 6100",
       "Iris Pro 5200",
+      "Iris 540",
+      "Iris 550",
       "---------------------",
       "other: ___________________"
     ]
@@ -332,8 +337,10 @@ module BackHelper
       "1 GB / 384 MB Shared",
       "1.5 GB",
       "2 GB",
+      "2 GB / 1.5 GB Shared",
       "3 GB",
       "4 GB",
+      "4 GB / 1.5 GB Shared",
       "6 GB"
     ]
   end
@@ -354,6 +361,8 @@ module BackHelper
       "ThunderBolt x 2 & HDMI",
       "ThunderBolt 2 x 6 & HDMI",
       "USB-C",
+      "ThunderBolt 3 (USB-C) x 2",
+      "ThunderBolt 3 (USB-C) x 4",
       "---------------------",
       "other: ___________________"
     ]
