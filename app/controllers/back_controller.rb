@@ -7,6 +7,8 @@ class BackController < ApplicationController
   end
 
   def computer
+    # Change this to affect model_year of Pre-owned sheet
+    @year = 2017
   end
 
   def computer_trade_in

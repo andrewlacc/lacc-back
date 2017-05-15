@@ -375,6 +375,7 @@ module BackHelper
       "Acer",
       "Asus",
       "Dell",
+      "Eizo",
       "Gateway",
       "HP",
       "LG",
@@ -387,6 +388,7 @@ module BackHelper
   def monitor_types
     [
       "CRT",
+      "Calibration Color LCD",
 	  	"ADC Display",
 	  	"Aluminum Display",
 	  	"Widescreen",

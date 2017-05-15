@@ -1,7 +1,7 @@
 <table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
   <tr>
     <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
-    <td align="center" colspan="5" valign="baseline" class="style2">Pre-owned Computer Specifications</td>
+    <td align="center" colspan="5" valign="baseline" class="style2">Refurbished Computer Specifications</td>
   </tr>
   <tr>
     <td colspan="6" align="center" valign="middle" class="Label">
@@ -19,7 +19,7 @@
     <td align="center" valign="middle" class="Label">Year: </td>
     <td colspan="3">
     	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
-      <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: 2017, prompt: true} %>
+      <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true} %>
     </td>
   </tr>
   <tr>
@@ -28,15 +28,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Original Part #:</td>
     <td>
-      <%= text_field_tag 'original_part_num', nil, {class: 'form-control', placeholder: 'Original Part #', size: 20} %>
+      <%= text_field_tag 'original_part_num', nil, {class: 'form-control', placeholder: 'Original Part #'} %>
     </td>
     <td align="center" valign="middle" class="Label">Serial #:</td>
     <td>
-      <%= text_field_tag 'serial_num', nil, {class: 'form-control', placeholder: 'Serial #', size: 20} %>
+      <%= text_field_tag 'serial_num', nil, {class: 'form-control', placeholder: 'Serial #'} %>
     </td>
     <td align="center" valign="middle" class="Label">Code:</td>
     <td>
-      <%= text_field_tag 'code', nil, {class: 'form-control', size: 20} %>
+      <%= text_field_tag 'code', nil, {class: 'form-control'} %>
     </td>
   </tr>
   <tr>
