@@ -4,12 +4,14 @@ class Computers extends React.Component {
             <div className='pad'>
                 <a className='btn btn-secondary' href="/adminarea">{ "<< Back" }</a>
                 <h1>Edit Pre-Owned Input Tags</h1>
-                <div className='rows'>
-                    <div className='cols-2'>
+                <div className='row'>
+                    <div className='col-2'>
                         <p>Implement Nav system</p>
                     </div>
-                    <div className='cols-10'>
-                        
+                    <div className='col-10'>
+                        <h2>Computer Type</h2>
+                        <table className='table'>
+                        </table>
                     </div>
                 </div>
             </div>

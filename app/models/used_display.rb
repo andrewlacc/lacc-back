@@ -1,0 +1,2 @@
+class UsedDisplay < ApplicationRecord
+end
