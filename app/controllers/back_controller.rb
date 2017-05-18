@@ -1,5 +1,6 @@
 class BackController < ApplicationController
-  def rmaindex
+  def index
+    # Home page, will just display different links
   end
 
   def display
@@ -9,5 +10,10 @@ class BackController < ApplicationController
   end
 
   def computer_trade_in
+    # Will display static trade-in Sheet
+  end
+
+  def onsite
+    # Will display static onsite sheet
   end
 end

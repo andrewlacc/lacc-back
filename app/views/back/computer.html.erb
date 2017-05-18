@@ -9,10 +9,10 @@
     </td>
   </tr>
   <tr>
-    <td><u><b>Model</b></u></td>
+    <td class="Title">Model</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Type: </td>
+    <td align="center" valign="middle" class="Label">Type:</td>
     <td>
       <%= select_tag :type, options_for_select(computer_types), include_blank: "Select" %>
     </td>
@@ -20,6 +20,7 @@
     <td colspan="3">
     	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
       <%= date_select('year_make', "year_make", {discard_day: true, discard_month: true, start_year: 2008}) %>
+      <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: 2017, prompt: true} %>
     </td>
   </tr>
   <tr>
@@ -27,17 +28,23 @@
   </tr>
   <tr>
     <td align="center" valign="middle" class="Label">Original Part #:</td>
-    <td><input type="text" class="form-control" placeholder="Original Part #", size="20"></td>
+    <td>
+      <%= text_field_tag 'original_part_num', nil, {class: 'form-control', placeholder: 'Original Part #', size: 20} %>
+    </td>
     <td align="center" valign="middle" class="Label">Serial #:</td>
-    <td><input type="text" class="form-control" placeholder="Serial #", size="20"></td>
+    <td>
+      <%= text_field_tag 'serial_num', nil, {class: 'form-control', placeholder: 'Serial #', size: 20} %>
+    </td>
     <td align="center" valign="middle" class="Label">Code:</td>
-    <td><input type="text" class="form-control" size="20"></td>
+    <td>
+      <%= text_field_tag 'code', nil, {class: 'form-control', size: 20} %>
+    </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="6"><u><b>Specs</b></u></td>
+    <td colspan="6" class="Title">Specs</td>
   </tr>
   <tr>
     <td align="center" valign="middle" class="Label">Processor Speed: </td>
@@ -139,7 +146,7 @@
   </tr>
   <tr>
     <td align="center" valign="middle" class="Label">Notes:</td>
-    <td colspan="6"><input type="text", class="form-control", size="100"></td>
+    <td colspan="6"><%= text_field_tag 'notes', nil, {class: 'form-control', size: 100} %></td>
   </tr>
   <tr>
     <td height="10" colspan="6" align="center" valign="middle">&nbsp;</td>
