@@ -10,7 +10,7 @@ class AdminController < ApplicationController
     end
 
     def computer
-        @types = Type.all
+        @computerType = UsedComputer.computer_type
     end
     
     def display
