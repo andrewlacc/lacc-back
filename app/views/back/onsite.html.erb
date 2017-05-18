@@ -52,19 +52,9 @@
     <td colspan="2" class="Title">On-Site Information</td>
   </tr>
   <tr>
-<<<<<<< HEAD:app/views/service/onsite.html.erb
-    <td colspan="3">
-      Date:
-      <%= date_select('onsite_date', "onsite_date", discard_year: true) %>
-    </td>
-    <td colspan="3">
-      Time:
-      <%= time_select('onsite_time', "onsite_time", {ampm: true, minute_step: 5}) %>
-=======
     <td colspan="6">
       Date and Time:
       <%= datetime_select 'onsite_time', 'onsite_time', {prompt: true, ampm: true, minute_step: 5} %>
->>>>>>> 2ad30acc591694633df2e43481294ad18ed47b24:app/views/back/onsite.html.erb
     </td>
   </tr>
   <tr>

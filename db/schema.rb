@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 20170515022441) do
 
   create_table "used_computers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "type"
+    t.string   "catagory"
     t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "used_displays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "type"
+    t.string   "catagory"
     t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
