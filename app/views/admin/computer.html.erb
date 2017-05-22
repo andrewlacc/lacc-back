@@ -20,8 +20,12 @@
                 <tbody>
                     <% @computerType.each do |computer_type| %>
                         <tr>
-                            <td><%= computer_type.catagory %></td>
+                            <td><%= computer_type.category %></td>
                             <td><%= computer_type.value %></td>
+                            <td>
+                              <%= link_to 'Edit', '#', class: "btn btn-secondary" %>
+                              <%= link_to 'Delete', '#', class: "btn btn-danger" %>
+                            </td>
                         </tr>
                     <% end %>
                 </tbody>

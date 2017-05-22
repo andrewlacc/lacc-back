@@ -1,5 +1,5 @@
 class UsedComputer < ApplicationRecord
 
-    scope :computer_type, -> { where(catagory: "computer_type") }
+    scope :search_category, -> (search) { where(category: search) }
 
 end

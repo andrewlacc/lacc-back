@@ -10,13 +10,13 @@ class AdminController < ApplicationController
     end
 
     def computer
-        @computerType = UsedComputer.computer_type
+        @computerType = UsedComputer.search_category("computer_type")
     end
-    
+
     def display
     end
 
     def destroy
     end
-    
+
 end
