@@ -313,6 +313,7 @@ module BackHelper
       "Iris 5100",
       "Iris 6100",
       "Iris Pro 5200",
+      "Iris Pro 6200",
       "Iris 540",
       "Iris 550",
       "---------------------",
