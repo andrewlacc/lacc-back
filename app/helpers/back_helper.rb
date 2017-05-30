@@ -1,8 +1,7 @@
 module BackHelper
   # Computer Pre-owned arrays
-  def computer_types
+  def computer_types_desktops
     [
-      "Desktops",
       "iMac Aluminum",
       "iMac Unibody",
       "iMac Slim",
@@ -10,9 +9,12 @@ module BackHelper
       "Mac Mini",
       "Mac Mini Unibody",
       "Mac Pro",
-      "Mac Pro Cylinder",
-      "--------------------",
-      "Laptops",
+      "Mac Pro Cylinder"
+    ]
+  end
+
+  def computer_types_laptops
+    [
       "MacBook Pro",
       "MacBook Pro Unibody",
       "MacBook Pro Retina",

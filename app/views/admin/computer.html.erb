@@ -12,15 +12,17 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Category</hh>
-                        <th>Value</hh>
-                        <th>Options</hh>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th>Value</th>
+                        <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% @computerType.each do |computer_type| %>
                         <tr>
                             <td><%= computer_type.category %></td>
+                            <td><%= computer_type.sub_category %></td>
                             <td><%= computer_type.value %></td>
                             <td>
                               <%= link_to 'Edit', '#', class: "btn btn-secondary" %>
