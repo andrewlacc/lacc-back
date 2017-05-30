@@ -8,30 +8,21 @@
             <p>Implement Nav system</p>
         </div>
         <div class="col-10">
-            <h2>Computer Type</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Sub Category</th>
-                        <th>Value</th>
-                        <th>Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @computerType.each do |computer_type| %>
-                        <tr>
-                            <td><%= computer_type.category %></td>
-                            <td><%= computer_type.sub_category %></td>
-                            <td><%= computer_type.value %></td>
-                            <td>
-                              <%= link_to 'Edit', '#', class: "btn btn-secondary" %>
-                              <%= link_to 'Delete', '#', class: "btn btn-danger" %>
-                            </td>
-                        </tr>
-                    <% end %>
-                </tbody>
-            </table>
+          <%= link_to 'New', '#', class: "btn btn-success" %>
+          <%= render partial: "table", locals: { header: "Computer Type", data: @computer_type } %>
+          <%= render partial: "table", locals: { header: "Processor Speed", data: @processor_speed } %>
+          <%= render partial: "table", locals: { header: "CPU Type", data: @cpu_type } %>
+          <%= render partial: "table", locals: { header: "Screen Size", data: @screen_size } %>
+          <%= render partial: "table", locals: { header: "Hard Drive", data: @hard_drive } %>
+          <%= render partial: "table", locals: { header: "Optical Drive", data: @optical_drive } %>
+          <%= render partial: "table", locals: { header: "Card Slot", data: @card_slot } %>
+          <%= render partial: "table", locals: { header: "Installed RAM", data: @installed_ram } %>
+          <%= render partial: "table", locals: { header: "Max RAM", data: @max_ram } %>
+          <%= render partial: "table", locals: { header: "Open Slots", data: @open_slots } %>
+          <%= render partial: "table", locals: { header: "OS", data: @os } %>
+          <%= render partial: "table", locals: { header: "Video Card", data: @video_card } %>
+          <%= render partial: "table", locals: { header: "Video RAM", data: @video_ram } %>
+          <%= render partial: "table", locals: { header: "Video Port", data: @video_port } %>
         </div>
     </div>
 </div>
