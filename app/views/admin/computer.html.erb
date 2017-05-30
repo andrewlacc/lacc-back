@@ -1,1 +1,37 @@
-<%= react_component 'Computers', { types: @types } %>
+<div class="pad">
+    <%= link_to '<< Back', adminarea_path, class: "btn btn-secondary" %>
+
+    <h1>Edit Refurbished Computer Input Tags</h1>
+
+    <div class="row">
+        <div class="col-2">
+            <p>Implement Nav system</p>
+        </div>
+        <div class="col-10">
+            <h2>Computer Type</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th>Value</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @computerType.each do |computer_type| %>
+                        <tr>
+                            <td><%= computer_type.category %></td>
+                            <td><%= computer_type.sub_category %></td>
+                            <td><%= computer_type.value %></td>
+                            <td>
+                              <%= link_to 'Edit', '#', class: "btn btn-secondary" %>
+                              <%= link_to 'Delete', '#', class: "btn btn-danger" %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
