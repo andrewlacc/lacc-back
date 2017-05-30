@@ -14,7 +14,7 @@
   <tr>
     <td align="center" valign="middle" class="Label">Type:</td>
     <td>
-      <%= select_tag :type, options_for_select(["Desktops"] + computer_types_desktops + ["----------------------", "Laptops"] + computer_types_laptops), include_blank: "Select" %>
+      <%= select_tag :type, options_for_select(["Desktops"] + @desktops_values + ["----------------------", "Laptops"]), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Year: </td>
     <td colspan="3">

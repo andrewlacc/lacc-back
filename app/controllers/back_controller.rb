@@ -7,6 +7,8 @@ class BackController < ApplicationController
   end
 
   def computer
+    @desktops = UsedComputer.search_subcategory("desktop")
+    @desktop_values = parse_values(@desktops)
   end
 
   def computer_trade_in

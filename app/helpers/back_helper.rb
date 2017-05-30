@@ -1,34 +1,4 @@
 module BackHelper
-  # Computer Pre-owned arrays
-  def computer_types_desktops
-    [
-      "iMac Aluminum",
-      "iMac Unibody",
-      "iMac Slim",
-      "iMac White",
-      "Mac Mini",
-      "Mac Mini Unibody",
-      "Mac Pro",
-      "Mac Pro Cylinder"
-    ]
-  end
-
-  def computer_types_laptops
-    [
-      "MacBook Pro",
-      "MacBook Pro Unibody",
-      "MacBook Pro Retina",
-      "MacBook White",
-      "MacBook Black",
-      "MacBook White Unibody",
-      "MacBook Alum Unibody",
-      "MacBook Retina (USB-C)",
-      "Macbook Pro Touch Bar",
-      "MacBook Air (1 x USB)",
-      "MacBook Air Unibody"
-    ]
-  end
-
   def year_section
     [
       "Early",
