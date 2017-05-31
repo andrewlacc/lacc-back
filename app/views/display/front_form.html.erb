@@ -11,11 +11,11 @@
   <tr>
     <td class="Label">Brand:</td>
     <td colspan="2">
-      <%= select_tag :brand, options_for_select(brand), prompt: "Select" %>
+      <%= select_tag :brand, options_for_select(@brand), prompt: "Select" %>
     </td>
     <td class="Label">Monitor Type:</td>
     <td>
-      <%= select_tag :monitor_type, options_for_select(monitor_types), prompt: "Select" %>
+      <%= select_tag :monitor_type, options_for_select(@monitor_type), prompt: "Select" %>
     </td>
   </tr>
   <tr>
@@ -24,7 +24,7 @@
   <tr>
     <td class="Label">Size:</td>
     <td colspan="2">
-      <%= select_tag :display_size, options_for_select(display_sizes), prompt: "Select" %>
+      <%= select_tag :display_size, options_for_select(@size), prompt: "Select" %>
     </td>
     <td width="137" class="Label">Optimal Resolution:</td>
     <td width="296">

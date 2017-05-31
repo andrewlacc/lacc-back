@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
-  root 'back#index'
+  root 'home#index'
 
-  get 'back/computer_trade_in'
-  get 'back/display'
-  get 'back/computer'
-  get 'back/onsite'
+  get '/comuputertradein',  to: 'home#computer_trade_in'
+  get '/useddisplay',       to: 'display#front_form'
+  get '/usedcomputer',      to: 'computer#front_form'
 
-  # Edit forms
-  get '/adminlogin',  to: 'admin#login'
-  get '/adminarea',   to: 'admin#index'
-  get '/login',       to: 'admin#new'
-  post '/login',      to: 'admin#create'
-  delete '/logout',   to: 'admin#destroy'
+  # Admin Login and Menu
+  get '/adminlogin',        to: 'admin#login'
+  get '/adminarea',         to: 'admin#index'
+  get '/login',             to: 'admin#new'
+  post '/login',            to: 'admin#create'
+  delete '/logout',         to: 'admin#destroy'
 
-  get 'admin/computer'
-  get 'admin/display'
+  # Used Computer Forms
+  resources :computer, only: [:index, :new, :create, :delete, :destroy]
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Used Display Forms
+  resources :display, only: [:index, :new, :create, :delete, :destroy]
+
+  # Onsite Forms
+  resources :onsite do
+    member do
+      get :delete
+    end
+  end
 end
