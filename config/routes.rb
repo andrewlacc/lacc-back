@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   delete '/logout',         to: 'admin#destroy'
 
   # Used Computer Forms
-  resources :computer, only: [:index, :new, :create, :delete, :destroy]
+  resources :computer, except: [:show]
 
   # Used Display Forms
-  resources :display, only: [:index, :new, :create, :delete, :destroy]
+  resources :display, except: [:show]
 
   # Onsite Forms
   resources :onsite do

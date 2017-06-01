@@ -1,0 +1,13 @@
+<div class="pad">
+  <%= link_to '<< Back', computer_index_path, class: "btn btn-secondary" %>
+
+  <h1>Edit Referbished Computer Input Tag</h1>
+
+  <%= form_for @display, url: { action: "update", params: { id: @display.id } } do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+
+    <div>
+      <%= f.submit "Save Tag", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

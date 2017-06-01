@@ -6,6 +6,7 @@ class OnsiteController < ApplicationController
   end
 
   def index
+    @onsites = OnSite.all
   end
 
   def show

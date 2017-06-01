@@ -38,4 +38,36 @@ class ComputerController < ApplicationController
     @video_ram = UsedComputer.search_category("video_ram")
     @video_port = UsedComputer.search_category("video_port")
   end
+
+  def new
+    @computer = UsedComputer.new()
+  end
+
+  def create
+    @computer = UsedComputer.new(used_computer_params)
+    @computer.save()
+    redirect_to computer_index_path
+  end
+
+  def edit
+    @computer = UsedComputer.find(params[:id])
+  end
+
+  def update
+    @computer = UsedComputer.find(params[:id])
+    @computer.update_attributes(used_computer_params)
+    redirect_to computer_index_path
+  end
+
+  def destroy
+    @computer = UsedComputer.find(params[:id])
+    @computer.destroy()
+    redirect_to computer_index_path
+  end
+
+  private
+
+  def used_computer_params
+    params.require(:used_computer).permit(:category, :sub_category, :value)
+  end
 end
