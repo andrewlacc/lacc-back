@@ -3,4 +3,7 @@
 <%= link_to 'Computer Pre-Owned Sheets', usedcomputer_path, class: "btn btn-secondary" %><br /><br />
 <%= link_to 'Trade-In Sheets', comuputertradein_path, class: "btn btn-secondary" %><br /><br />
 <%= link_to 'Display Pre-Owned Sheets', useddisplay_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'One Sites', onsite_index_path, class: "btn btn-secondary" %>
+<%= link_to 'One Sites', onsite_index_path, class: "btn btn-secondary" %><br /><br />
+<% if session[:user_id] %>
+  <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
+<% end %>

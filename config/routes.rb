@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/adminlogin',        to: 'admin#login'
   get '/adminarea',         to: 'admin#index'
   get '/login',             to: 'admin#new'
-  post '/login',            to: 'admin#create'
+  post '/attempt_login',    to: 'admin#create'
   delete '/logout',         to: 'admin#destroy'
 
   # Used Computer Forms
@@ -24,4 +24,6 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+
+  get '/onsite_blank_form', to: 'onsite#blank_form'
 end

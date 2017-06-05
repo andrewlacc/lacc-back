@@ -1,4 +1,7 @@
 class ComputerController < ApplicationController
+
+  before_action :confirm_logged_in, except: [:front_form]
+
   def front_form
     @desktop_values = parse_values(UsedComputer.search_subcategory("desktop"))
     @laptop_values = parse_values(UsedComputer.search_subcategory("laptop"))

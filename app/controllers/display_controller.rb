@@ -1,4 +1,7 @@
 class DisplayController < ApplicationController
+
+  before_action :confirm_logged_in, except: [:front_form]
+
   def front_form
     @brand = parse_values(UsedComputer.search_category("brand"))
     @monitor_type = parse_values(UsedComputer.search_category("monitor_type"))

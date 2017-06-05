@@ -1,10 +1,10 @@
 module ComputerHelper
-  def categories
+  def computer_categories
     [ "computer_type", "processor_speed", "cpu_type", "screen_size", "hard_drive", "optical_drive",
     "card_slot", "installed_ram", "max_ram", "open_slots", "os", "video_card", "video_ram", "video_port" ]
   end
 
-  def sub_categories
+  def computer_sub_categories
     [ "N/A", "desktop", "laptop", "hdd", "fusion", "ssd", "max_os", "nvidia", "amd", "intel" ]
   end
 

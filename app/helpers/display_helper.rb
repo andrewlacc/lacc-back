@@ -1,9 +1,9 @@
 module DisplayHelper
-  def categories
+  def display_categories
     [ "brand", "monitor_type", "size" ]
   end
 
-  def sub_categories
+  def display_sub_categories
     [ "N/A" ]
   end
 end

@@ -2,13 +2,13 @@
     <h1>L.A. Computer Company</h1>
     <h5>LACC Login</h5>
 
-    <%= form_for(:session, url: login_path) do |f| %>
-        <%= f.label :user_id %><br />
-        <%= f.number_field :user_id, class: 'form-control', placeholder: "User ID" %><br />
-        <%= f.label :password %><br />
-        <%= f.password_field :password, class: 'form-control', placeholder: "Passowrd" %><br />
-        <p>
-        <%= f.submit("Log In", class: 'btn btn-success') %>
-        </p>
+    <%= form_tag attempt_login_path, method: 'post' do %>
+      <%= label_tag "User ID" %><br />
+      <%= number_field_tag :userid, params[:userid], class: 'form-control', placeholder: "User ID" %><br />
+      <%= label_tag "Passowrd" %><br />
+      <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: "Passowrd" %><br />
+      <p>
+        <%= submit_tag "Log In", class: 'btn btn-success' %>
+      </p>
     <% end %>
 </div>

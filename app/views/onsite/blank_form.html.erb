@@ -19,29 +19,30 @@
   </tr>
   <tr>
     <td align="center" valign="middle">Name:</td>
-    <td colspan="2"><%= @onsite.name %></td>
+    <td colspan="2"><%= text_field 'name', nil, {size: 30} %></td>
     <td align="center" valign="middle">Company Name:</td>
-    <td colspan="2"><%= @onsite.company %></td>
+    <td colspan="2"><%= text_field 'co_name', nil, {size: 30} %></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Phone Number:</td>
-    <td colspan="2"><%= @onsite.phone %></td>
+    <td colspan="2"><%= text_field 'phone_num', nil, {size: 30} %></td>
     <td align="center" valign="middle">Alt Phone Number:</td>
-    <td colspan="2"><%= @onsite.alt_phone %></td>
+    <td colspan="2"><%= text_field 'alt_phone_num', nil, {size: 30} %></td>
   </tr>
   <td align="center" valign="middle">E-Mail:</td>
-  <td colspan="4"><%= @onsite.email %></td>
+  <td colspan="4"><%= text_field 'email', nil, {size: 50} %></td>
   <tr>
     <td align="center" valign="middle">Address:</td>
-    <td colspan="2"><%= @onsite.street %></td>
+    <td colspan="2"><%= text_field 'address', nil, {size: 30} %></td>
     <td>
-      City: <%= @onsite.city %>
+      City:
+      <input type="text" size="15">
     </td>
     <td valign="middle" colspan="2">
       State:
-      <%= @onsite.state %>
+      <%= text_field 'state', 'state', {size: 3, value: "CA"} %>
       Zip:
-      <%= @onsite.zip %>
+      <%= text_field 'zip', nil, {size: 6} %>
     </td>
   </tr>
   <tr>
@@ -53,14 +54,14 @@
   <tr>
     <td colspan="6">
       Date and Time:
-      <%= @onsite.onsite_date %>
+      <%= datetime_select 'onsite_time', 'onsite_time', {prompt: true, ampm: true, minute_step: 5} %>
     </td>
   </tr>
   <tr>
     <td>Symptoms:</td>
   </tr>
   <tr>
-    <td colspan="6"><%= text_area 'symptoms', nil, {size: "100x3", value: @onsite.symptoms, disabled: 'disabled'} %></td>
+    <td colspan="6"><%= text_area 'symptoms', nil, {size: "100x3"} %></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -70,11 +71,11 @@
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
-    <td><%= text_field 'part_num_one', nil, {size: 20, value: @onsite.part_num_one, disabled: 'disabled'} %></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Part:</td>
-    <td><%= text_field 'part 1', nil, {size: 20, value: @onsite.part_one, disabled: 'disabled'} %></td>
+    <td><input type="text"  size="20"></td>
     <td align="center" valign="middle">Price: $</td>
-    <td><%= text_field 'price 1', nil, {size: 20, value: @onsite.price_one, disabled: 'disabled'} %></td>
+    <td><input type="text"  size="20"></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>

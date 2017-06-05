@@ -5,4 +5,9 @@
     <%= link_to 'Edit Pre-Owned Computer Sheet', computer_index_path, class: 'btn btn-primary btn-lg btn-block' %>
     <br />
     <%= link_to 'Edit Pre-Owned Display Sheet', display_index_path, class: 'btn btn-primary btn-lg btn-block' %>
+    <br />
+    <% if session[:user_id] %>
+      <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
+    <% end %>
+
 </div>
