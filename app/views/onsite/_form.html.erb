@@ -96,10 +96,10 @@
     <td colspan="5"><%= f.text_area :resolution, {size: "80x8"} %></td>
     <td align="right">
       OnSite: <%= f.text_field :onsite_cost, { size: 15 } %><br />
-      Parts: <%= text_field 'parts_cost', nil, { size: 15 } %><br />
-      Subtotal: <%= text_field 'subtotal', nil, { size: 15 } %><br />
-      Tax: <%= text_field 'tax', nil, { size: 15 } %><br />
-      Total: <%= text_field 'total', nil, { size: 15 } %><br />
+      Parts: <%= text_field 'parts_cost', nil, { size: 15, disabled: 'disabled' } %><br />
+      Subtotal: <%= text_field 'subtotal', nil, { size: 15, disabled: 'disabled' } %><br />
+      Tax: <%= text_field 'tax', nil, { size: 15, disabled: 'disabled' } %><br />
+      Total: <%= text_field 'total', nil, { size: 15, disabled: 'disabled' } %><br />
     </td>
   </tr>
   </table>

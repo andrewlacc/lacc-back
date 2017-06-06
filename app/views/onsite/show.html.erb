@@ -105,10 +105,10 @@
     <td colspan="5"><%= text_area 'notes', nil, {size: "80x8", value: @onsite.resolution, disabled: 'disabled'} %></td>
     <td align="right">
       OnSite: <%= text_field 'onsite_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
-      Parts: <%= text_field 'parts_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
-      Subtotal: <%= text_field 'subtotal', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
-      Tax: <%= text_field 'tax', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
-      Total: <%= text_field 'total_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
+      Parts: <%= text_field 'parts_cost', nil, {size: 15, value: @parts_cost, disabled: 'disabled'} %><br />
+      Subtotal: <%= text_field 'subtotal', nil, {size: 15, value: @subtotal, disabled: 'disabled'} %><br />
+      Tax: <%= text_field 'tax', nil, {size: 15, value: @tax, disabled: 'disabled'} %><br />
+      Total: <%= text_field 'total_cost', nil, {size: 15, value: @total, disabled: 'disabled'} %><br />
     </td>
   </tr>
   <tr>

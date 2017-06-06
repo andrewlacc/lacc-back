@@ -18,6 +18,10 @@ class OnsiteController < ApplicationController
 
   def show
     @onsite = OnSite.find(params[:id])
+    @parts_cost = cal_parts_cost(@onsite.price_one, @onsite.price_two, @onsite.price_three)
+    @subtotal = cal_subtotal(@onsite.onsite_cost, @parts_cost)
+    @tax = cal_tax(@parts_cost)
+    @total = cal_total(@subtotal, @tax)
   end
 
   def edit
@@ -42,5 +46,22 @@ class OnsiteController < ApplicationController
     params.require(:on_site).permit(:name, :company, :phone, :alt_phone, :email, :street, :city, :state, :zip,
      :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
      :resolution, :onsite_cost)
+  end
+
+  def cal_parts_cost(price_part_one = 0.0, price_part_two = 0.0, price_part_three = 0.0)
+    return price_part_one + price_part_two + price_part_three
+  end
+
+  def cal_subtotal(onsite_cost, parts_cost)
+    onsite_cost = onsite_cost || 0.0
+    return onsite_cost + parts_cost
+  end
+
+  def cal_tax(subtotal)
+    return subtotal * 0.08
+  end
+
+  def cal_total(subtotal, tax)
+    return subtotal + tax
   end
 end
