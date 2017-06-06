@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def confirm_logged_in
     unless session[:user_id]
-      redirect_to adminlogin_path
+      redirect_to login_path
     end
   end
 end

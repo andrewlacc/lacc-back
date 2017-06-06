@@ -78,19 +78,19 @@
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
-    <td><input type="text"  size="20"></td>
+    <td><%= text_field 'part_num_one', nil, {size: 20, value: @onsite.part_num_two, disabled: 'disabled'} %></td>
     <td align="center" valign="middle">Part:</td>
-    <td><input type="text"  size="20"></td>
+    <td><%= text_field 'part 1', nil, {size: 20, value: @onsite.part_two, disabled: 'disabled'} %></td>
     <td align="center" valign="middle">Price: $</td>
-    <td><input type="text"  size="20"></td>
+    <td><%= text_field 'price 1', nil, {size: 20, value: @onsite.price_two, disabled: 'disabled'} %></td>
   </tr>
   <tr>
     <td align="center" valign="middle">Part #:</td>
-    <td><input type="text"  size="20"></td>
+    <td><%= text_field 'part_num_one', nil, {size: 20, value: @onsite.part_num_three, disabled: 'disabled'} %></td>
     <td align="center" valign="middle">Part:</td>
-    <td><input type="text"  size="20"></td>
+    <td><%= text_field 'part 1', nil, {size: 20, value: @onsite.part_three, disabled: 'disabled'} %></td>
     <td align="center" valign="middle">Price: $</td>
-    <td><input type="text"  size="20"></td>
+    <td><%= text_field 'price 1', nil, {size: 20, value: @onsite.price_three, disabled: 'disabled'} %></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
@@ -102,13 +102,13 @@
     <td>Notes:</td>
   </tr>
   <tr>
-    <td colspan="5"><%= text_area 'notes', nil, {size: "80x8"} %></td>
+    <td colspan="5"><%= text_area 'notes', nil, {size: "80x8", value: @onsite.resolution, disabled: 'disabled'} %></td>
     <td align="right">
-      OnSite:<input type="text"  size="15"><br />
-      Parts: <input type="text"  size="15"><br />
-      Subtotal: <input type="text"  size="15"><br />
-      Tax: <input type="text"  size="15"><br />
-      Total: <input type="text"  size="15"><br />
+      OnSite: <%= text_field 'onsite_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
+      Parts: <%= text_field 'parts_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
+      Subtotal: <%= text_field 'subtotal', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
+      Tax: <%= text_field 'tax', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
+      Total: <%= text_field 'total_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
     </td>
   </tr>
   <tr>

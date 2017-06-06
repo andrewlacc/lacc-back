@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get '/usedcomputer',      to: 'computer#front_form'
 
   # Admin Login and Menu
-  get '/adminlogin',        to: 'admin#login'
-  get '/adminarea',         to: 'admin#index'
-  get '/login',             to: 'admin#new'
-  post '/attempt_login',    to: 'admin#create'
-  delete '/logout',         to: 'admin#destroy'
+  get '/login',             to: 'admin#login'
+  post '/attempt_login',    to: 'admin#attempt_login'
+  delete '/logout',         to: 'admin#logout'
+
+  resources :admin, except: [:show]
 
   # Used Computer Forms
   resources :computer, except: [:show]

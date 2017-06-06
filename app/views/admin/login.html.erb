@@ -1,14 +1,15 @@
 <div class="jumbotron container">
-    <h1>L.A. Computer Company</h1>
-    <h5>LACC Login</h5>
+  <%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
+  <h1>L.A. Computer Company</h1>
+  <h5>LACC Login</h5>
 
-    <%= form_tag attempt_login_path, method: 'post' do %>
-      <%= label_tag "User ID" %><br />
-      <%= number_field_tag :userid, params[:userid], class: 'form-control', placeholder: "User ID" %><br />
-      <%= label_tag "Passowrd" %><br />
-      <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: "Passowrd" %><br />
-      <p>
-        <%= submit_tag "Log In", class: 'btn btn-success' %>
-      </p>
-    <% end %>
+  <%= form_tag attempt_login_path, method: 'post' do %>
+    <%= label_tag "User ID" %><br />
+    <%= number_field_tag :userid, params[:userid], class: 'form-control', placeholder: "User ID" %><br />
+    <%= label_tag "Passowrd" %><br />
+    <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: "Passowrd" %><br />
+    <p>
+      <%= submit_tag "Log In", class: 'btn btn-success' %>
+    </p>
+  <% end %>
 </div>
