@@ -18,4 +18,4 @@
 
 # Custom ignore files
 /config/application.yml
-/db/seed.rb
+/db/seeds.rb
