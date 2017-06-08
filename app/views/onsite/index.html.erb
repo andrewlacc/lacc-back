@@ -19,7 +19,7 @@
         <td>
           <%= link_to 'Show / Print', onsite_path(onsite), class: "btn btn-secondary" %>
           <%= link_to 'Edit', edit_onsite_path(onsite), class: "btn btn-secondary" %>
-          <%= link_to 'Delete', '#', class: "btn btn-danger" %>
+          <%= link_to 'Delete', "onsite/#{ onsite.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this onsite?" } %>
         </td>
       <% end %>
     <tbody>

@@ -51,7 +51,10 @@ class OnsiteController < ApplicationController
      :resolution, :onsite_cost)
   end
 
-  def cal_parts_cost(price_part_one = 0.0, price_part_two = 0.0, price_part_three = 0.0)
+  def cal_parts_cost(price_part_one, price_part_two, price_part_three)
+    price_part_one ||= 0.00
+    price_part_two ||= 0.00
+    price_part_three ||= 0.00
     return price_part_one + price_part_two + price_part_three
   end
 
