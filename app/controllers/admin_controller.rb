@@ -23,16 +23,16 @@ class AdminController < ApplicationController
     end
 
     def index
-      @users = User.all()
+      @users = User.all
     end
 
     def new
-      @user = User.new()
+      @user = User.new
     end
 
     def create
       @user = User.new(user_params)
-      @user.save()
+      @user.save
       redirect_to admin_index_path
     end
 
@@ -48,7 +48,7 @@ class AdminController < ApplicationController
 
     def destroy
       @user = User.find(params[:id])
-      @user.destroy()
+      @user.destroy
       redirect_to admin_index_path
     end
 

@@ -18,30 +18,16 @@
     <td class="Title">Customer</td>
   </tr>
   <tr>
-    <td align="center" valign="middle">Name:</td>
-    <td colspan="2"><%= @onsite.name %></td>
-    <td align="center" valign="middle">Company Name:</td>
-    <td colspan="2"><%= @onsite.company %></td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle">Phone Number:</td>
-    <td colspan="2"><%= @onsite.phone %></td>
-    <td align="center" valign="middle">Alt Phone Number:</td>
-    <td colspan="2"><%= @onsite.alt_phone %></td>
-  </tr>
-  <td align="center" valign="middle">E-Mail:</td>
-  <td colspan="4"><%= @onsite.email %></td>
-  <tr>
-    <td align="center" valign="middle">Address:</td>
-    <td colspan="2"><%= @onsite.street %></td>
-    <td>
-      City: <%= @onsite.city %>
+    <td align="left" colspan="3">
+      <%= @onsite.name %><br />
+      <%= @onsite.company %><br />
+      <%= @onsite.street %><br />
+      <%= "#{@onsite.city}, #{@onsite.state} #{@onsite.zip}" %>
     </td>
-    <td valign="middle" colspan="2">
-      State:
-      <%= @onsite.state %>
-      Zip:
-      <%= @onsite.zip %>
+    <td align="right" colspan="3">
+      <%= @onsite.phone %><br />
+      <%= @onsite.alt_phone %><br />
+      <%= @onsite.email %>
     </td>
   </tr>
   <tr>
@@ -53,7 +39,7 @@
   <tr>
     <td colspan="6">
       Date and Time:
-      <%= @onsite.onsite_date %>
+      <%= @onsite.onsite_date.strftime('%A %d/%m/%y at %l:%M %p') %>
     </td>
   </tr>
   <tr>

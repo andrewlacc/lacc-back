@@ -43,12 +43,12 @@ class ComputerController < ApplicationController
   end
 
   def new
-    @computer = UsedComputer.new()
+    @computer = UsedComputer.new
   end
 
   def create
     @computer = UsedComputer.new(used_computer_params)
-    @computer.save()
+    @computer.save
     redirect_to computer_index_path
   end
 
@@ -64,7 +64,7 @@ class ComputerController < ApplicationController
 
   def destroy
     @computer = UsedComputer.find(params[:id])
-    @computer.destroy()
+    @computer.destroy
     redirect_to computer_index_path
   end
 

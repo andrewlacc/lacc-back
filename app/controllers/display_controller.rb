@@ -15,12 +15,12 @@ class DisplayController < ApplicationController
   end
 
   def new
-    @display = UsedDisplay.new()
+    @display = UsedDisplay.new
   end
 
   def create
     @display = UsedDisplay.new(used_display_params)
-    @display.save()
+    @display.save
     redirect_to display_index_path
   end
 
@@ -36,7 +36,7 @@ class DisplayController < ApplicationController
 
   def destroy
     @display = UsedDisplay.find(params[:id])
-    @display.destroy()
+    @display.destroy
     redirect_to display_index_path
   end
 

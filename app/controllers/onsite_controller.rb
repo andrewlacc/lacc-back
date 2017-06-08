@@ -8,12 +8,12 @@ class OnsiteController < ApplicationController
 
   def create
     @onsite = OnSite.new(onsite_params)
-    @onsite.save()
+    @onsite.save
     redirect_to onsite_index_path
   end
 
   def index
-    @onsites = OnSite.all()
+    @onsites = OnSite.all
   end
 
   def show
@@ -38,6 +38,9 @@ class OnsiteController < ApplicationController
   end
 
   def destroy
+    @onsite = OnSite.find(params[:id])
+    @onsite.destroy
+    redirect_to onsite_index_path
   end
 
   private
