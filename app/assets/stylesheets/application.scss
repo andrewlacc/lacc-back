@@ -14,6 +14,35 @@
  *= require_self
  */
 
+.style2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	color: #000000;
+}
+
+.Label {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.Footer {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.Title {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+textarea:disabled {
+  color: black;
+}
+
+input:disabled {
+  color: black;
+}
+
  // Custom bootstrap variables must be set or imported before bootstrap.
  $input-color: black;
 

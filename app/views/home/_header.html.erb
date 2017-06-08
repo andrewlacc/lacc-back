@@ -5,9 +5,4 @@
   <%= link_to 'LACC', root_path, class: "navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   </div>
-  <div class="my-2 my-lg-0">
-    <% if session[:user_id] %>
-      <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
-    <% end %>
-  </div>
 </nav>

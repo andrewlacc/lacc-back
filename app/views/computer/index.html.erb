@@ -1,0 +1,28 @@
+<div class="pad">
+  <%= link_to '<< Back', admin_index_path, class: "btn btn-secondary" %>
+
+  <h1>Refurbished Computer Input Tags</h1>
+
+  <div class="row">
+    <div class="col-2">
+      <p>Implement Nav system</p>
+    </div>
+    <div class="col-10">
+      <%= link_to 'New', new_computer_path, class: "btn btn-success" %>
+      <%= render partial: "table", locals: { header: "Computer Type", data: @computer_type } %>
+      <%= render partial: "table", locals: { header: "Processor Speed", data: @processor_speed } %>
+      <%= render partial: "table", locals: { header: "CPU Type", data: @cpu_type } %>
+      <%= render partial: "table", locals: { header: "Screen Size", data: @screen_size } %>
+      <%= render partial: "table", locals: { header: "Hard Drive", data: @hard_drive } %>
+      <%= render partial: "table", locals: { header: "Optical Drive", data: @optical_drive } %>
+      <%= render partial: "table", locals: { header: "Card Slot", data: @card_slot } %>
+      <%= render partial: "table", locals: { header: "Installed RAM", data: @installed_ram } %>
+      <%= render partial: "table", locals: { header: "Max RAM", data: @max_ram } %>
+      <%= render partial: "table", locals: { header: "Open Slots", data: @open_slots } %>
+      <%= render partial: "table", locals: { header: "OS", data: @os } %>
+      <%= render partial: "table", locals: { header: "Video Card", data: @video_card } %>
+      <%= render partial: "table", locals: { header: "Video RAM", data: @video_ram } %>
+      <%= render partial: "table", locals: { header: "Video Port", data: @video_port } %>
+    </div>
+  </div>
+</div>
