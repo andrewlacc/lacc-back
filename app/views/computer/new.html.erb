@@ -1,0 +1,13 @@
+<div class="pad">
+  <%= link_to '<< Back', computer_index_path, class: "btn btn-secondary" %>
+
+  <h1>New Refurbished Computer Input Tag</h1>
+
+  <%= form_for @computer, url: { action: "create", params: { id: @computer.id } } do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+
+    <div>
+      <%= f.submit "Create Tag", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

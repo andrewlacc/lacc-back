@@ -1,0 +1,2 @@
+class OnSite < ApplicationRecord
+end

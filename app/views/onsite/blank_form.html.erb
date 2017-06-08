@@ -1,0 +1,130 @@
+<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
+  <tr>
+    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
+    <td align="left" class="Label">
+      2993 E. White Star Ave.<br />
+      Anaheim, VA 92806<br />
+      Phone: 714-630-8200<br />
+      www.lacomputercompany.com
+    </td>
+    <td align="left" colspan="3" valign="baseline" class="style2">On Site Service</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">
+      <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Title">Customer</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">Name:</td>
+    <td colspan="2"><%= text_field 'name', nil, {size: 30} %></td>
+    <td align="center" valign="middle">Company Name:</td>
+    <td colspan="2"><%= text_field 'co_name', nil, {size: 30} %></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">Phone Number:</td>
+    <td colspan="2"><%= text_field 'phone_num', nil, {size: 30} %></td>
+    <td align="center" valign="middle">Alt Phone Number:</td>
+    <td colspan="2"><%= text_field 'alt_phone_num', nil, {size: 30} %></td>
+  </tr>
+  <td align="center" valign="middle">E-Mail:</td>
+  <td colspan="4"><%= text_field 'email', nil, {size: 50} %></td>
+  <tr>
+    <td align="center" valign="middle">Address:</td>
+    <td colspan="2"><%= text_field 'address', nil, {size: 30} %></td>
+    <td>
+      City:
+      <input type="text" size="15">
+    </td>
+    <td valign="middle" colspan="2">
+      State:
+      <%= text_field 'state', 'state', {size: 3, value: "CA"} %>
+      Zip:
+      <%= text_field 'zip', nil, {size: 6} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" class="Title">On-Site Information</td>
+  </tr>
+  <tr>
+    <td colspan="6">
+      Date and Time:
+      <%= datetime_select 'onsite_time', 'onsite_time', {prompt: true, ampm: true, minute_step: 5} %>
+    </td>
+  </tr>
+  <tr>
+    <td>Symptoms:</td>
+  </tr>
+  <tr>
+    <td colspan="6"><%= text_area 'symptoms', nil, {size: "100x3"} %></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" class="Title">Parts Needed</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">Part #:</td>
+    <td><input type="text"  size="20"></td>
+    <td align="center" valign="middle">Part:</td>
+    <td><input type="text"  size="20"></td>
+    <td align="center" valign="middle">Price: $</td>
+    <td><input type="text"  size="20"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">Part #:</td>
+    <td><input type="text"  size="20"></td>
+    <td align="center" valign="middle">Part:</td>
+    <td><input type="text"  size="20"></td>
+    <td align="center" valign="middle">Price: $</td>
+    <td><input type="text"  size="20"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">Part #:</td>
+    <td><input type="text"  size="20"></td>
+    <td align="center" valign="middle">Part:</td>
+    <td><input type="text"  size="20"></td>
+    <td align="center" valign="middle">Price: $</td>
+    <td><input type="text"  size="20"></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" class="Title">Resolution</td>
+  </tr>
+  <tr>
+    <td>Notes:</td>
+  </tr>
+  <tr>
+    <td colspan="5"><%= text_area 'notes', nil, {size: "80x8"} %></td>
+    <td align="right">
+      OnSite:<input type="text"  size="15"><br />
+      Parts: <input type="text"  size="15"><br />
+      Subtotal: <input type="text"  size="15"><br />
+      Tax: <input type="text"  size="15"><br />
+      Total: <input type="text"  size="15"><br />
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">L.A Computer Company will not be responsible
+      for any data in customer's hard drive. There will be a charge for repairs under warranty if the problem is
+      deemed to be software rather than hardware.</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" colspan="3">Signature ________________________________</td>
+    <td align="center" valign="middle" colspan="3">Date ________________________________</td>
+  </tr>
+  </table>

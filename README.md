@@ -5,6 +5,9 @@ This is the backend website for the LA Computer Company. As of today, it include
 * Ruby version: 2.4.0
 * Using Bootstrap: 4.0.6Alpha
 
+* UPDATES - 05/14/2017
+- Created Database for the different forms.
+
 * UPDATES - 04/04/2017
 - Added more options to Hard drive and graphics card
 - Sorted options for Pre-owned Comptuer Specifications
