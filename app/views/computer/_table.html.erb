@@ -1,0 +1,24 @@
+<h2><%= "#{ header }" %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Sub Category</th>
+      <th>Value</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% data.each do |d| %>
+        <tr>
+          <td><%= d.category %></td>
+          <td><%= d.sub_category %></td>
+          <td><%= d.value %></td>
+          <td>
+            <%= link_to 'Edit', edit_computer_path(d), class: "btn btn-secondary" %>
+            <%= link_to 'Delete', "computer/#{ d.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete #{ d.value }" } %>
+          </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

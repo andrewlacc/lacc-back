@@ -1,0 +1,28 @@
+<div>
+  <%= link_to '<< Back', root_path, class: "btn btn-secondary" %><br /><br />
+  <%= link_to 'New Onsite', new_onsite_path, class: "btn btn-success" %>
+  <%= link_to 'Blank Onsite Form', onsite_blank_form_path, class: "btn btn-secondary" %>
+  <h1>On Sites</h1>
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Primary Number</th>
+      <th>Street Address</th>
+      <th>Date / Time</th>
+      <th>Options</th>
+    </thead>
+      <% @onsites.each do |onsite| %>
+        <td><%= onsite.name %></td>
+        <td><%= onsite.phone %></td>
+        <td><%= onsite.street %></td>
+        <td><%= onsite.onsite_date %></td>
+        <td>
+          <%= link_to 'Show / Print', onsite_path(onsite), class: "btn btn-secondary" %>
+          <%= link_to 'Edit', edit_onsite_path(onsite), class: "btn btn-secondary" %>
+          <%= link_to 'Delete', "onsite/#{ onsite.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this onsite?" } %>
+        </td>
+      <% end %>
+    <tbody>
+    </tbody>
+  </table>
+</div>

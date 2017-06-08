@@ -1,8 +1,35 @@
 <div class="container">
-    <h1>Admin Area</h1>
-    <h2>Logged in as: <h2>
-    <br />
-    <%= link_to 'Edit Pre-Owned Computer Sheet', admin_computer_path, class: 'btn btn-primary btn-lg btn-block' %>
-    <br />
-    <%= link_to 'Edit Pre-Owned Display Sheet', admin_display_path, class: 'btn btn-primary btn-lg btn-block' %>
+  <%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
+  <% if session[:user_id] %>
+    <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
+  <% end %>
+  <h1>Admin Area</h1>
+  <h2>Logged in as: <%= "#{ session[:username] }" %><h2>
+
+  <%= link_to 'Edit Pre-Owned Computer Sheet', computer_index_path, class: 'btn btn-primary btn-lg btn-block' %><br />
+  <%= link_to 'Edit Pre-Owned Display Sheet', display_index_path, class: 'btn btn-primary btn-lg btn-block' %><br />
+  <hr />
+
+  <%= link_to 'Create New Admin', new_admin_path, class: 'btn btn-success' %><br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.userid %></td>
+          <td><%= user.name %></td>
+          <td>
+            <%= link_to 'Edit User', edit_admin_path(user), class: 'btn btn-secondary' %>
+            <%= link_to 'Delete User', "admin/#{ user.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete #{ user.name }?" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

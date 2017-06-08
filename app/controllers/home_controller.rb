@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
-  def home
+  def index
+  end
+
+  def computer_trade_in
   end
 end

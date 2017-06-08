@@ -1,11 +1,11 @@
 <table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
   <tr>
-    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
+    <td align="center"><%= image_tag "lacc_logo.jpg", alt: "", width: "71", height: "68" %></td>
     <td align="center" colspan="5" valign="baseline" class="style2">Refurbished Computer Specifications</td>
   </tr>
   <tr>
     <td colspan="6" align="center" valign="middle" class="Label">
-      <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
+      <%= image_tag "bar.jpg", alt: "", width: "925", height: "25" %>
     </td>
   </tr>
   <tr>
@@ -14,7 +14,7 @@
   <tr>
     <td align="center" valign="middle" class="Label">Type:</td>
     <td>
-      <%= select_tag :type, options_for_select(computer_types), include_blank: "Select" %>
+      <%= select_tag :type, options_for_select(["Desktops"] + @desktop_values + ["---------------------", "Laptops"] + @laptop_values), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Year: </td>
     <td colspan="3">
@@ -48,15 +48,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Processor Speed: </td>
     <td>
-      <%= select_tag :processor_speed, options_for_select(processor_speed), include_blank: "Select" %>
+      <%= select_tag :processor_speed, options_for_select(@processor_speed), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">CPU Type: </td>
     <td>
-    	<%= select_tag :cpu_type, options_for_select(cpu_type), include_blank: "Select" %>
+    	<%= select_tag :cpu_type, options_for_select(@cpu_type), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Screen Size: </td>
     <td>
-      <%= select_tag :screen_size, options_for_select(screen_size), include_blank: "Select" %>
+      <%= select_tag :screen_size, options_for_select(@screen_size), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -65,15 +65,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Hard Drive:</td>
     <td>
-    	<%= select_tag :hard_drive, options_for_select(hard_drive), include_blank: "Select" %>
+    	<%= select_tag :hard_drive, options_for_select(["Hard Drives"] + @hdd + ["--------------------", "Fusion Drives"] + @fusion + ["--------------------", "Solid State Drives"] + @ssd), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Optical Drive:</td>
     <td>
-    	<%= select_tag :optical_drive, options_for_select(optical_drive), include_blank: "Select" %>
+    	<%= select_tag :optical_drive, options_for_select(@optical_drive), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Card Slot:</td>
     <td>
-      <%= select_tag :card_slot, options_for_select(card_slot), include_blank: "Select" %>
+      <%= select_tag :card_slot, options_for_select(@card_slot), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -82,15 +82,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Installed RAM:</td>
     <td>
-      <%= select_tag :installed_ram, options_for_select(ram), include_blank: "Select" %>
+      <%= select_tag :installed_ram, options_for_select(@ram), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Max RAM:</td>
     <td>
-      <%= select_tag :max_ram, options_for_select(max_ram), include_blank: "Select" %>
+      <%= select_tag :max_ram, options_for_select(@max_ram), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Open Slots:</td>
     <td>
-      <%= select_tag :open_slots, options_for_select(open_slots), include_blank: "Select" %>
+      <%= select_tag :open_slots, options_for_select(@open_slots), include_blank: "Select" %>
     </td>
   </tr>
   <tr>
@@ -99,11 +99,11 @@
   <tr>
     <td align="center" valign="middle" class="Label">OS:</td>
     <td>
-      <%= select_tag :os, options_for_select(osx), include_blank: "Select" %>
+      <%= select_tag :os, options_for_select(@os), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Max OS</td>
     <td>
-      <%= select_tag :max_os, options_for_select(max_os), include_blank: "Select" %>
+      <%= select_tag :max_os, options_for_select(@max_os), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Batt. Test Results:</td>
     <td>
@@ -116,15 +116,15 @@
   <tr>
     <td align="center" valign="middle" class="Label">Video Card:</td>
     <td>
-      <%= select_tag :video_card, options_for_select(video_card), include_blank: "Select" %>
+      <%= select_tag :video_card, options_for_select(["NVIDIA"] + @nvidia + ["--------------------", "AMD/ATI"] + @amd + ["--------------------", "Intel"] + @intel), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Video RAM:</td>
     <td>
-      <%= select_tag :video_ram, options_for_select(video_ram), include_blank: "Select" %>
+      <%= select_tag :video_ram, options_for_select(@video_ram), include_blank: "Select" %>
     </td>
     <td align="center" valign="middle" class="Label">Video Port:</td>
     <td>
-      <%= select_tag :video_port, options_for_select(video_port), include_blank: "Select" %>
+      <%= select_tag :video_port, options_for_select(@video_port), include_blank: "Select" %>
     </td>
   </tr>
   <tr>

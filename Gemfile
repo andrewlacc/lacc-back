@@ -5,27 +5,28 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# Core
 gem 'rails', '~> 5.0.1'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'puma', '~> 3.0'
+gem 'turbolinks', '~> 5'
+gem 'bcrypt', '~> 3.1.7'
+gem 'dalli', '~> 2.7', '>= 2.7.6'
+
+# CSS
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'react-rails', '~> 2.0', '>= 2.0.2'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 gem 'dalli', '~> 2.7', '>= 2.7.6'
 
+# JavaScript
+gem 'jbuilder', '~> 2.6', '>= 2.6.4'
+gem 'jquery-rails'
+gem 'coffee-rails', '~> 4.2'
+gem 'react-rails', '~> 2.0', '>= 2.0.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri

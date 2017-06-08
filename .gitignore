@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Custom ignore files
+/config/application.yml
+/db/seed.rb
