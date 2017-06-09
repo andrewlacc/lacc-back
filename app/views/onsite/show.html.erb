@@ -15,35 +15,36 @@
     </td>
   </tr>
   <tr>
-    <td class="Title">Customer</td>
+    <td class="Title" colspan="3">Customer</td>
+    <td class="Title" align="right" colspan="3">On-Site ID and Date</td>
   </tr>
   <tr>
     <td align="left" colspan="3">
+      <%= "On Site ID: #{@onsite.id}" %><br />
       <%= @onsite.name %><br />
       <%= @onsite.company %><br />
       <%= @onsite.street %><br />
       <%= "#{@onsite.city}, #{@onsite.state} #{@onsite.zip}" %>
     </td>
     <td align="right" colspan="3">
-      <%= @onsite.phone %><br />
-      <%= @onsite.alt_phone %><br />
-      <%= @onsite.email %>
+      <%= "On Site ID: #{@onsite.id}" %><br />
+      <%= @onsite.onsite_date.strftime('Date: %A %m/%d/%y') %><br />
+      <%= @onsite.onsite_date.strftime('Time: %l:%M %p') %>
     </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="Title">Contact Information</td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= "Phone Number: #{@onsite.phone}" %></td>
+    <td colspan="2"><%= "Alt Phone Number: #{@onsite.alt_phone}" %></td>
+    <td colspan="2"><%= "Email: #{@onsite.email}" %></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="2" class="Title">On-Site Information</td>
-  </tr>
-  <tr>
-    <td colspan="6">
-      Date and Time:
-      <%= @onsite.onsite_date.strftime('%A %d/%m/%y at %l:%M %p') %>
-    </td>
-  </tr>
-  <tr>
-    <td>Symptoms:</td>
+    <td class="Title">Symptoms:</td>
   </tr>
   <tr>
     <td colspan="6"><%= text_area 'symptoms', nil, {size: "100x3", value: @onsite.symptoms, disabled: 'disabled'} %></td>
@@ -90,11 +91,11 @@
   <tr>
     <td colspan="5"><%= text_area 'notes', nil, {size: "80x8", value: @onsite.resolution, disabled: 'disabled'} %></td>
     <td align="right">
-      OnSite: <%= text_field 'onsite_cost', nil, {size: 15, value: @onsite.onsite_cost, disabled: 'disabled'} %><br />
-      Parts: <%= text_field 'parts_cost', nil, {size: 15, value: @parts_cost, disabled: 'disabled'} %><br />
-      Subtotal: <%= text_field 'subtotal', nil, {size: 15, value: @subtotal, disabled: 'disabled'} %><br />
-      Tax: <%= text_field 'tax', nil, {size: 15, value: @tax, disabled: 'disabled'} %><br />
-      Total: <%= text_field 'total_cost', nil, {size: 15, value: @total, disabled: 'disabled'} %><br />
+      OnSite: <%= text_field 'onsite_cost', nil, {size: 15, value: "$#{number_with_precision(@onsite.onsite_cost, precision: 2)}", disabled: 'disabled'} %><br />
+      Parts: <%= text_field 'parts_cost', nil, {size: 15, value: "$#{number_with_precision(@parts_cost, precision: 2)}", disabled: 'disabled'} %><br />
+      Subtotal: <%= text_field 'subtotal', nil, {size: 15, value: "$#{number_with_precision(@subtotal, precision: 2)}", disabled: 'disabled'} %><br />
+      Tax: <%= text_field 'tax', nil, {size: 15, value: "$#{number_with_precision(@tax, precision: 2)}", disabled: 'disabled'} %><br />
+      Total: <%= text_field 'total_cost', nil, {size: 15, value: "$#{number_with_precision(@total, precision: 2)}", disabled: 'disabled'} %><br />
     </td>
   </tr>
   <tr>

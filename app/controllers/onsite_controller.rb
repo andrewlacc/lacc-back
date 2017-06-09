@@ -55,16 +55,16 @@ class OnsiteController < ApplicationController
     price_part_one ||= 0.00
     price_part_two ||= 0.00
     price_part_three ||= 0.00
-    return price_part_one + price_part_two + price_part_three
+    return (price_part_one + price_part_two + price_part_three).round(2)
   end
 
   def cal_subtotal(onsite_cost, parts_cost)
     onsite_cost = onsite_cost || 0.0
-    return onsite_cost + parts_cost
+    return (onsite_cost + parts_cost).round(2)
   end
 
   def cal_tax(subtotal)
-    return subtotal * 0.08
+    return (subtotal * 0.08).round(2)
   end
 
   def cal_total(subtotal, tax)
