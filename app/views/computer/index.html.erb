@@ -1,28 +1,42 @@
 <div class="pad">
-  <%= link_to '<< Back', admin_index_path, class: "btn btn-secondary" %>
+  <%= link_to '<< Back', admin_index_path, class: "btn btn-secondary", id: "top" %>
 
   <h1>Refurbished Computer Input Tags</h1>
 
   <div class="row">
     <div class="col-2">
-      <p>Implement Nav system</p>
+      <div class="btn-group-vertical">
+        <%= link_to 'Computer Type', '#computer_type', class: "btn btn-primary" %>
+        <%= link_to 'Processor Speed', '#processor_speed', class: "btn btn-primary" %>
+        <%= link_to 'CPU Type', '#cpu_type', class: "btn btn-primary" %>
+        <%= link_to 'Screen Size', '#screen_size', class: "btn btn-primary" %>
+        <%= link_to 'Hard Drive', '#hard_drive', class: "btn btn-primary" %>
+        <%= link_to 'Optical Drive', '#optical_drive', class: "btn btn-primary" %>
+        <%= link_to 'Car Slot', '#card_slot', class: "btn btn-primary" %>
+        <%= link_to 'Installed RAM', '#installed_ram', class: "btn btn-primary" %>
+        <%= link_to 'Max RAM', '#max_ram', class: "btn btn-primary" %>
+        <%= link_to 'Open Slots', '#open_slots', class: "btn btn-primary" %>
+        <%= link_to 'OS', '#os', class: "btn btn-primary" %>
+        <%= link_to 'Video Card', '#video_card', class: "btn btn-primary" %>
+        <%= link_to 'Video Ram', '#video_ram', class: "btn btn-primary" %>
+        <%= link_to 'Video Port', '#video_port', class: "btn btn-primary" %>
+      </div>
     </div>
     <div class="col-10">
-      <%= link_to 'New', new_computer_path, class: "btn btn-success" %>
-      <%= render partial: "table", locals: { header: "Computer Type", data: @computer_type } %>
-      <%= render partial: "table", locals: { header: "Processor Speed", data: @processor_speed } %>
-      <%= render partial: "table", locals: { header: "CPU Type", data: @cpu_type } %>
-      <%= render partial: "table", locals: { header: "Screen Size", data: @screen_size } %>
-      <%= render partial: "table", locals: { header: "Hard Drive", data: @hard_drive } %>
-      <%= render partial: "table", locals: { header: "Optical Drive", data: @optical_drive } %>
-      <%= render partial: "table", locals: { header: "Card Slot", data: @card_slot } %>
-      <%= render partial: "table", locals: { header: "Installed RAM", data: @installed_ram } %>
-      <%= render partial: "table", locals: { header: "Max RAM", data: @max_ram } %>
-      <%= render partial: "table", locals: { header: "Open Slots", data: @open_slots } %>
-      <%= render partial: "table", locals: { header: "OS", data: @os } %>
-      <%= render partial: "table", locals: { header: "Video Card", data: @video_card } %>
-      <%= render partial: "table", locals: { header: "Video RAM", data: @video_ram } %>
-      <%= render partial: "table", locals: { header: "Video Port", data: @video_port } %>
+      <%= render partial: "table", locals: { header: "Computer Type", id: "computer_type", data: @computer_type } %>
+      <%= render partial: "table", locals: { header: "Processor Speed", id: "processor_speed", data: @processor_speed } %>
+      <%= render partial: "table", locals: { header: "CPU Type", id: "cpu_type", data: @cpu_type } %>
+      <%= render partial: "table", locals: { header: "Screen Size", id: "screen_size", data: @screen_size } %>
+      <%= render partial: "table", locals: { header: "Hard Drive", id: "hard_drive", data: @hard_drive } %>
+      <%= render partial: "table", locals: { header: "Optical Drive", id: "optical_drive", data: @optical_drive } %>
+      <%= render partial: "table", locals: { header: "Card Slot", id: "card_slot", data: @card_slot } %>
+      <%= render partial: "table", locals: { header: "Installed RAM", id: "installed_ram", data: @installed_ram } %>
+      <%= render partial: "table", locals: { header: "Max RAM", id: "max_ram", data: @max_ram } %>
+      <%= render partial: "table", locals: { header: "Open Slots", id: "open_slots", data: @open_slots } %>
+      <%= render partial: "table", locals: { header: "OS", id: "os", data: @os } %>
+      <%= render partial: "table", locals: { header: "Video Card", id: "video_card", data: @video_card } %>
+      <%= render partial: "table", locals: { header: "Video RAM", id: "video_ram", data: @video_ram } %>
+      <%= render partial: "table", locals: { header: "Video Port", id: "video_port", data: @video_port } %>
     </div>
   </div>
 </div>
