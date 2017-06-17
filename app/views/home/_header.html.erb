@@ -3,6 +3,47 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <%= link_to 'LACC', root_path, class: "navbar-brand" %>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <% if session[:user_id] %>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin Area
+            </a>
+            <div class="dropdown-menu">
+              <%= link_to 'Edit Refurbished Computer Sheet', computer_index_path, class: 'dropdown-item' %>
+              <%= link_to 'Edit Refurbished Display Sheet', display_index_path, class: 'dropdown-item' %>
+            </div>
+          </div>
+        <% end %>
+      </li>
+      <li class="nav-item active">
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Refurbished / Trade-In Sheets
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to 'Computer Refurbished Sheets', usedcomputer_path, class: "dropdown-item" %>
+            <%= link_to 'Display Refurbished Sheets', useddisplay_path, class: "dropdown-item" %>
+            <%= link_to 'Trade-In Sheets', comuputertradein_path, class: "dropdown-item" %>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Service
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to 'One Sites', onsite_index_path, class: "dropdown-item" %>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <% if session[:user_id] %>
+      <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
+    <% end %>
   </div>
 </nav>
