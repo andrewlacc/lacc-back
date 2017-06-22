@@ -1,6 +1,18 @@
 <h1>LACC Back End</h1>
 <%= link_to 'Admin Area >>', admin_index_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'Computer Refurbished Sheets >>', usedcomputer_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'Trade-In Sheets >>', comuputertradein_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'Display Refurbished Sheets >>', useddisplay_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'One Sites >>', onsite_index_path, class: "btn btn-secondary" %><br /><br />
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Refurbished / Trade-In Sheets</h4>
+    <%= link_to 'Refurbished Computer Sheets', usedcomputer_path, class: "card-link" %>
+    <%= link_to 'Refurbished Display Sheets', useddisplay_path, class: "card-link" %>
+    <%= link_to 'Trade-In Sheets ', comuputertradein_path, class: "card-link" %>
+  </div>
+</div><br />
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Service Forms</h4>
+    <%= link_to 'One Sites', onsite_index_path, class: "card-link" %>
+  </div>
+</div>
