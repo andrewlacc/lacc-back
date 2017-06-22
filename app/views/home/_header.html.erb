@@ -25,8 +25,8 @@
             Refurbished / Trade-In Sheets
           </a>
           <div class="dropdown-menu">
-            <%= link_to 'Computer Refurbished Sheets', usedcomputer_path, class: "dropdown-item" %>
-            <%= link_to 'Display Refurbished Sheets', useddisplay_path, class: "dropdown-item" %>
+            <%= link_to 'Refurbished Computer Sheets', usedcomputer_path, class: "dropdown-item" %>
+            <%= link_to 'Refurbished Display Sheets', useddisplay_path, class: "dropdown-item" %>
             <%= link_to 'Trade-In Sheets', comuputertradein_path, class: "dropdown-item" %>
           </div>
         </div>
@@ -44,6 +44,14 @@
     </ul>
     <% if session[:user_id] %>
       <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
+    <% else %>
+      <div class="form-inline">
+        <%= form_tag attempt_login_path, method: 'post' do %>
+          <%= number_field_tag :userid, params[:userid], class: 'form-control', placeholder: "User ID" %>
+          <%= password_field_tag :password, params[:password], class: 'form-control', placeholder: "Passowrd" %>
+          <%= submit_tag "Log In", class: 'btn btn-success' %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </nav>
