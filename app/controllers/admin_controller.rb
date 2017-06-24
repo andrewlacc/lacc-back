@@ -13,7 +13,7 @@ class AdminController < ApplicationController
       if authorized_user
         session[:user_id] = authorized_user.id
         session[:username] = authorized_user.name
-        redirect_to admin_index_path
+        redirect_to root_path
       else
         render 'login'
       end

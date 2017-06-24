@@ -1,5 +1,17 @@
 <h1>LACC Back End</h1>
-<%= link_to 'Admin Area >>', admin_index_path, class: "btn btn-secondary" %><br /><br />
+
+<% if session[:user_id] %>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Admin Area</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Edit different sheets and manage users</h6>
+      <%= link_to 'Edit Refurbished Computer Sheet', computer_index_path, class: 'card-link' %>
+      <%= link_to 'Edit Refurbished Display Sheet', display_index_path, class: 'card-link' %>
+      <%= link_to 'Manage Users', admin_index_path, class: "card-link" %>
+    </div>
+  </div>
+  <br />
+<% end %>
 
 <div class="card">
   <div class="card-block">
@@ -8,7 +20,8 @@
     <%= link_to 'Refurbished Display Sheets', useddisplay_path, class: "card-link" %>
     <%= link_to 'Trade-In Sheets ', comuputertradein_path, class: "card-link" %>
   </div>
-</div><br />
+</div>
+<br />
 
 <div class="card">
   <div class="card-block">
