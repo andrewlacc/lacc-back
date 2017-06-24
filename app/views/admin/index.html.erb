@@ -1,12 +1,10 @@
 <div class="container">
   <%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
 
-  <h1>Admin Area</h1>
-  <h2>Logged in as: <%= "#{ session[:username] }" %><h2>
-  <%= link_to 'Edit Refurbished Computer Sheet', computer_index_path, class: 'btn btn-primary btn-lg btn-block' %><br />
-  <%= link_to 'Edit Refurbished Display Sheet', display_index_path, class: 'btn btn-primary btn-lg btn-block' %><br />
+  <h1>Manage Users</h1>
+  <h2>Logged in as: <%= "#{ session[:username] }" %></h2>
   <hr />
-  <%= link_to 'Create New Admin', new_admin_path, class: 'btn btn-success' %><br />
+  <%= link_to 'Create New Admin', new_admin_path, class: 'btn btn-success' %><br /><br />
   <table class="table">
     <thead>
       <tr>

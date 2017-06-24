@@ -64,7 +64,7 @@ class OnsiteController < ApplicationController
   end
 
   def cal_tax(subtotal)
-    return (subtotal * 0.08).round(2)
+    return (subtotal * 0.0775).round(2)
   end
 
   def cal_total(subtotal, tax)
