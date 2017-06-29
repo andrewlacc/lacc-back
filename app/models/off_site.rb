@@ -1,0 +1,2 @@
+class OffSite < ApplicationRecord
+end
