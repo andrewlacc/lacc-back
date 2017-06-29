@@ -1,2 +1,33 @@
-<h1>Clients#index</h1>
-<p>Find me in app/views/clients/index.html.erb</p>
+<%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
+
+<h1 align="center">Clients</h1>
+<hr />
+
+<%= link_to 'New Client', new_client_path, class: "btn btn-success" %><br /><br />
+
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Street Address</th>
+    <th>Options</th>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.phone %></td>
+        <td><%= client.email %></td>
+        <td><%= client.street %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to 'Show / Print', client_path(client), class: "btn btn-secondary" %>
+            <%= link_to 'Edit', edit_client_path(client), class: "btn btn-secondary" %>
+            <%= link_to 'Delete', "client/#{ client.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this onsite?" } %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

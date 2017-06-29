@@ -1,7 +1,11 @@
-<%= link_to '<< Back', root_path, class: "btn btn-secondary" %><br /><br />
+<%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
+
+<h1 align="center">On Sites</h1>
+<hr />
+
 <%= link_to 'New Onsite', new_onsite_path, class: "btn btn-success" %>
-<%= link_to 'Blank Onsite Form', onsite_blank_form_path, class: "btn btn-secondary" %>
-<h1>On Sites</h1>
+<%= link_to 'Blank Onsite Form', onsite_blank_form_path, class: "btn btn-secondary" %><br /><br />
+
 <table class="table">
   <thead>
     <th>On-Site ID</th>
@@ -11,6 +15,7 @@
     <th>Date / Time</th>
     <th>Options</th>
   </thead>
+  <tbody>
     <% @onsites.each do |onsite| %>
       <tr>
         <td><%= onsite.id %></td>
@@ -27,6 +32,5 @@
         </td>
       </tr>
     <% end %>
-  <tbody>
   </tbody>
 </table>
