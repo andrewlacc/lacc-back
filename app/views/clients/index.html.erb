@@ -22,7 +22,7 @@
         <td><%= client.street %></td>
         <td>
           <div class="btn-group">
-            <%= link_to 'Show / Print', client_path(client), class: "btn btn-secondary" %>
+            <%= link_to 'View', client_path(client), class: "btn btn-secondary" %>
             <%= link_to 'Edit', edit_client_path(client), class: "btn btn-secondary" %>
             <%= link_to 'Delete', "client/#{ client.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this onsite?" } %>
           </div>
