@@ -4,6 +4,7 @@ class OnsiteController < ApplicationController
 
   def new
     @onsite = OnSite.new({ state: "CA" })
+    @clients = Client.all
   end
 
   def create
@@ -26,6 +27,7 @@ class OnsiteController < ApplicationController
 
   def edit
     @onsite = OnSite.find(params[:id])
+    @clients = Client.all
   end
 
   def update
@@ -46,9 +48,8 @@ class OnsiteController < ApplicationController
   private
 
   def onsite_params
-    params.require(:on_site).permit(:name, :company, :phone, :alt_phone, :email, :street, :city, :state, :zip,
-     :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
-     :resolution, :onsite_cost)
+    params.require(:on_site).permit(:client_id, :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
+    :resolution, :onsite_cost)
   end
 
   def cal_parts_cost(price_part_one, price_part_two, price_part_three)
