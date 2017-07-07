@@ -25,7 +25,7 @@ class ClientsController < ApplicationController
   def update
     @client = Client.find(params[:id])
     if @client.update_attributes(client_params)
-      redirect_to clients_path
+      redirect_to client_path(@client)
     else
       render edit_client_path
     end
