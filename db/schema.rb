@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624202302) do
+ActiveRecord::Schema.define(version: 20170630171018) do
+
+  create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "company"
+    t.string   "phone"
+    t.string   "alt_phone"
+    t.string   "email"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.text     "notes",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "off_sites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "location"
+    t.date     "checked_date"
+    t.text     "initial_problem", limit: 65535
+    t.string   "service_order"
+    t.string   "data"
+    t.boolean  "is_done"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "client_id"
+    t.index ["client_id"], name: "index_off_sites_on_client_id", using: :btree
+  end
 
   create_table "on_sites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -37,6 +65,8 @@ ActiveRecord::Schema.define(version: 20170624202302) do
     t.float    "onsite_cost",    limit: 24
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "client_id"
+    t.index ["client_id"], name: "index_on_sites_on_client_id", using: :btree
   end
 
   create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -51,14 +81,17 @@ ActiveRecord::Schema.define(version: 20170624202302) do
     t.string   "value"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "sub_index"
+    t.index ["sub_index"], name: "index_used_computers_on_sub_index", using: :btree
   end
 
   create_table "used_displays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "category"
-    t.string   "sub_category"
     t.string   "value"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sub_index"
+    t.index ["sub_index"], name: "index_used_displays_on_sub_index", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

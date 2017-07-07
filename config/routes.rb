@@ -25,5 +25,17 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :clients do
+    member do
+      get :delete
+    end
+  end
+
+  resources :off_sites do
+    member do
+      get :delete
+    end
+  end
+
   get '/onsite_blank_form', to: 'onsite#blank_form'
 end

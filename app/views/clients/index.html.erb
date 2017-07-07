@@ -1,0 +1,32 @@
+<%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
+
+<h1 align="center">Clients</h1>
+<hr />
+
+<%= link_to 'New Client', new_client_path, class: "btn btn-success" %><br /><br />
+
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Street Address</th>
+    <th>Options</th>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.phone %></td>
+        <td><%= client.email %></td>
+        <td><%= client.street %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to 'View', client_path(client), class: "btn btn-secondary" %>
+            <%= link_to 'Edit', edit_client_path(client), class: "btn btn-secondary" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

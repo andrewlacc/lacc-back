@@ -1,0 +1,11 @@
+<div class="container">
+  <%= form_for :off_site, url: { action: "create" } do |f| %>
+    <%= link_to '<< Back', off_sites_path, class: "btn btn-secondary" %>
+    <%= f.submit "Create Off Site Sheet", class: "btn btn-success" %>
+    <h1 align="center">New Off Site Sheet</h1>
+    <%= render partial: 'form', locals: { f: f } %>
+    <div align="right">
+      <%= f.submit "Create Off Site Sheet", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

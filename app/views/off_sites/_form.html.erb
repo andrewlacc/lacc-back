@@ -1,0 +1,22 @@
+<hr />
+<h6 class="Title">Customer</h6>
+<div class="row">
+  <%= f.select :client_id, options_for_select(get_client_hash), { }, { class: "form-control col-3" } %>
+</div>
+<br />
+
+<h6 class="Title">Off Site Information</h6>
+<div class="row">
+  <p class="col-5">Date Checked in<%= f.date_select :checked_date, { prompt: true } %></p>
+  <p class="col" align="right">SO Number:</p>
+  <p class="col"><%= f.text_field :service_order, { class: "form-control" } %></p>
+</div>
+<div class="row">
+  <p class="col" align="right">Location to send: </p>
+  <%= f.select :location, display_off_sites, { }, { class: "form-control col" } %>
+</div>
+
+<h6 class="Title">Initial Problem</h6>
+<div class="row">
+  <%= f.text_area :initial_problem, { size: "100x3", class: "form-control" } %>
+</div>

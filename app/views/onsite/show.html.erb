@@ -20,10 +20,10 @@
   </tr>
   <tr>
     <td align="left" colspan="3">
-      <%= @onsite.name %><br />
-      <%= @onsite.company %><br />
-      <%= @onsite.street %><br />
-      <%= "#{@onsite.city}, #{@onsite.state} #{@onsite.zip}" %>
+      <%= @onsite.client.name %><br />
+      <%= @onsite.client.company %><br />
+      <%= @onsite.client.street %><br />
+      <%= "#{@onsite.client.city}, #{@onsite.client.state} #{@onsite.client.zip}" %>
     </td>
     <td align="right" colspan="3">
       <%= "On Site ID: #{@onsite.id}" %><br />
@@ -35,9 +35,9 @@
     <td colspan="2" class="Title">Contact Information</td>
   </tr>
   <tr>
-    <td colspan="2"><%= "Phone Number: #{@onsite.phone}" %></td>
-    <td colspan="2"><%= "Alt Phone Number: #{@onsite.alt_phone}" %></td>
-    <td colspan="2"><%= "Email: #{@onsite.email}" %></td>
+    <td colspan="2"><%= "Phone Number: #{@onsite.client.phone}" %></td>
+    <td colspan="2"><%= "Alt Phone Number: #{@onsite.client.alt_phone}" %></td>
+    <td colspan="2"><%= "Email: #{@onsite.client.email}" %></td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>

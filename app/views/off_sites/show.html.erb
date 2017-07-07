@@ -1,0 +1,67 @@
+<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
+  <tr>
+    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
+    <td align="left" class="Label">
+      2993 E. White Star Ave.<br />
+      Anaheim, VA 92806<br />
+      Phone: 714-630-8200<br />
+      www.lacomputercompany.com
+    </td>
+    <td align="left" colspan="3" valign="baseline" class="style2">On Site Service</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">
+      <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Title" colspan="3">Customer</td>
+    <td class="Title" align="right" colspan="3">SO Number and Date</td>
+  </tr>
+  <tr>
+    <td align="left" colspan="3">
+      <%= @off_site.client.name %><br />
+      <%= @off_site.client.company %><br />
+      <%= @off_site.client.street %><br />
+      <%= "#{@off_site.client.city}, #{@off_site.client.state} #{@off_site.client.zip}" %>
+    </td>
+    <td align="right" colspan="3">
+      <%= "On Site ID: #{@off_site.id}" %><br />
+      <%= @off_site.checked_date.strftime('Date: %A %m/%d/%y') %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="Title">Contact Information</td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= "Phone Number: #{@off_site.client.phone}" %></td>
+    <td colspan="2"><%= "Alt Phone Number: #{@off_site.client.alt_phone}" %></td>
+    <td colspan="2"><%= "Email: #{@off_site.client.email}" %></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Title">Initial Problem:</td>
+  </tr>
+  <tr>
+    <td colspan="6"><%= text_area 'symptoms', nil, { size: "100x3", value: @off_site.initial_problem, disabled: 'disabled' } %></td>
+  </tr>
+  <tr>
+    <td>Location to send: </td>
+    <td><%= @off_site.location %></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6">Make Sure that data is backed up if sending it for a logicboard level repair</td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" colspan="3">Signature ________________________________</td>
+    <td align="center" valign="middle" colspan="3">Date ________________________________</td>
+  </tr>
+  </table>
