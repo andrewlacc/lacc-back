@@ -22,7 +22,7 @@
           <div class="btn-group">
             <%= link_to 'Show / Print', off_site_path(off_site), class: "btn btn-secondary" %>
             <%= link_to 'Edit', edit_off_site_path(off_site), class: "btn btn-secondary" %>
-            <%= link_to 'Delete', "off_site/#{ off_site.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this onsite?" } %>
+            <%= link_to 'Delete', off_site_path(off_site), method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this off site sheet?" } %>
           </div>
         </td>
       </tr>
