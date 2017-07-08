@@ -14,7 +14,7 @@ class OnsiteController < ApplicationController
   end
 
   def index
-    @onsites = OnSite.all
+    @onsites = OnSite.sort_by_date_desc
   end
 
   def show
