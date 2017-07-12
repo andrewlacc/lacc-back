@@ -7,7 +7,7 @@
       Phone: 714-630-8200<br />
       www.lacomputercompany.com
     </td>
-    <td align="left" colspan="3" valign="baseline" class="style2">On Site Service</td>
+    <td align="left" colspan="3" valign="baseline" class="style2">Off Site Repair Sheet</td>
   </tr>
   <tr>
     <td colspan="6" align="center" valign="middle" class="Label">
@@ -26,7 +26,8 @@
       <%= "#{@off_site.client.city}, #{@off_site.client.state} #{@off_site.client.zip}" %>
     </td>
     <td align="right" colspan="3">
-      <%= "On Site ID: #{@off_site.id}" %><br />
+      <%= "On Site ID: #{@off_site.service_order}" %><br />
+      <%= "Serial Number: #{@off_site.serial_number}" %><br />
       <%= @off_site.checked_date.strftime('Date: %A %m/%d/%y') %>
     </td>
   </tr>
