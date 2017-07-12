@@ -12,6 +12,8 @@
   <p class="col"><%= f.text_field :service_order, { class: "form-control" } %></p>
 </div>
 <div class="row">
+  <p class="col-2" align="right">Serial Number: </p>
+  <p class="col-3"><%= f.text_field :serial_number, { class: "form-control" } %></p>
   <p class="col" align="right">Location to send: </p>
   <%= f.select :location, display_off_sites, { }, { class: "form-control col" } %>
 </div>
