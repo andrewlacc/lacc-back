@@ -1,5 +1,5 @@
 module OffSitesHelper
   def display_off_sites
-    ["Apple", "Data Recovery", "Logic Board Level Repair"]
+    ["Apple", "Data Recovery", "DT&T", "KT Electronics"]
   end
 end
