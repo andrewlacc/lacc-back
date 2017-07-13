@@ -1,6 +1,14 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.all
+    @max_page = (Client.all.length / 20) + 1
+    @page = params[:page].to_i
+    max = @page * 10
+    min = max - 9
+    @clients = Client.all.where(id: min..max)
+
+    if @page > @max_page || @page < 1
+      redirect_to clients_path(page: 1)
+    end
   end
 
   def create

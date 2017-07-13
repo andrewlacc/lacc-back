@@ -1,6 +1,7 @@
+<hr />
+<h4>Sub Index</h4>
+<%= f.number_field :sub_index, { class: "form-control" } %><br /><br />
 <h4>Category</h4>
 <%= f.select :category, display_categories, { }, { class: "form-control" } %><br /><br />
-<h4>Sub Category</h4>
-<%= f.select :sub_category, display_sub_categories, { }, { class: "form-control" } %><br /><br />
 <h4>Value</h4>
 <%= f.text_field :value, class: "form-control", placeholder: "Value" %><br /><br />
