@@ -1,6 +1,14 @@
 class OffSitesController < ApplicationController
   def index
+    @max_page = (OffSite.all.length / 20) + 1
+    @page = params[:page].to_i
+    max = @page * 10
+    min = max - 9
     @off_sites = OffSite.all.sort_desc
+
+    if @page > @max_page || @page < 1
+      redirect_to off_sites_path(page: 1)
+    end
   end
 
   def new
