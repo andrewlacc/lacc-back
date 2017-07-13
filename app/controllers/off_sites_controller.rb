@@ -1,6 +1,6 @@
 class OffSitesController < ApplicationController
   def index
-    @off_sites = OffSite.all
+    @off_sites = OffSite.all.sort_desc
   end
 
   def new
