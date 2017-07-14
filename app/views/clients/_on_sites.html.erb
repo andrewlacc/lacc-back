@@ -1,9 +1,6 @@
 <table class="table">
   <thead>
     <th>On-Site ID</th>
-    <th>Name</th>
-    <th>Primary Number</th>
-    <th>Street Address</th>
     <th>Date / Time</th>
     <th>Options</th>
   </thead>
@@ -11,9 +8,6 @@
     <% @on_sites.each do |onsite| %>
       <tr>
         <td><%= onsite.id %></td>
-        <td><%= onsite.name %></td>
-        <td><%= onsite.phone %></td>
-        <td><%= onsite.street %></td>
         <td><%= onsite.onsite_date.strftime('%m/%d/%y at %l:%M %p') %></td>
         <td>
           <div class="btn-group">
