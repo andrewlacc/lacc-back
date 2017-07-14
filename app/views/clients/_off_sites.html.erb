@@ -1,7 +1,6 @@
 <table class="table">
   <thead>
     <th>Service Ticket</th>
-    <th>Client Name</th>
     <th>Location Shipped</th>
     <th>Options</th>
   </thead>
@@ -9,7 +8,6 @@
     <% @off_sites.each do |off_site| %>
       <tr>
         <td><%= off_site.service_order %></td>
-        <td><%= off_site.client.name %></td>
         <td><%= off_site.location %></td>
         <td>
           <div class="btn-group">
