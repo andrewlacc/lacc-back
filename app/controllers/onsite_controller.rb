@@ -3,7 +3,7 @@ class OnsiteController < ApplicationController
   end
 
   def new
-    @onsite = OnSite.new({ state: "CA" })
+    @onsite = OnSite.new()
     @clients = Client.all
   end
 
