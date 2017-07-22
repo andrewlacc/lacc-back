@@ -15,20 +15,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require react
-//= require react_ujs
-//= require components
 //= require_tree .
-
-// Returns true if the array given is an array and if there is data within the array.
-function checkData ( checkArray ) {
-    // Checks to see if it is an array
-    if (!Array.isArray(checkArray)) {
-        console.log("Data is not an array!");
-        return false;
-    }
-    if (checkArray.length == 0)
-        return false;
-    else
-        return true;
-}

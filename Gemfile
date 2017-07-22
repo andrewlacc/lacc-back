@@ -25,7 +25,6 @@ end
 gem 'jbuilder', '~> 2.6', '>= 2.6.4'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
-gem 'react-rails', '~> 2.0', '>= 2.0.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
