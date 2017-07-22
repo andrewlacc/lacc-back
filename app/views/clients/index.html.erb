@@ -17,7 +17,7 @@
           <% end %>
         <% end %>
       </li>
-      <% (1..@max_page).each do |page| %>
+      <% build_pagination(@page, @max_page).each do |page| %>
         <li class="page-item"><%= link_to "#{page}", clients_path(page: page), class: 'page-link' %></li>
       <% end %>
       <li class="page-item">
