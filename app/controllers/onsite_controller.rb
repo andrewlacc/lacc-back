@@ -57,7 +57,7 @@ class OnsiteController < ApplicationController
 
   def onsite_params
     params.require(:on_site).permit(:client_id, :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
-    :resolution, :onsite_cost)
+    :resolution, :onsite_cost, :invoice_number)
   end
 
   def cal_parts_cost(price_part_one, price_part_two, price_part_three)

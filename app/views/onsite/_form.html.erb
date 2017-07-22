@@ -9,6 +9,9 @@
 <div class="row">
   <p class="col" align="center">Date and Time: <%= f.datetime_select :onsite_date, {prompt: true, ampm: true, minute_step: 5} %></p>
 </div>
+<div class="form-group row">
+  <p class="col" align="center">Invoice Number:</p><%= f.text_field :invoice_number, class: 'col-10 form-control' %>
+</div>
 
 <h6 class="Title">Symptoms</h6>
 <div class="row">
