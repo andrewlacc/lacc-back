@@ -1,10 +1,12 @@
 module OnsiteHelper
 
   def get_client_hash
-    x = {}
+    client_hash = {}
+
     @clients.each do |client|
-      x[client.name] = client.id
+      client_hash[client.name] = client.id
     end
-    x
+    
+    client_hash
   end
 end

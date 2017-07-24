@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
     @page = params[:page].to_i
     max = @page * 10
     min = max - 9
-    @clients = Client.all.where(id: min..max)
+    @clients = Client.all.sort_by_name
 
     if @page > @max_page || @page < 1
       redirect_to clients_path(page: 1)
