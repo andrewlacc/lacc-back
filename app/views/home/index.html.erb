@@ -11,6 +11,16 @@
     </div>
   </div>
   <br />
+
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Service Forms</h4>
+      <%= link_to 'Clients', clients_path(page: 1), class: "card-link" %>
+      <%= link_to 'On Sites', onsite_index_path(page: 1), class: "card-link" %>
+      <%= link_to 'Off Sites Service', off_sites_path(page: 1), class: "card-link" %>
+    </div>
+  </div>
+  <br />
 <% end %>
 
 <div class="card">
@@ -19,15 +29,5 @@
     <%= link_to 'Refurbished Computer Sheets', usedcomputer_path, class: "card-link" %>
     <%= link_to 'Refurbished Display Sheets', useddisplay_path, class: "card-link" %>
     <%= link_to 'Trade-In Sheets ', comuputertradein_path, class: "card-link" %>
-  </div>
-</div>
-<br />
-
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Service Forms</h4>
-    <%= link_to 'Clients', clients_path(page: 1), class: "card-link" %>
-    <%= link_to 'On Sites', onsite_index_path(page: 1), class: "card-link" %>
-    <%= link_to 'Off Sites Service', off_sites_path(page: 1), class: "card-link" %>
   </div>
 </div>
