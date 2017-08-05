@@ -37,5 +37,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/onsite_blank_form', to: 'onsite#blank_form'
+  get '/onsite_blank_form',   to: 'onsite#blank_form'
+  get '/computer_blank_form', to: 'computer#blank_form'
+  get '/display_blank_form',  to: 'display#blank_form'
 end

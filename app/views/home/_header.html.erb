@@ -22,26 +22,27 @@
       <li class="nav-item active">
         <div class="dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Refurbished / Trade-In Sheets
+            Refurbished Sheets
           </a>
           <div class="dropdown-menu">
             <%= link_to 'Refurbished Computer Sheets', usedcomputer_path, class: "dropdown-item" %>
             <%= link_to 'Refurbished Display Sheets', useddisplay_path, class: "dropdown-item" %>
-            <%= link_to 'Trade-In Sheets', comuputertradein_path, class: "dropdown-item" %>
           </div>
         </div>
       </li>
       <li class="nav-item active">
-        <div class="dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Service
-          </a>
-          <div class="dropdown-menu">
-            <%= link_to 'Clients', clients_path(page: 1), class: "dropdown-item" %>
-            <%= link_to 'On Sites', onsite_index_path(page: 1), class: "dropdown-item" %>
-            <%= link_to 'Off Sites', off_sites_path(page: 1), class: "dropdown-item" %>
+        <% if session[:user_id] %>
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Service
+            </a>
+            <div class="dropdown-menu">
+              <%= link_to 'Clients', clients_path(page: 1), class: "dropdown-item" %>
+              <%= link_to 'On Sites', onsite_index_path(page: 1), class: "dropdown-item" %>
+              <%= link_to 'Off Sites', off_sites_path(page: 1), class: "dropdown-item" %>
+            </div>
           </div>
-        </div>
+          <% end %>
       </li>
     </ul>
     <div class="nav-item">

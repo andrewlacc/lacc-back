@@ -1,0 +1,161 @@
+<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
+  <tr>
+    <td align="center"><%= image_tag "lacc_logo.jpg", alt: "", width: "71", height: "68" %></td>
+    <td align="center" colspan="5" valign="baseline" class="style2">Refurbished Computer Specifications</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">
+      <%= image_tag "bar.jpg", alt: "", width: "925", height: "25" %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Title">Model</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Type:</td>
+    <td>
+      <%= text_field_tag 'computer_type', nil, {class: 'form-control', placeholder: 'Computer Type'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Year: </td>
+    <td colspan="3">
+    	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
+      <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Original Part #:</td>
+    <td>
+      <%= text_field_tag 'original_part_num', nil, {class: 'form-control', placeholder: 'Original Part #'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Serial #:</td>
+    <td>
+      <%= text_field_tag 'serial_num', nil, {class: 'form-control', placeholder: 'Serial #'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Code:</td>
+    <td>
+      <%= text_field_tag 'code', nil, {class: 'form-control'} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" class="Title">Specs</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Processor Speed: </td>
+    <td>
+      <%= text_field_tag 'processor_speed', nil, {class: 'form-control', placeholder: 'Processor Speed'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">CPU Type: </td>
+    <td>
+    	<%= text_field_tag 'cpu_type', nil, {class: 'form-control', placeholder: 'CPU Type'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Screen Size: </td>
+    <td>
+      <%= text_field_tag 'screen_size', nil, {class: 'form-control', placeholder: 'Screen Size'} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Hard Drive:</td>
+    <td>
+    	<%= text_field_tag 'hard_drive', nil, {class: 'form-control', placeholder: 'Hard Drive type / size'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Optical Drive:</td>
+    <td>
+    	<%= text_field_tag 'optical_drive', nil, {class: 'form-control', placeholder: 'Optical Drive type'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Card Slot:</td>
+    <td>
+      <%= text_field_tag 'card_slot', nil, {class: 'form-control', placeholder: 'Card Slot'} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Installed RAM:</td>
+    <td>
+      <%= text_field_tag 'installed_ram', nil, {class: 'form-control', placeholder: 'Installed Ram'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Max RAM:</td>
+    <td>
+      <%= text_field_tag 'max_ram', nil, {class: 'form-control', placeholder: 'Max Ram'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Open Slots:</td>
+    <td>
+      <%= text_field_tag 'open_slots', nil, {class: 'form-control', placeholder: 'Open Slots'} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">OS:</td>
+    <td>
+      <%= text_field_tag 'os', nil, {class: 'form-control', placeholder: 'Operating System'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Max OS</td>
+    <td>
+      <%= text_field_tag 'max_os', nil, {class: 'form-control', placeholder: 'Max OS'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Batt. Test Results:</td>
+    <td>
+      <%= select_tag :battery_test, options_for_select(battery), include_blank: "Select" %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Video Card:</td>
+    <td>
+      <%= text_field_tag 'video_card', nil, {class: 'form-control', placeholder: 'Video Card'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Video RAM:</td>
+    <td>
+      <%= text_field_tag 'video_ram', nil, {class: 'form-control', placeholder: 'Video RAM'} %>
+    </td>
+    <td align="center" valign="middle" class="Label">Video Port:</td>
+    <td>
+      <%= text_field_tag 'video_port', nil, {class: 'form-control', placeholder: 'Video Port'} %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">WiFi:</td>
+    <td>
+    	<%= select_tag :bluetooth, options_for_select(yes_no), include_blank: "Select" %>
+    </td>
+    <td align="center" valign="middle" class="Label">Bluetooth:</td>
+    <td>
+    	<%= select_tag :bluetooth, options_for_select(yes_no), include_blank: "Select" %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Notes:</td>
+    <td colspan="6"><%= text_field_tag 'notes', nil, {class: 'form-control', size: 100} %></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6" align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Footer">All refurbished computers include a 90 day parts and labor warranty.*<br />
+      All batteries are considered AS IS and do not carry any warranty.</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
+      Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
+  </tr>
+</table>
