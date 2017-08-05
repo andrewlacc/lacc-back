@@ -1,0 +1,62 @@
+<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
+  <tr>
+    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
+    <td align="center" colspan="5" valign="middle" class="style2">Refurbished Display Specifications</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle">
+      <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Label">Brand:</td>
+    <td colspan="2">
+      <input type="text" class="form-control col-8">
+    </td>
+    <td class="Label">Monitor Type:</td>
+    <td>
+      <input type="text" class="form-control col-8">
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Label">Size:</td>
+    <td colspan="2">
+      <input type="text" class="form-control col-8">
+    </td>
+    <td width="137" class="Label">Optimal Resolution:</td>
+    <td width="296">
+      <input size="4" maxlength="4">
+      x
+      <input size="4" maxlength="4">
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Label">Model: </td>
+    <td colspan="2"><input type="text" class="form-control col-8"></input></td>
+    <td class="Label">Serial Number: </td>
+    <td><input type="text" class="form-control col-9" placeholder="Serial #"></input></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Label">Notes:</td>
+    <td colspan="6"><%= text_area 'notes', nil, {size: "90x6", class: "form-control col-11"} %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Footer">All refurbished displays include a 90 day parts and labor warranty.*</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
+      Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
+  </tr>
+</table>

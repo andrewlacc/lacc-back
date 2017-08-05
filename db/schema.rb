@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715000709) do
+ActiveRecord::Schema.define(version: 20170805190557) do
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170715000709) do
     t.datetime "updated_at",                    null: false
     t.integer  "client_id"
     t.string   "serial_number"
+    t.string   "tech"
     t.index ["client_id"], name: "index_off_sites_on_client_id", using: :btree
   end
 
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170715000709) do
     t.datetime "updated_at",                   null: false
     t.integer  "client_id"
     t.string   "invoice_number"
+    t.string   "tech"
     t.index ["client_id"], name: "index_on_sites_on_client_id", using: :btree
   end
 
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 20170715000709) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "access_level"
   end
 
 end
