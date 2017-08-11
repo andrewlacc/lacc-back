@@ -21,13 +21,13 @@
   </thead>
   <tbody>
       <% data.each do |d| %>
-        <tr>
+        <tr id="display-<%= "#{d.id}" %>">
           <td><%= d.sub_index %></td>
           <td><%= d.category %></td>
           <td><%= d.value %></td>
           <td class="btn-group">
             <%= link_to 'Edit', edit_display_path(d), class: "btn btn-secondary" %>
-            <%= link_to 'Delete', "display/#{ d.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete #{ d.value }" } %>
+            <button class="btn btn-danger">Delete</button>
           </td>
         </tr>
       <% end %>

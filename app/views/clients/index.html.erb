@@ -7,7 +7,6 @@
   <div class="col">
     <%= link_to 'New Client', new_client_path, class: "btn btn-success" %>
   </div>
-  <!-- Will dynamically build from JS -->
   <nav aria-label="Page navigation example col">
     <ul class="pagination">
       <li class="page-item">
@@ -45,7 +44,7 @@
   </thead>
   <tbody>
     <% @clients.each do |client| %>
-      <tr>
+      <tr id="<%= "#{client.id}" %>">
         <td><%= client.name %></td>
         <td><%= client.phone %></td>
         <td><%= client.email %></td>

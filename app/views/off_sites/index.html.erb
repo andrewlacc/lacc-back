@@ -43,7 +43,7 @@
   </thead>
   <tbody>
     <% @off_sites.each do |off_site| %>
-      <tr>
+      <tr id="off_sites-<%= "#{off_site.id}" %>">
         <td><%= off_site.service_order %></td>
         <td><%= off_site.client.name %></td>
         <td><%= off_site.location %></td>
@@ -51,7 +51,7 @@
           <div class="btn-group">
             <%= link_to 'Show / Print', off_site_path(off_site), class: "btn btn-secondary" %>
             <%= link_to 'Edit', edit_off_site_path(off_site), class: "btn btn-secondary" %>
-            <%= link_to 'Delete', off_site_path(off_site), method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this off site sheet?" } %>
+            <button class="btn btn-danger">Delete</button>
           </div>
         </td>
       </tr>

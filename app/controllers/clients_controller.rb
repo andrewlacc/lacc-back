@@ -1,10 +1,9 @@
 class ClientsController < ApplicationController
   def index
-    @max_page = (Client.all.length / 20) + 1
+    per_page = 20
+    @max_page = (Client.count / per_page) + 1
     @page = params[:page].to_i
-    max = @page * 10
-    min = max - 9
-    @clients = Client.all.sort_by_name
+    @clients = Client.all.sort_by_name.limit(per_page).offset((@page - 1) * per_page)
 
     if @page > @max_page || @page < 1
       redirect_to clients_path(page: 1)
