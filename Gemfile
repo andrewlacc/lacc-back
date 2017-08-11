@@ -16,16 +16,14 @@ gem 'dalli', '~> 2.7', '>= 2.7.6'
 # CSS
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'bootstrap', '~> 4.0.0.alpha6'
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.3.3'
-end
+gem 'bootstrap', '~> 4.0.0.beta'
 
 # JavaScript
 gem 'jbuilder', '~> 2.6', '>= 2.6.4'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootbox-rails', '~> 0.5.0'
+gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri

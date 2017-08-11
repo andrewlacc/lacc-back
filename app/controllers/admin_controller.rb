@@ -29,8 +29,12 @@ class AdminController < ApplicationController
 
     def create
       @user = User.new(user_params)
-      @user.save
-      redirect_to admin_index_path
+      if @user.save
+        redirect_to admin_index_path
+      else
+        flash[:alert] = "Failed to create new user"
+        render 'new'
+      end
     end
 
     def edit

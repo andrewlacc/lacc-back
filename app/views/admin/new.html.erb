@@ -1,6 +1,6 @@
 <div class="pad">
   <%= form_for @user, url: { action: "create", params: { id: @user.id } } do |f| %>
-    <%= link_to '<< Back', admin_index_path, class: "btn btn-secondary" %>
+    <%= link_to '<< Back', admin_index_path, class: "btn btn-light" %>
     <h1>Create New User</h1>
     <%= render partial: 'form', locals: { f: f } %>
     <div>

@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   resources :admin, except: [:show]
 
   # Used Computer Forms
-  resources :computer, except: [:show]
+  resources :computer, except: [:new, :show]
 
   # Used Display Forms
-  resources :display, except: [:show]
+  resources :display, except: [:new, :show]
 
   # Onsite Forms
   resources :onsite do

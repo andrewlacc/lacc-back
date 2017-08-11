@@ -1,13 +1,13 @@
-<%= link_to '<< Back', root_path, class: "btn btn-secondary" %>
+<%= link_to '<< Back', root_path, class: "btn btn-light" %>
 
 <h1 align="center">Clients</h1>
 <hr />
 
 <div class="row">
-  <div class="col">
+  <div class="col-xl-10">
     <%= link_to 'New Client', new_client_path, class: "btn btn-success" %>
   </div>
-  <nav aria-label="Page navigation example col">
+  <nav class="col-2" aria-label="Page navigation">
     <ul class="pagination">
       <li class="page-item">
         <% if @page != 1 %>
@@ -51,8 +51,8 @@
         <td><%= client.street %></td>
         <td>
           <div class="btn-group">
-            <%= link_to 'View', client_path(client), class: "btn btn-secondary" %>
-            <%= link_to 'Edit', edit_client_path(client), class: "btn btn-secondary" %>
+            <%= link_to 'View', client_path(client), class: "btn btn-light" %>
+            <%= link_to 'Edit', edit_client_path(client), class: "btn btn-light" %>
           </div>
         </td>
       </tr>

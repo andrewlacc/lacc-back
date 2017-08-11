@@ -1,4 +1,15 @@
 class OffSite < ApplicationRecord
+  # t.string   "location"
+  # t.date     "checked_date"
+  # t.text     "initial_problem", limit: 65535
+  # t.string   "service_order"
+  # t.string   "data"
+  # t.boolean  "is_done"
+  # t.datetime "created_at",                    null: false
+  # t.datetime "updated_at",                    null: false
+  # t.integer  "client_id"
+  # t.string   "serial_number"
+  # t.string   "tech"
 
   belongs_to :client
 

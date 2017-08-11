@@ -1,6 +1,6 @@
 <div class="pad">
   <%= form_for @display, url: { action: "update", params: { id: @display.id } } do |f| %>
-    <%= link_to '<< Back', computer_index_path, class: "btn btn-secondary" %>
+    <%= link_to '<< Back', computer_index_path, class: "btn btn-light" %>
     <h1>Edit Refurbished Computer Input Tag</h1>
     <%= render partial: 'form', locals: { f: f } %>
     <div>
