@@ -14,11 +14,10 @@ class OnsiteController < ApplicationController
   end
 
   def index
-    @max_page = (OnSite.all.length / 20) + 1
+    per_page = 20
+    @max_page = (OnSite.count / per_page) + 1
     @page = params[:page].to_i
-    max = @page * 10
-    min = max - 9
-    @onsites = OnSite.sort_by_date_desc
+    @onsites = OnSite.sort_by_date_desc.limit(per_page).offset((@page - 1) * per_page)
 
     if @page > @max_page || @page < 1
       redirect_to onsite_index_path(page: 1)

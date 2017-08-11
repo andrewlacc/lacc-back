@@ -46,7 +46,7 @@
   </thead>
   <tbody>
     <% @onsites.each do |onsite| %>
-      <tr>
+      <tr id="onsite-<%= "#{onsite.id}" %>">
         <td><%= onsite.id %></td>
         <td><%= onsite.client.name %></td>
         <td><%= onsite.client.phone %></td>
@@ -56,7 +56,7 @@
           <div class="btn-group">
             <%= link_to 'Show / Print', onsite_path(onsite), class: "btn btn-secondary" %>
             <%= link_to 'Edit', edit_onsite_path(onsite), class: "btn btn-secondary" %>
-            <%= link_to 'Delete', "onsite/#{ onsite.id }", method: 'delete', class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this onsite?" } %>
+            <button class="btn btn-danger">Delete</button>
           </div>
         </td>
       </tr>
