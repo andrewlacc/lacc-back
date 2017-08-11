@@ -1,5 +1,5 @@
 <%= form_for :client, url: clients_path do |f| %>
-  <%= link_to '<< Back', clients_path, class: "btn btn-secondary" %>
+  <%= link_to '<< Back', clients_path, class: "btn btn-light" %>
   <h1 align="center">New Client</h1>
   <%= render partial: 'form', locals: { f: f } %>
   <div align="right">

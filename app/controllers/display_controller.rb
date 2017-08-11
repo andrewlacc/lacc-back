@@ -1,6 +1,6 @@
 class DisplayController < ApplicationController
 
-  before_action :confirm_logged_in, except: [:front_form]
+  before_action :confirm_logged_in, except: [:front_form, :blank_form]
 
   def front_form
     @brand = parse_values(UsedDisplay.search_category("brand"))
@@ -14,14 +14,15 @@ class DisplayController < ApplicationController
     @size = UsedDisplay.search_category("size")
   end
 
-  def new
-    @display = UsedDisplay.new
-  end
-
   def create
     @display = UsedDisplay.new(used_display_params)
-    @display.save
-    redirect_to display_index_path
+    if @display.save
+      flash[:success] = "Display tag created successfully!"
+      redirect_to display_index_path
+    else
+      flash[:alert] = "Failed to create display tag."
+      redirect_to display_index_path
+    end
   end
 
   def edit
@@ -30,13 +31,17 @@ class DisplayController < ApplicationController
 
   def update
     @display = UsedDisplay.find(params[:id])
-    @display.update_attributes(used_display_params)
-    redirect_to display_index_path
+    if @display.update_attributes(used_display_params)
+      flash[:success] = "Display tag saved successfully!"
+      redirect_to display_index_path
+    else
+      flash[:alert] = "Failed to create display tag."
+      render 'edit'
+    end
   end
 
   def destroy
-    @display = UsedDisplay.find(params[:id])
-    @display.destroy
+    UsedDisplay.find(params[:id]).destroy
     redirect_to display_index_path
   end
 

@@ -1,6 +1,6 @@
 <div align="lef">
-  <%= link_to "<< Back", clients_path, class: 'btn btn-secondary' %>
-  <%= link_to "Edit", edit_client_path(@client.id), class: 'btn btn-secondary' %>
+  <%= link_to "<< Back", clients_path, class: 'btn btn-light' %>
+  <%= link_to "Edit", edit_client_path(@client.id), class: 'btn btn-light' %>
 </div>
 <div align="right">
   <h1><%= "#{@client.name}" %></h1>
@@ -39,6 +39,8 @@
 <br />
 
 <h4>Off Sites</h4>
+<%= link_to 'Create Off Site', new_off_site_path, class: 'btn btn-success' %>
 <%= render partial: 'off_sites' %>
 <h4>On Sites</h4>
+<%= link_to 'Create On Site', new_onsite_path, class: 'btn btn-success' %>
 <%= render partial: 'on_sites' %>

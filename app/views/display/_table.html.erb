@@ -13,7 +13,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Position</th>
+      <th>#</th>
       <th>Category</th>
       <th>Value</th>
       <th>Options</th>
@@ -26,7 +26,7 @@
           <td><%= d.category %></td>
           <td><%= d.value %></td>
           <td class="btn-group">
-            <%= link_to 'Edit', edit_display_path(d), class: "btn btn-secondary" %>
+            <%= link_to 'Edit', edit_display_path(d), class: "btn btn-light" %>
             <button class="btn btn-danger">Delete</button>
           </td>
         </tr>

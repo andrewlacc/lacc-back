@@ -2,7 +2,7 @@
 
 <% if session[:user_id] %>
   <div class="card">
-    <div class="card-block">
+    <div class="card-body">
       <h4 class="card-title">Admin Area</h4>
       <h6 class="card-subtitle mb-2 text-muted">Edit different sheets and manage users</h6>
       <%= link_to 'Edit Refurbished Computer Sheet', computer_index_path, class: 'card-link' %>
@@ -13,7 +13,7 @@
   <br />
 
   <div class="card">
-    <div class="card-block">
+    <div class="card-body">
       <h4 class="card-title">Service Forms</h4>
       <%= link_to 'Clients', clients_path(page: 1), class: "card-link" %>
       <%= link_to 'On Sites', onsite_index_path(page: 1), class: "card-link" %>
@@ -24,7 +24,7 @@
 <% end %>
 
 <div class="card">
-  <div class="card-block">
+  <div class="card-body">
     <h4 class="card-title">Refurbished Computer / Display Sheets</h4>
     <%= link_to 'Refurbished Computer Sheet', usedcomputer_path, class: "card-link" %>
     <%= link_to 'Refurbished Display Sheet', useddisplay_path, class: "card-link" %>
@@ -33,7 +33,7 @@
 <br />
 
 <div class="card">
-  <div class="card-block">
+  <div class="card-body">
     <h4 class="card-title">Blank Sheets</h4>
     <%= link_to 'Refurbished Computer Sheet', computer_blank_form_path, class: "card-link" %>
     <%= link_to 'Refurbished Display Sheet', display_blank_form_path, class: "card-link" %>
