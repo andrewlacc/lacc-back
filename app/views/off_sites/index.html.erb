@@ -5,7 +5,9 @@
 
 <div class="row">
   <div class="col">
-    <%= link_to 'New Off Site Form', new_off_site_path, class: "btn btn-success" %>
+    <%= link_to new_off_site_path, class: "btn btn-success" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
   </div>
   <nav aria-label="Page navigation example col">
     <ul class="pagination">

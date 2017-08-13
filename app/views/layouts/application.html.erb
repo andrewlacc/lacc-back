@@ -4,8 +4,6 @@
     <title>Lacc</title>
     <%= csrf_meta_tags %>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -22,6 +20,10 @@
     <% elsif !flash[:alert].blank? %>
       <div class="container alert alert-danger">
         <%= flash[:alert] %>
+      </div>
+    <% elsif !flash[:info].blank? %>
+      <div class="container alert alert-primary">
+        <%= flash[:info] %>
       </div>
     <% end %>
 
