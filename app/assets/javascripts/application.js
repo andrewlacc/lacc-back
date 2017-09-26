@@ -19,8 +19,10 @@
 //= require moment
 //= require_tree .
 
-var handleDelete
+var handleDelete;
+var handleBack;
 
 $(document).on("turbolinks:load", function() {
   handleDelete();
+  handleBack();
 })

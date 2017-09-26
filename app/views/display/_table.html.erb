@@ -5,7 +5,7 @@
     <%= 'Category: ' %>
     <%= f.select :category, options_for_select(display_categories, "#{ id }"), { }, { class: "form-control" } %>
     <%= f.text_field :value, class: "form-control", placeholder: "Value" %>
-    <%= f.submit "Create New Tag", class: "btn btn-success", id: "#{ id }" %>
+    <button submit class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
   <% end %>
 </div>
 <br />

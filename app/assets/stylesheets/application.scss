@@ -16,7 +16,7 @@
 
 // Will hide specified elements when printing
  @media print {
- 	#navigation, .back-btn {
+ 	#navigation, #backButton {
 		display: none;
 	}
  }
