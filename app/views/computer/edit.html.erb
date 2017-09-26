@@ -1,6 +1,6 @@
 <div class="pad">
+  <button class="btn btn-light" id="backButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
   <%= form_for @computer, url: { action: "update", params: { id: @computer.id } } do |f| %>
-    <%= link_to '<< Back', computer_index_path, class: "btn btn-light" %>
     <h1>Edit Refurbished Computer Input Tag</h1>
     <%= render partial: 'form', locals: { f: f } %>
     <div>

@@ -7,7 +7,7 @@
     <%= 'Sub Category: ' %>
     <%= f.select :sub_category, computer_sub_categories, { }, { class: "form-control" } %>
     <%= f.text_field :value, class: "form-control", placeholder: "Value" %>
-    <%= f.submit "Create New Tag", class: "btn btn-success", id: "#{ id }" %>
+    <button submit class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
   <% end %>
 </div>
 <br />
@@ -15,7 +15,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
       <th>Category</th>
       <th>Sub Category</th>
       <th>Value</th>
@@ -25,13 +24,11 @@
   <tbody>
       <% data.each do |d| %>
         <tr id="computer-<%= "#{d.id}" %>">
-          <td><%= d.sub_index %></td>
           <td><%= d.category %></td>
           <td><%= d.sub_category %></td>
           <td><%= d.value %></td>
           <td>
             <div class="btn-group">
-              <div class="btn-group">
               <%= link_to 'Edit', edit_computer_path(d), class: "btn btn-light" %>
               <button class="btn btn-danger">Delete</button>
             </div>

@@ -1,9 +1,6 @@
 class AdminController < ApplicationController
     before_action :confirm_logged_in, except: [:login, :attempt_login]
 
-    def login
-    end
-
     def attempt_login
       found_user = User.where(userid: params[:userid]).first
       if found_user
@@ -15,6 +12,7 @@ class AdminController < ApplicationController
         session[:username] = authorized_user.name
         redirect_to root_path
       else
+        flash[:alert] = "Login failed, please login with correct login/password."
         render 'login'
       end
     end
@@ -43,18 +41,22 @@ class AdminController < ApplicationController
 
     def update
       @user = User.find(params[:id])
-      @user.update_attributes(user_params)
-      redirect_to admin_index_path
+      if @user.update_attributes(user_params)
+        redirect_to admin_index_path
+      else
+        flash[:alert] = "Failed to save user"
+        render 'edit'
+      end
     end
 
     def destroy
-      @user = User.find(params[:id])
-      @user.destroy
+      User.find(params[:id]).destroy
       redirect_to admin_index_path
     end
 
     def logout
       session[:user_id] = nil
+      flash[:info] = "Successfully logged out"
       redirect_to root_path
     end
 
