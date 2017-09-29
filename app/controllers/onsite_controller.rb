@@ -1,6 +1,5 @@
 class OnsiteController < ApplicationController
-  def blank_form
-  end
+  before_action :confirm_logged_in
 
   def new
     @onsite = OnSite.new()
@@ -41,9 +40,6 @@ class OnsiteController < ApplicationController
     @onsite = OnSite.find(params[:id])
     @onsite.update_attributes(onsite_params)
     redirect_to onsite_index_path
-  end
-
-  def delete
   end
 
   def destroy

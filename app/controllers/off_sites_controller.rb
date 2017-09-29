@@ -1,4 +1,6 @@
 class OffSitesController < ApplicationController
+  before_action :confirm_logged_in
+  
   def index
     per_page = 20
     @max_page = (OffSite.count / per_page) + 1

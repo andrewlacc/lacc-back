@@ -21,8 +21,10 @@
 
 var handleDelete;
 var handleBack;
+var handleNavigation;
 
 $(document).on("turbolinks:load", function() {
   handleDelete();
   handleBack();
+  handleNavigation();
 })
