@@ -1,8 +1,6 @@
-<div align="lef">
-  <%= link_to "<< Back", clients_path, class: 'btn btn-light' %>
-  <%= link_to "Edit", edit_client_path(@client.id), class: 'btn btn-light' %>
-</div>
-<div align="right">
+<button class="btn btn-light" id="backButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+<%= link_to "Edit", edit_client_path(@client.id), class: 'btn btn-light' %>
+<div class="text-right">
   <h1><%= "#{@client.name}" %></h1>
   <h5><%= "#{@client.company}" %></h5>
 </div>
@@ -31,7 +29,7 @@
       </tr>
     </table>
   </div>
-  <div class="col" align="right">
+  <div class="col text-right">
     <h5>Notes</h5>
     <p><%= "#{@client.notes}" %></p>
   </div>

@@ -1,7 +1,13 @@
 <hr />
-<h6 class="Title">Customer</h6>
 <div class="row">
-  <%= f.select :client_id, get_client_hash, { }, { class: "form-control col-3" } %>
+  <div class="col-3">
+    <h6 class="Title">Customer</h6>
+    <%= f.select :client_id, get_client_hash, { }, { class: "form-control" } %>
+  </div>
+  <div class="col-3">
+    <h6 class="Title">Tech</h6>
+    <%= f.text_field :tech, { class: "form-control" } %>
+  </div>
 </div>
 <br />
 

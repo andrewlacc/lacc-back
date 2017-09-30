@@ -3,7 +3,7 @@
 This is the back end website to create Refurbished Sheets for computers, displays as well as keep track of On Sites Appointments.
 
 * Ruby version: 2.4.0
-* Using Bootstrap: 4.0.6Alpha
+* Using Bootstrap: 4.0.0-beta
 
 ### To Upload to the server
 * Log in to admin user and pull files

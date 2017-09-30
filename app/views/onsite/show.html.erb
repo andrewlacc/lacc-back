@@ -26,6 +26,7 @@
       <%= "#{@onsite.client.city}, #{@onsite.client.state} #{@onsite.client.zip}" %>
     </td>
     <td align="right" colspan="3">
+      <%= "Tech: #{@onsite.tech}" %><br />
       <%= "Invoice Number: #{@onsite.invoice_number}" %><br />
       <%= "On Site ID: #{@onsite.id}" %><br />
       <%= @onsite.onsite_date.strftime('Date: %A %m/%d/%y') %><br />
