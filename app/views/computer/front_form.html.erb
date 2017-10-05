@@ -1,10 +1,10 @@
-<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
+<table class="mx-auto page">
   <tr>
-    <td align="center"><%= image_tag "lacc_logo.jpg", alt: "", width: "71", height: "68" %></td>
-    <td align="center" colspan="5" valign="baseline" class="style2">Refurbished Computer Specifications</td>
+    <td class="text-center"><%= image_tag "lacc_logo.jpg", alt: "", width: "71", height: "68" %></td>
+    <td class="text-center style2" colspan="5" valign="baseline">Refurbished Computer Specifications</td>
   </tr>
   <tr>
-    <td colspan="6" align="center" valign="middle" class="Label">
+    <td colspan="6" class="Label text-center" valign="middle">
       <%= image_tag "bar.jpg", alt: "", width: "925", height: "25" %>
     </td>
   </tr>
@@ -12,29 +12,29 @@
     <td class="Title">Model</td>
   </tr>
   <tr>
-    <td valign="middle" class="text-center Label">Type:</td>
+    <td class="text-center Label" valign="middle">Type:</td>
     <td>
-      <%= select_tag :type, options_for_select(["Desktops"] + @desktop_values + ["---------------------", "Laptops"] + @laptop_values), include_blank: "Select" %>
+      <%= select_tag :type, options_for_select(["Desktops"] + @desktop_values + ["---------------------", "Laptops"] + @laptop_values), include_blank: "Select", class: "form-control" %>
     </td>
-    <td valign="middle" class="text-center Label">Year: </td>
-    <td colspan="3">
-    	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
-      <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true} %>
+    <td class="text-center Label" valign="middle">Year: </td>
+    <td class="row" colspan="3">
+    	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select", class: "form-control col-6" %>
+      <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true}, class: "form-control col-6" %>
     </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Original Part #:</td>
+    <td class="Label text-center" valign="middle">Part #:</td>
     <td>
       <%= text_field_tag 'original_part_num', nil, {class: 'form-control', placeholder: 'Original Part #'} %>
     </td>
-    <td align="center" valign="middle" class="Label">Serial #:</td>
+    <td class="Label text-center" valign="middle">Serial #:</td>
     <td>
       <%= text_field_tag 'serial_num', nil, {class: 'form-control', placeholder: 'Serial #'} %>
     </td>
-    <td align="center" valign="middle" class="Label">Code:</td>
+    <td class="Label text-center" valign="middle">Code:</td>
     <td>
       <%= text_field_tag 'code', nil, {class: 'form-control'} %>
     </td>
@@ -46,116 +46,116 @@
     <td colspan="6" class="Title">Specs</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Processor Speed: </td>
+    <td class="Label text-center" valign="middle">Processor Speed: </td>
     <td>
-      <%= select_tag :processor_speed, options_for_select(@processor_speed), include_blank: "Select" %>
+      <%= select_tag :processor_speed, options_for_select(@processor_speed), { class: "form-control", include_blank: "Select" } %>
     </td>
-    <td align="center" valign="middle" class="Label">CPU Type: </td>
+    <td class="Label text-center" valign="middle">CPU Type: </td>
     <td>
-    	<%= select_tag :cpu_type, options_for_select(@cpu_type), include_blank: "Select" %>
+    	<%= select_tag :cpu_type, options_for_select(@cpu_type), { class: "form-control", include_blank: "Select" } %>
     </td>
-    <td align="center" valign="middle" class="Label">Screen Size: </td>
+    <td class="Label text-center" valign="middle">Screen Size: </td>
     <td>
-      <%= select_tag :screen_size, options_for_select(@screen_size), include_blank: "Select" %>
-    </td>
-  </tr>
-  <tr>
-    <td height="10" colspan="6">&nbsp;</td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle" class="Label">Hard Drive:</td>
-    <td>
-    	<%= select_tag :hard_drive, options_for_select(["Hard Drives"] + @hdd + ["--------------------", "Fusion Drives"] + @fusion + ["--------------------", "Solid State Drives"] + @ssd), include_blank: "Select" %>
-    </td>
-    <td align="center" valign="middle" class="Label">Optical Drive:</td>
-    <td>
-    	<%= select_tag :optical_drive, options_for_select(@optical_drive), include_blank: "Select" %>
-    </td>
-    <td align="center" valign="middle" class="Label">Card Slot:</td>
-    <td>
-      <%= select_tag :card_slot, options_for_select(@card_slot), include_blank: "Select" %>
+      <%= select_tag :screen_size, options_for_select(@screen_size), { class: "form-control", include_blank: "Select" } %>
     </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Installed RAM:</td>
+    <td class="Label text-center" valign="middle">Hard Drive:</td>
     <td>
-      <%= select_tag :installed_ram, options_for_select(@ram), include_blank: "Select" %>
+    	<%= select_tag :hard_drive, options_for_select(["Hard Drives"] + @hdd + ["--------------------", "Fusion Drives"] + @fusion + ["--------------------", "Solid State Drives"] + @ssd), { class: "form-control", include_blank: "Select" } %>
     </td>
-    <td align="center" valign="middle" class="Label">Max RAM:</td>
+    <td class="Label text-center" valign="middle">Optical Drive:</td>
     <td>
-      <%= select_tag :max_ram, options_for_select(@max_ram), include_blank: "Select" %>
+    	<%= select_tag :optical_drive, options_for_select(@optical_drive), { class: "form-control", include_blank: "Select" } %>
     </td>
-    <td align="center" valign="middle" class="Label">Open Slots:</td>
+    <td class="Label text-center" valign="middle">Card Slot:</td>
     <td>
-      <%= select_tag :open_slots, options_for_select(@open_slots), include_blank: "Select" %>
-    </td>
-  </tr>
-  <tr>
-    <td height="10" colspan="6">&nbsp;</td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle" class="Label">OS:</td>
-    <td>
-      <%= select_tag :os, options_for_select(@os), include_blank: "Select" %>
-    </td>
-    <td align="center" valign="middle" class="Label">Max OS</td>
-    <td>
-      <%= select_tag :max_os, options_for_select(@max_os), include_blank: "Select" %>
-    </td>
-    <td align="center" valign="middle" class="Label">Batt. Test Results:</td>
-    <td>
-      <%= select_tag :battery_test, options_for_select(battery), include_blank: "Select" %>
+      <%= select_tag :card_slot, options_for_select(@card_slot), { class: "form-control", include_blank: "Select" } %>
     </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Video Card:</td>
+    <td class="Label text-center" valign="middle">Installed RAM:</td>
     <td>
-      <%= select_tag :video_card, options_for_select(["NVIDIA"] + @nvidia + ["--------------------", "AMD/ATI"] + @amd + ["--------------------", "Intel"] + @intel), include_blank: "Select" %>
+      <%= select_tag :installed_ram, options_for_select(@ram), { class: "form-control", include_blank: "Select" } %>
     </td>
-    <td align="center" valign="middle" class="Label">Video RAM:</td>
+    <td class="Label text-center" valign="middle">Max RAM:</td>
     <td>
-      <%= select_tag :video_ram, options_for_select(@video_ram), include_blank: "Select" %>
+      <%= select_tag :max_ram, options_for_select(@max_ram), { class: "form-control", include_blank: "Select" } %>
     </td>
-    <td align="center" valign="middle" class="Label">Video Port:</td>
+    <td class="Label text-center" valign="middle">Open Slots:</td>
     <td>
-      <%= select_tag :video_port, options_for_select(@video_port), include_blank: "Select" %>
-    </td>
-  </tr>
-  <tr>
-    <td height="10" colspan="6">&nbsp;</td>
-  </tr>
-  <tr>
-    <td align="center" valign="middle" class="Label">WiFi:</td>
-    <td>
-    	<%= select_tag :bluetooth, options_for_select(yes_no), include_blank: "Select" %>
-    </td>
-    <td align="center" valign="middle" class="Label">Bluetooth:</td>
-    <td>
-    	<%= select_tag :bluetooth, options_for_select(yes_no), include_blank: "Select" %>
+      <%= select_tag :open_slots, options_for_select(@open_slots), { class: "form-control", include_blank: "Select" } %>
     </td>
   </tr>
   <tr>
     <td height="10" colspan="6">&nbsp;</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Notes:</td>
+    <td class="Label text-center" valign="middle">OS:</td>
+    <td>
+      <%= select_tag :os, options_for_select(@os), { class: "form-control", include_blank: "Select" } %>
+    </td>
+    <td class="Label text-center" valign="middle">Max OS</td>
+    <td>
+      <%= select_tag :max_os, options_for_select(@max_os), { class: "form-control", include_blank: "Select" } %>
+    </td>
+    <td class="Label text-center" valign="middle">Batt. Test Results:</td>
+    <td>
+      <%= select_tag :battery_test, options_for_select(battery), { class: "form-control", include_blank: "Select" } %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Label text-center" valign="middle">Video Card:</td>
+    <td>
+      <%= select_tag :video_card, options_for_select(["NVIDIA"] + @nvidia + ["--------------------", "AMD/ATI"] + @amd + ["--------------------", "Intel"] + @intel), { class: "form-control", include_blank: "Select" } %>
+    </td>
+    <td class="Label text-center" valign="middle">Video RAM:</td>
+    <td>
+      <%= select_tag :video_ram, options_for_select(@video_ram), { class: "form-control", include_blank: "Select" } %>
+    </td>
+    <td class="Label text-center" valign="middle">Video Port:</td>
+    <td>
+      <%= select_tag :video_port, options_for_select(@video_port), { class: "form-control", include_blank: "Select" } %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Label text-center" valign="middle">WiFi:</td>
+    <td>
+    	<%= select_tag :bluetooth, options_for_select(yes_no), { class: "form-control", include_blank: "Select" } %>
+    </td>
+    <td class="Label text-center" valign="middle">Bluetooth:</td>
+    <td>
+    	<%= select_tag :bluetooth, options_for_select(yes_no), { class: "form-control", include_blank: "Select" } %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="Label text-center" valign="middle">Notes:</td>
     <td colspan="6"><%= text_field_tag 'notes', nil, {class: 'form-control', size: 100} %></td>
   </tr>
   <tr>
-    <td height="10" colspan="6" align="center" valign="middle">&nbsp;</td>
+    <td height="10" colspan="6" valign="middle">&nbsp;</td>
   </tr>
   <tr>
-    <td colspan="6" align="center" valign="middle" class="Footer">All refurbished computers include a 90 day parts and labor warranty.*<br />
+    <td colspan="6" class="Footer text-center" valign="middle">All refurbished computers include a 90 day parts and labor warranty.*<br />
       All batteries are considered AS IS and do not carry any warranty.</td>
   </tr>
   <tr>
-    <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
+    <td colspan="6" class="Label text-center" valign="middle">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
       Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
   </tr>
 </table>
