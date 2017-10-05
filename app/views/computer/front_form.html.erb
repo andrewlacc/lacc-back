@@ -12,11 +12,11 @@
     <td class="Title">Model</td>
   </tr>
   <tr>
-    <td align="center" valign="middle" class="Label">Type:</td>
+    <td valign="middle" class="text-center Label">Type:</td>
     <td>
       <%= select_tag :type, options_for_select(["Desktops"] + @desktop_values + ["---------------------", "Laptops"] + @laptop_values), include_blank: "Select" %>
     </td>
-    <td align="center" valign="middle" class="Label">Year: </td>
+    <td valign="middle" class="text-center Label">Year: </td>
     <td colspan="3">
     	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select" %>
       <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true} %>
