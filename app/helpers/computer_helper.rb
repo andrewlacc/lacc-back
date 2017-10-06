@@ -15,4 +15,21 @@ module ComputerHelper
   def battery
     [ "N/A", "Good", "Consumed", "Bad" ]
   end
+
+  def computer_tags
+    [ { title: "Computer Type", header_id: "computer_type_heading", id: "computer_type", data: @computer_type },
+      { title: "CPU Type", header_id: "cpu_type_heading", id: "cpu_type", data: @cpu_type },
+      { title: "Screen Size", header_id: "screen_size_heading", id: "screen_size", data: @screen_size },
+      { title: "Hard Drive", header_id: "hard_drive_heading", id: "hard_drive", data: @hard_drive },
+      { title: "Optical Drive", header_id: "optical_drive_heading", id: "optical_drive", data: @optical_drive },
+      { title: "Card Slot", header_id: "card_slot_heading", id: "card_slot", data: @card_slot },
+      { title: "Installed Ram", header_id: "installed_ram_heading", id: "installed_ram", data: @installed_ram },
+      { title: "Max Ram", header_id: "max_ram_heading", id: "max_ram", data: @max_ram },
+      { title: "Open Slots", header_id: "Open Slots", id: "open_slots", data: @open_slots },
+      { title: "Computer Type", header_id: "OS", id: "os", data: @os },
+      { title: "Computer Type", header_id: "Video Card", id: "video_card", data: @video_card },
+      { title: "Computer Type", header_id: "Video RAM", id: "video_ram", data: @video_ram },
+      { title: "Computer Type", header_id: "Video Port", id: "video_port", data: @video_port } ]
+  end
+
 end

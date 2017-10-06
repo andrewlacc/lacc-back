@@ -4,6 +4,12 @@ handleNavigation = function() {
     case ("/"):
       $("#home").addClass("active");
       break;
+    case ("/computer"):
+      $("#computers").addClass("active");
+      break;
+    case ("/display"):
+      $("#displays").addClass("active");
+      break;
     case ("/onsite"):
       $("#onsites").addClass("active");
       break;
@@ -29,6 +35,8 @@ handleNavigation = function() {
   };
 
   createPopup("#home", "Home");
+  createPopup("#computers", "Used Computer Sheets");
+  createPopup("#displays", "Used Display Sheets");
   createPopup("#onsites", "On Sites");
   createPopup("#offsites", "Off Sites");
   createPopup("#clients", "Clients");

@@ -30,10 +30,16 @@
 
   <% if session[:user_id] %>
   <li class="nav-item">
+    <a class="nav-link" id="computers" href="/computer"><i class="fa fa-desktop"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="displays" href="/display"><i class="fa fa-television"></i></a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" id="clients" href="/clients"><i class="fa fa-address-book"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="onsites" href="/onsite"><i class="fa fa-desktop"></i></a>
+    <a class="nav-link" id="onsites" href="/onsite"><i class="fa fa-map-o"></i></i></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="offsites" href="/off_sites"><i class="fa fa-building"></i></a>
