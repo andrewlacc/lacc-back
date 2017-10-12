@@ -17,6 +17,10 @@ class AdminController < ApplicationController
       end
     end
 
+    def settings
+
+    end
+
     def index
       @users = User.all
     end

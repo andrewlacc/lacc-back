@@ -8,7 +8,6 @@
     <table class="table">
       <thead>
         <tr>
-          <th>#</th>
           <th>Category</th>
           <th>Value</th>
           <th>Options</th>
@@ -17,7 +16,6 @@
       <tbody>
           <% data.each do |d| %>
             <tr id="display-<%= "#{d.id}" %>">
-              <td><%= d.sub_index %></td>
               <td><%= d.category %></td>
               <td><%= d.value %></td>
               <td class="btn-group">

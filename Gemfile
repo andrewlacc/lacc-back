@@ -18,6 +18,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem "font-awesome-rails"
+gem "animate-rails"
 
 # JavaScript
 gem 'jbuilder', '~> 2.6', '>= 2.6.4'

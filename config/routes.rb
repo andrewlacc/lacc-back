@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get '/settings',          to: 'admin#settings'
 
   get '/comuputertradein',  to: 'home#computer_trade_in'
   get '/useddisplay',       to: 'display#front_form'

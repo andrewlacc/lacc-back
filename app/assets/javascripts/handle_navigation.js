@@ -19,9 +19,6 @@ handleNavigation = function() {
     case ("/clients"):
       $("#clients").addClass("active");
       break;
-    case ("/admin"):
-      $("#admin").addClass("active");
-      break;
   }
 
   var createPopup = function(id, display) {
@@ -40,5 +37,4 @@ handleNavigation = function() {
   createPopup("#onsites", "On Sites");
   createPopup("#offsites", "Off Sites");
   createPopup("#clients", "Clients");
-  createPopup("#admin", "Manage Users");
 }
