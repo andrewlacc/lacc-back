@@ -13,10 +13,18 @@
 
 <h6 class="Title">On-Site Information</h6>
 <div class="row">
-  <p class="col" align="center">Date and Time: <%= f.datetime_select :onsite_date, {prompt: true, ampm: true, minute_step: 5} %></p>
+  <p class="col-2" align="center">Date and Time:</p>
+  <div class="input-group col-10">
+    <input class="form-control" type="text" name="on_site[onsite_date]" id="on_site_onsite_date", value="<%= @onsite.onsite_date %>"><button type="button" class="input-group-addon btn btn-light" data-toggle="popover" id="datetimepicker"><i class="fa fa-calendar"></i></button>
+  </div>
 </div>
+<br />
+
 <div class="form-group row">
-  <p class="col" align="center">Invoice Number:</p><%= f.text_field :invoice_number, class: 'col-10 form-control' %>
+  <p class="col" align="center">Invoice Number:</p>
+  <div class="col-10">
+    <%= f.text_field :invoice_number, class: 'form-control' %>
+  </div>
 </div>
 
 <h6 class="Title">Symptoms</h6>

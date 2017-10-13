@@ -16,11 +16,21 @@
  */
 
 // Will hide specified elements when printing
- @media print {
- 	#navigation, #backButton {
-		display: none;
-	}
- }
+@media print {
+  #navigation, #backButton {
+    display: none;
+  }
+}
+
+.popover {
+  width: 275px;
+  height: 250px;
+}
+
+#containerElem .popover {
+  width: 275px;
+  height: 250px;
+}
 
 .style2 {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;

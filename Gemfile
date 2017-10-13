@@ -26,6 +26,7 @@ gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootbox-rails', '~> 0.5.0'
 gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'
+gem 'lodash-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
