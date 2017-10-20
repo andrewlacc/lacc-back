@@ -24,12 +24,7 @@
 
 .popover {
   width: 275px;
-  height: 250px;
-}
-
-#containerElem .popover {
-  width: 275px;
-  height: 250px;
+  height: 400px;
 }
 
 .style2 {
@@ -61,6 +56,11 @@ textarea:disabled {
 
 input:disabled {
   color: black;
+}
+
+#containerElem .popover {
+  width: 275px;
+  height: 250px;
 }
 
 // Custom bootstrap variables must be set or imported before bootstrap.
