@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805190557) do
+ActiveRecord::Schema.define(version: 20171020172404) do
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 20170805190557) do
     t.decimal  "tax",        precision: 10
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_settings_on_user_id", using: :btree
   end
 
   create_table "used_computers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -94,9 +96,9 @@ ActiveRecord::Schema.define(version: 20170805190557) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "access_level"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "access_level",    default: "user"
   end
 
 end

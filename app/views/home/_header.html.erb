@@ -13,7 +13,9 @@
           <button class="btn btn-info" type="button" id="dropdownMenuButton" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
           <div class="dropdown-menu">
             <a href="/settings" class="dropdown-item"><i class="fa fa-cog"></i> Settings</a>
-            <a href="/admin" class="dropdown-item"><i class="fa fa-users"></i> Manage Users</a>
+            <% if session[:access_level] == 'admin' %>
+              <a href="/admin" class="dropdown-item"><i class="fa fa-users"></i> Manage Users</a>
+            <% end %>
             <%= link_to logout_path, method: :delete do %>
               <button class="dropdown-item"><i class="fa fa-power-off"></i> Log Out</button>
             <% end %>
