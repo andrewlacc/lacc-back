@@ -19,6 +19,9 @@ handleNavigation = function() {
     case ("/clients"):
       $("#clients").addClass("active");
       break;
+    case ("/cost"):
+      $("#cost").addClass("active");
+      break;
   }
 
   var createPopup = function(id, display) {
@@ -37,4 +40,5 @@ handleNavigation = function() {
   createPopup("#onsites", "On Sites");
   createPopup("#offsites", "Off Sites");
   createPopup("#clients", "Clients");
+  createPopup("#cost", "Price List")
 }

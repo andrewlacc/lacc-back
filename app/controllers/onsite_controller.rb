@@ -8,8 +8,12 @@ class OnsiteController < ApplicationController
 
   def create
     @onsite = OnSite.new(onsite_params)
-    @onsite.save
-    redirect_to onsite_index_path
+    if @onsite.save
+      redirect_to onsite_index_path
+    else
+      flash[:alert] = "Unable to create Onsite"
+      redirect_to new_onsite_path
+    end
   end
 
   def index
@@ -38,8 +42,11 @@ class OnsiteController < ApplicationController
 
   def update
     @onsite = OnSite.find(params[:id])
-    @onsite.update_attributes(onsite_params)
-    redirect_to onsite_index_path
+    if @onsite.update_attributes(onsite_params)
+      redirect_to onsite_index_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy

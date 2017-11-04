@@ -26,10 +26,10 @@ module ComputerHelper
       { title: "Installed Ram", header_id: "installed_ram_heading", id: "installed_ram", data: @installed_ram },
       { title: "Max Ram", header_id: "max_ram_heading", id: "max_ram", data: @max_ram },
       { title: "Open Slots", header_id: "Open Slots", id: "open_slots", data: @open_slots },
-      { title: "Computer Type", header_id: "OS", id: "os", data: @os },
-      { title: "Computer Type", header_id: "Video Card", id: "video_card", data: @video_card },
-      { title: "Computer Type", header_id: "Video RAM", id: "video_ram", data: @video_ram },
-      { title: "Computer Type", header_id: "Video Port", id: "video_port", data: @video_port } ]
+      { title: "Operating System", header_id: "OS", id: "os", data: @os },
+      { title: "Video Card", header_id: "Video Card", id: "video_card", data: @video_card },
+      { title: "Video Ram", header_id: "Video RAM", id: "video_ram", data: @video_ram },
+      { title: "Video Port", header_id: "Video Port", id: "video_port", data: @video_port } ]
   end
 
 end

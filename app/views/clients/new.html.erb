@@ -2,6 +2,7 @@
 <h1 class="text-center">New Client</h1>
 
 <%= form_for :client, url: clients_path do |f| %>
+  <%= f.submit "Create Client", class: "btn btn-success" %>
   <%= render partial: 'form', locals: { f: f } %>
   <div align="right">
     <%= f.submit "Create Client", class: "btn btn-success" %>
