@@ -1,33 +1,34 @@
 handleCalendar = function() {
-  var calendar = moment();
-  var todayId = "#day-" + ((Math.floor(calendar.date() / 7) * 7) + calendar.day());
+  var todayMoment = moment();
+  var current = moment(todayMoment.month() + 1, "MM");
+  var todayId = "#day-" + ((Math.floor(todayMoment.date() / 7) * 7) + todayMoment.day());
   var onsites = $('.onsite-data');
 
-  $('#month').text(calendar.format('MMMM YYYY'));
+  var buildCalendar = function(date) {
+    $(todayId).removeClass('bg-secondary');
+    $('#month').text(date.format('MMMM YYYY'));
 
-  _.each(_.range(1, 43), function(day) {
-    if($('#day-' + day)[0]) {
-      $('#day-' + day)[0].children[0].innerHTML = moment().day(day).date();
+    _.each(_.range(1, 43), function(day) {
+      if($('#day-' + day)[0]) {
+        $('#day-' + day)[0].children[0].innerHTML = moment(date).day(day).date();
+      }
+    });
+
+    if (date.month() === todayMoment.month()) {
+      $(todayId).addClass('bg-secondary');
     }
-  });
+  };
 
-  $(todayId).addClass('bg-secondary');
+  buildCalendar(current);
 
-  // Open and close sidebar menu
-  $('#onsite-open').on('click', function() {
-    $('#onsite-menu').css('right', 0);
-  });
-
-  $('#onsite-close').on('click', function() {
-    $('#onsite-menu').css('right', '-1121px');
-  });
-
-  // Build Cells to put to calendar
+  // Builds onsite information for calendar
   var parseDateTime = function(dateTime) {
     return dateTime.toString().split("at  ");
   }
 
   var buildCellData = function() {
+    $('.onsites').text("");
+
     var cellData = [];
 
     _.each($('.onsite-data'), function(data) {
@@ -44,7 +45,7 @@ handleCalendar = function() {
       var dateId = "";
       var date = moment(data.date, "MM-DD-YYYY");
 
-      if (date.month() === moment().month()) {
+      if (date.month() === current.month()) {
         dateId = ("#day-" + ((Math.floor(date.date() / 7) * 7) + date.day()));
         if ($(dateId)[0]) {
           $(dateId)[0].children[1].innerHTML = data.cell;
@@ -54,6 +55,19 @@ handleCalendar = function() {
         }
       }
     });
+  };
+  buildCellData();
 
-  }();
+  // Adds Forward and backwards to calendar
+  $('#prev-month').on('click', function() {
+    current.subtract(1, 'months');
+    buildCalendar(current);
+    buildCellData();
+  });
+
+  $('#next-month').on('click', function() {
+    current.add(1, 'months');
+    buildCalendar(current);
+    buildCellData();
+  });
 }

@@ -40,5 +40,13 @@ handleNavigation = function() {
   createPopup("#onsites", "On Sites");
   createPopup("#offsites", "Off Sites");
   createPopup("#clients", "Clients");
-  createPopup("#cost", "Price List")
+  createPopup("#cost", "Price List");
+
+  // Open and close sidebar menu
+  $('#onsite-open').on('click', function() {
+    $('#onsite-menu').css('right', 0);
+  });
+  $('#onsite-close').on('click', function() {
+    $('#onsite-menu').css('right', '-1121px');
+  });
 }
