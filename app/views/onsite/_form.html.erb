@@ -4,19 +4,12 @@
     <h6 class="Title">Customer</h6>
     <%= f.select :client_id, get_client_hash, { }, { class: "form-control" } %>
   </div>
-  <div class="col-3">
-    <h6 class="Title">Tech</h6>
-    <%= f.text_field :tech, { class: "form-control" } %>
-  </div>
 </div>
 <br />
 
 <h6 class="Title">On-Site Information</h6>
 <div class="row">
-  <p class="col-2" align="center">Date and Time:</p>
-  <div class="input-group col-10">
-    <input class="form-control" type="text" name="on_site[onsite_date]" id="on_site_onsite_date", value="<%= @onsite.onsite_date %>"><button type="button" class="input-group-addon btn btn-light" id="datetimepicker" data-toggle="popover"><i class="fa fa-calendar"></i></button>
-  </div>
+  <p class="col" align="center">Date and Time: <%= f.datetime_select :onsite_date, {prompt: true, ampm: true, minute_step: 5, selected: @date} %></p>
 </div>
 <br />
 

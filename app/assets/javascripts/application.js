@@ -23,13 +23,11 @@
 var handleDelete;
 var handleBack;
 var handleNavigation;
-var handleDateTimePicker;
 var handleCalendar;
 
 $(document).on("turbolinks:load", function() {
   handleDelete();
   handleBack();
   handleNavigation();
-  handleDateTimePicker();
   handleCalendar();
 })

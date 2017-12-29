@@ -4,11 +4,14 @@ class OnsiteController < ApplicationController
   def new
     @onsite = OnSite.new()
     @clients = Client.all
+    @date = Date.today
   end
 
   def create
-    @onsite = OnSite.new(onsite_params)
-    if @onsite.save
+    onsite = OnSite.new(onsite_params)
+    onsite.tech = session[:username]
+
+    if onsite.save
       redirect_to onsite_index_path
     else
       flash[:alert] = "Unable to create Onsite"
@@ -38,6 +41,7 @@ class OnsiteController < ApplicationController
   def edit
     @onsite = OnSite.find(params[:id])
     @clients = Client.all
+    @date = @onsite.onsite_date
   end
 
   def update

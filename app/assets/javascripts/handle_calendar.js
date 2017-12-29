@@ -4,6 +4,7 @@ handleCalendar = function() {
   var todayId = "#day-" + ((Math.floor(todayMoment.date() / 7) * 7) + todayMoment.day());
   var onsites = $('.onsite-data');
 
+  // Builds and fills in information for the calendar
   var buildCalendar = function(date) {
     $(todayId).removeClass('bg-secondary');
     $('#month').text(date.format('MMMM YYYY'));
@@ -14,18 +15,18 @@ handleCalendar = function() {
       }
     });
 
-    if (date.month() === todayMoment.month()) {
+    if (date.isSame(todayMoment, 'year', 'month')) {
       $(todayId).addClass('bg-secondary');
     }
   };
-
   buildCalendar(current);
 
   // Builds onsite information for calendar
   var parseDateTime = function(dateTime) {
-    return dateTime.toString().split("at  ");
+    return dateTime.toString().split("at ");
   }
 
+  // Fills in Onsite data to map
   var buildCellData = function() {
     $('.onsites').text("");
 
@@ -58,13 +59,14 @@ handleCalendar = function() {
   };
   buildCellData();
 
-  // Adds Forward and backwards to calendar
+  // Next Month function
   $('#prev-month').on('click', function() {
     current.subtract(1, 'months');
     buildCalendar(current);
     buildCellData();
   });
 
+  // Previous Month function
   $('#next-month').on('click', function() {
     current.add(1, 'months');
     buildCalendar(current);
