@@ -47,7 +47,7 @@ handleNavigation = function() {
     if (!$('#onsite-menu').hasClass('open')) {
       $('#onsite-menu').css('right', 0).addClass('open');
     } else {
-      $('#onsite-menu').css('right', '-1121px').removeClass('open');
+      $('#onsite-menu').css('right', '-100vw').removeClass('open');
     }
   });
 
