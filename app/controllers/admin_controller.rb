@@ -10,11 +10,26 @@ class AdminController < ApplicationController
       if authorized_user
         session[:user_id] = authorized_user.id
         session[:username] = authorized_user.name
+        session[:access_level] = authorized_user.access_level
         redirect_to root_path
       else
         flash[:alert] = "Login failed, please login with correct login/password."
         render 'login'
       end
+    end
+
+    def settings
+      @user_settings = User.find( session[:user_id] ).setting
+      if @user_settings == nil
+        new_setting = Setting.new( user_id: session[:user_id], tax: 0.00 )
+        new_setting.save
+      end
+    end
+
+    def update_settings
+      @user_settings.find( params[:id] )
+      @user_settings.save
+      redirect_to root_path
     end
 
     def index
@@ -63,6 +78,10 @@ class AdminController < ApplicationController
     private
 
     def user_params
-      params.require(:user).permit(:userid, :name, :email, :password)
+      params.require(:user).permit(:userid, :name, :email, :password, :access_level)
+    end
+
+    def setting_params
+      params.require(:setting).permit(:tax)
     end
 end

@@ -1,4 +1,10 @@
 class ClientsController < ApplicationController
+  before_action :confirm_logged_in
+
+  # def export_clients
+  #   render json: Client.all
+  # end
+
   def index
     per_page = 20
     @max_page = (Client.count / per_page) + 1

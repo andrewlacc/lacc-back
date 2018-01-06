@@ -1,11 +1,15 @@
-<div class="container">
-  <%= form_for @onsite, url: { action: "update", params: { id: @onsite.id } } do |f| %>
-    <%= link_to '<< Back', onsite_index_path, class: "btn btn-light" %>
+<button class="btn btn-light" id="backButton"><i class="fa fa-arrow-left"></i></button>
+<h1 align="center">Edit On Site Service</h1>
+
+<%= form_for @onsite, url: { action: "update", params: { id: @onsite.id } } do |f| %>
+  <div align="right">
     <%= f.submit "Save On Site Service", class: "btn btn-success" %>
-    <h1 align="center">Edit On Site Service</h1>
-    <%= render partial: 'form', locals: { f: f } %>
-    <div align="right">
-      <%= f.submit "Save On Site Service", class: "btn btn-success" %>
-    </div>
-  <% end %>
+  </div>
+  <%= render partial: 'form', locals: { f: f } %>
+  <div align="right">
+    <%= f.submit "Save On Site Service", class: "btn btn-success" %>
+  </div>
+<% end %>
+<div class="Footer-Space">
+
 </div>

@@ -1,0 +1,40 @@
+<div class="row">
+  <button type="button" class="col-1 btn btn-light" id="prev-month"><i class="fa fa-angle-left"></i></button>
+  <h2 class="col-10 text-center" id="month"></h2>
+  <button type="button" class="col-1 btn btn-light" id="next-month"><i class="fa fa-angle-right"></i></button>
+</div>
+<div class="row text-center">
+  <div class="col-2 calendar-header">
+    <h6>Monday</h6>
+  </div>
+  <div class="col-2 calendar-header">
+    <h6>Tuesday</h6>
+  </div>
+  <div class="col-2 calendar-header">
+    <h6>Wednesday</h6>
+  </div>
+  <div class="col-2 calendar-header">
+    <h6>Thursday</h6>
+  </div>
+  <div class="col-2 calendar-header">
+    <h6>Friday</h6>
+  </div>
+  <div class="col-2 calendar-header">
+    <h6>Saturday</h6>
+  </div>
+</div>
+
+<% (0..5).each do |week| %>
+  <div class="row" id="week-<%= week %>">
+    <% (1..6).each do |weekday| %>
+      <div class="col-2 calendar-cell" id="day-<%= (7 * week) + weekday %>">
+        <div class="date text-right">
+
+        </div>
+        <div class="onsites">
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

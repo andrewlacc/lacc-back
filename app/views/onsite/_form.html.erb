@@ -1,22 +1,30 @@
 <hr />
-<h6 class="Title">Customer</h6>
 <div class="row">
-  <%= f.select :client_id, get_client_hash, { }, { class: "form-control col-3" } %>
+  <div class="col-3">
+    <h6 class="Title">Customer</h6>
+    <%= f.select :client_id, get_client_hash, { }, { class: "form-control" } %>
+  </div>
 </div>
 <br />
 
 <h6 class="Title">On-Site Information</h6>
 <div class="row">
-  <p class="col" align="center">Date and Time: <%= f.datetime_select :onsite_date, {prompt: true, ampm: true, minute_step: 5} %></p>
+  <p class="col" align="center">Date and Time: <%= f.datetime_select :onsite_date, {prompt: true, ampm: true, minute_step: 5, selected: @date} %></p>
 </div>
+<br />
+
 <div class="form-group row">
-  <p class="col" align="center">Invoice Number:</p><%= f.text_field :invoice_number, class: 'col-10 form-control' %>
+  <p class="col" align="center">Invoice Number:</p>
+  <div class="col-10">
+    <%= f.text_field :invoice_number, class: 'form-control' %>
+  </div>
 </div>
 
 <h6 class="Title">Symptoms</h6>
 <div class="row">
   <%= f.text_area :symptoms, {size: "100x3", class: "form-control"} %>
 </div>
+<br />
 
 <h6 class="Title">Parts Needed</h6>
 <div class="row">

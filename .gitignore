@@ -21,3 +21,6 @@
 /config/database.yml
 /config/secrets.yml
 /db/seeds.rb
+
+# Ignore OSX system files
+*/.DS_Store

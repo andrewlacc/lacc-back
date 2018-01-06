@@ -1,62 +1,60 @@
-<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
-  <tr>
-    <td align="center"><%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %></td>
-    <td align="center" colspan="5" valign="middle" class="style2">Refurbished Display Specifications</td>
-  </tr>
-  <tr>
-    <td colspan="6" align="center" valign="middle">
-      <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
-    </td>
-  </tr>
-  <tr>
-    <td class="Label">Brand:</td>
-    <td colspan="2">
-      <%= select_tag :brand, options_for_select(@brand), prompt: "Select" %>
-    </td>
-    <td class="Label">Monitor Type:</td>
-    <td>
-      <%= select_tag :monitor_type, options_for_select(@monitor_type), prompt: "Select" %>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="Label">Size:</td>
-    <td colspan="2">
-      <%= select_tag :display_size, options_for_select(@size), prompt: "Select" %>
-    </td>
-    <td width="137" class="Label">Optimal Resolution:</td>
-    <td width="296">
-      <input size="4" maxlength="4">
-      x
-      <input size="4" maxlength="4">
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="Label">Model: </td>
-    <td colspan="2"><input type="text" class="form-control col-8"></input></td>
-    <td class="Label">Serial Number: </td>
-    <td><input type="text" class="form-control col-9" placeholder="Serial #"></input></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="Label">Notes:</td>
-    <td colspan="6"><%= text_area 'notes', nil, {size: "90x6", class: "form-control col-11"} %></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="6" align="center" valign="middle" class="Footer">All refurbished displays include a 90 day parts and labor warranty.*</td>
-  </tr>
-  <tr>
-    <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
-      Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
-  </tr>
-</table>
+<div class="mx-auto page">
+  <div class="row">
+    <div class="col-1">
+      <%= image_tag("lacc_logo.jpg", alt: "", width: "71", height: "68") %>
+    </div>
+    <div class="col-11">
+      <h1>Refurbished Display Specifications</h1>
+    </div>
+  </div>
+
+  <%= image_tag("bar.jpg", alt: "", width: "925", height: "25") %>
+
+  <div class="row">
+    <div class="col-3">
+      <p class="Label">Brand: </p>
+    </div>
+    <%= select_tag :brand, options_for_select(@brand), prompt: "Select", class: "col-3 form-control" %>
+    <div class="col-3">
+      <p class="Label">Monitor Type: </p>
+    </div>
+    <%= select_tag :monitor_type, options_for_select(@monitor_type), prompt: "Select", class: "col-3 form-control" %>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col-3">
+      <p class="Label">Size: </p>
+    </div>
+    <%= select_tag :display_size, options_for_select(@size), prompt: "Select", class: "col-3 form-control" %>
+    <div class="col-3">
+      <p class="Label">Optimal Resolution: </p>
+    </div>
+    <input class="form-control col-1" size="4" maxlength="4">
+    <h4 class="text-center" style="margin-top: 5px;">x</h4>
+    <input class="form-control col-1" size="4" maxlength="4">
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col-3">
+      <p class="Label">Model: </p>
+    </div>
+    <%= text_field_tag 'display-model', nil, {class: "col-3 form-control"} %>
+    <div class="col-3">
+      <p class="Label">Serial Number: </p>
+    </div>
+    <%= text_field_tag 'serial-number', nil, {class: "col-3 form-control"} %>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col-3">
+      <p class="Label">Notes: </p>
+    </div>
+    <%= text_area 'notes', nil, {size: "90x6", class: "form-control col-9"} %>
+  </div>
+
+  <p class="Label text-center">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
+    Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</p>
+</div>

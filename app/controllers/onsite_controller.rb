@@ -1,16 +1,22 @@
 class OnsiteController < ApplicationController
-  def blank_form
-  end
+  before_action :confirm_logged_in
 
   def new
     @onsite = OnSite.new()
     @clients = Client.all
+    @date = Date.today
   end
 
   def create
-    @onsite = OnSite.new(onsite_params)
-    @onsite.save
-    redirect_to onsite_index_path
+    onsite = OnSite.new(onsite_params)
+    onsite.tech = session[:username]
+
+    if onsite.save
+      redirect_to onsite_index_path
+    else
+      flash[:alert] = "Unable to create Onsite"
+      redirect_to new_onsite_path
+    end
   end
 
   def index
@@ -35,15 +41,16 @@ class OnsiteController < ApplicationController
   def edit
     @onsite = OnSite.find(params[:id])
     @clients = Client.all
+    @date = @onsite.onsite_date
   end
 
   def update
     @onsite = OnSite.find(params[:id])
-    @onsite.update_attributes(onsite_params)
-    redirect_to onsite_index_path
-  end
-
-  def delete
+    if @onsite.update_attributes(onsite_params)
+      redirect_to onsite_index_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -56,7 +63,7 @@ class OnsiteController < ApplicationController
 
   def onsite_params
     params.require(:on_site).permit(:client_id, :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
-    :resolution, :onsite_cost, :invoice_number)
+    :resolution, :onsite_cost, :invoice_number, :tech)
   end
 
   def cal_parts_cost(price_part_one, price_part_two, price_part_three)

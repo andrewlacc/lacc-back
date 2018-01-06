@@ -12,14 +12,20 @@
  *
  *= require_tree .
  *= require_self
+ *= require animate
  */
 
 // Will hide specified elements when printing
- @media print {
- 	#navigation, #backButton {
-		display: none;
-	}
- }
+@media print {
+  #navigation, #backButton {
+    display: none;
+  }
+}
+
+.popover {
+  width: 275px;
+  height: 400px;
+}
 
 .style2 {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -30,6 +36,8 @@
 .Label {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 12px;
+  text-align: center;
+  margin: 1em;
 }
 
 .Footer {
@@ -42,12 +50,21 @@
 	text-decoration: underline;
 }
 
+.Footer-Space {
+  height: 100px;
+}
+
 textarea:disabled {
   color: black;
 }
 
 input:disabled {
   color: black;
+}
+
+#containerElem .popover {
+  width: 275px;
+  height: 250px;
 }
 
 // Custom bootstrap variables must be set or imported before bootstrap.

@@ -1,43 +1,20 @@
-<div class="pad">
-  <button class="btn btn-light" id="backButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+<h1 align="center">Refurbished Computer Input Tags</h1>
+<hr />
 
-  <h1 align="center">Refurbished Computer Input Tags</h1>
-  <hr />
+<div class="mx-auto page form-inline">
+  <%= form_for :used_computer, url: { action: "create" } do |f| %>
+    <%= 'Category: ' %>
+    <%= f.select :category, options_for_select(computer_categories), { }, { class: "form-control" } %>
+    <%= 'Sub Category: ' %>
+    <%= f.select :sub_category, computer_sub_categories, { }, { class: "form-control" } %>
+    <%= f.text_field :value, class: "form-control", placeholder: "Value" %>
+    <button submit class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
+  <% end %>
+</div>
+<br />
 
-  <div class="row">
-    <div class="col-2">
-      <div class="btn-group-vertical">
-        <%= link_to 'Computer Type', '#computer_type', class: "btn btn-secondary" %>
-        <%= link_to 'Processor Speed', '#processor_speed', class: "btn btn-secondary" %>
-        <%= link_to 'CPU Type', '#cpu_type', class: "btn btn-secondary" %>
-        <%= link_to 'Screen Size', '#screen_size', class: "btn btn-secondary" %>
-        <%= link_to 'Hard Drive', '#hard_drive', class: "btn btn-secondary" %>
-        <%= link_to 'Optical Drive', '#optical_drive', class: "btn btn-secondary" %>
-        <%= link_to 'Car Slot', '#card_slot', class: "btn btn-secondary" %>
-        <%= link_to 'Installed RAM', '#installed_ram', class: "btn btn-secondary" %>
-        <%= link_to 'Max RAM', '#max_ram', class: "btn btn-secondary" %>
-        <%= link_to 'Open Slots', '#open_slots', class: "btn btn-secondary" %>
-        <%= link_to 'OS', '#os', class: "btn btn-secondary" %>
-        <%= link_to 'Video Card', '#video_card', class: "btn btn-secondary" %>
-        <%= link_to 'Video Ram', '#video_ram', class: "btn btn-secondary" %>
-        <%= link_to 'Video Port', '#video_port', class: "btn btn-secondary" %>
-      </div>
-    </div>
-    <div class="col-10">
-      <%= render partial: "table", locals: { header: "Computer Type", id: "computer_type", data: @computer_type } %>
-      <%= render partial: "table", locals: { header: "Processor Speed", id: "processor_speed", data: @processor_speed } %>
-      <%= render partial: "table", locals: { header: "CPU Type", id: "cpu_type", data: @cpu_type } %>
-      <%= render partial: "table", locals: { header: "Screen Size", id: "screen_size", data: @screen_size } %>
-      <%= render partial: "table", locals: { header: "Hard Drive", id: "hard_drive", data: @hard_drive } %>
-      <%= render partial: "table", locals: { header: "Optical Drive", id: "optical_drive", data: @optical_drive } %>
-      <%= render partial: "table", locals: { header: "Card Slot", id: "card_slot", data: @card_slot } %>
-      <%= render partial: "table", locals: { header: "Installed RAM", id: "installed_ram", data: @installed_ram } %>
-      <%= render partial: "table", locals: { header: "Max RAM", id: "max_ram", data: @max_ram } %>
-      <%= render partial: "table", locals: { header: "Open Slots", id: "open_slots", data: @open_slots } %>
-      <%= render partial: "table", locals: { header: "OS", id: "os", data: @os } %>
-      <%= render partial: "table", locals: { header: "Video Card", id: "video_card", data: @video_card } %>
-      <%= render partial: "table", locals: { header: "Video RAM", id: "video_ram", data: @video_ram } %>
-      <%= render partial: "table", locals: { header: "Video Port", id: "video_port", data: @video_port } %>
-    </div>
-  </div>
+<div id="accordion" role="tablist">
+  <% computer_tags.each do |ct| %>
+    <%= render partial: "table", locals: { title: ct[:title], header_id: ct[:header_id], id: ct[:id], data: ct[:data] } %>
+  <% end %>
 </div>

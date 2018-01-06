@@ -1,8 +1,29 @@
-<h3>User ID</h3>
-<%= f.number_field :userid, class: "form-control", placeholder: "User ID" %><br /><br />
+<hr />
+
 <h3>Username</h3>
-<%= f.text_field :name, class: "form-control", placeholder: "Username" %><br /><br />
-<h3>Email</h3>
-<%= f.text_field :email, class: "form-control", placeholder: "Email Address" %><br /><br />
-<h3>Password</h3>
-<%= f.password_field :password, class: "form-control", placeholder: "Password" %><br /><br />
+<%= f.text_field :name, class: "form-control", placeholder: "Username" %>
+<br /><br />
+
+<div class="row">
+  <div class="col">
+    <h3>User ID</h3>
+    <%= f.number_field :userid, class: "form-control", placeholder: "User ID" %>
+  </div>
+  <div class="col">
+    <h3>Password</h3>
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+</div>
+<br /><br />
+
+<div class="row">
+  <div class="col">
+    <h3>Email</h3>
+    <%= f.text_field :email, class: "form-control", placeholder: "Email Address" %>
+  </div>
+  <div class="col">
+    <h3>Access Level</h3>
+    <%= f.text_field :access_level, class: "form-control" %>
+  </div>
+</div>
+<br /><br />

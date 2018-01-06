@@ -1,56 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "lacc_brand.jpg", alt: "", width: "45", height: "45" %>
-  <% end %>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <% if session[:user_id] %>
-          <div class="dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Admin Area
-            </a>
-            <div class="dropdown-menu">
-              <%= link_to 'Edit Refurbished Computer Sheet', computer_index_path, class: 'dropdown-item' %>
-              <%= link_to 'Edit Refurbished Display Sheet', display_index_path, class: 'dropdown-item' %>
-            </div>
-          </div>
-        <% end %>
-      </li>
-      <li class="nav-item active">
-        <div class="dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Refurbished Sheets
-          </a>
-          <div class="dropdown-menu">
-            <%= link_to 'Refurbished Computer Sheets', usedcomputer_path, class: "dropdown-item" %>
-            <%= link_to 'Refurbished Display Sheets', useddisplay_path, class: "dropdown-item" %>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item active">
-        <% if session[:user_id] %>
-          <div class="dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Service
-            </a>
-            <div class="dropdown-menu">
-              <%= link_to 'Clients', clients_path(page: 1), class: "dropdown-item" %>
-              <%= link_to 'On Sites', onsite_index_path(page: 1), class: "dropdown-item" %>
-              <%= link_to 'Off Sites', off_sites_path(page: 1), class: "dropdown-item" %>
-            </div>
-          </div>
-          <% end %>
-      </li>
-    </ul>
-    <div class="nav-item">
+<div class="row">
+  <div class="col-1">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "lacc_brand.jpg", alt: "", width: "90", height: "90" %>
+    <% end %>
+  </div>
+  <div class="col-11">
+    <h1>LA Computer Company Back End</h1>
+    <div>
       <% if session[:user_id] %>
         <%= "Logged in as: #{ session[:username] }" %>
-        <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
+        <span class="dropdown">
+          <button class="btn btn-info" type="button" id="dropdownMenuButton" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
+          <div class="dropdown-menu">
+            <a href="/settings" class="dropdown-item"><i class="fa fa-cog"></i> Settings</a>
+            <% if session[:access_level] == 'admin' %>
+              <a href="/admin" class="dropdown-item"><i class="fa fa-users"></i> Manage Users</a>
+            <% end %>
+            <%= link_to logout_path, method: :delete do %>
+              <button class="dropdown-item"><i class="fa fa-power-off"></i> Log Out</button>
+            <% end %>
+          </div>
+        </span>
       <% else %>
         <div class="form-inline">
           <%= form_tag attempt_login_path, method: 'post' do %>
@@ -62,4 +32,34 @@
       <% end %>
     </div>
   </div>
-</nav>
+</div>
+
+<br />
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" id="home" href="/"><i class="fa fa-home"></i></a>
+  </li>
+
+  <% if session[:user_id] %>
+  <li class="nav-item">
+    <a class="nav-link" id="computers" href="/computer"><i class="fa fa-desktop"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="displays" href="/display"><i class="fa fa-television"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="clients" href="/clients"><i class="fa fa-address-book"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="onsites" href="/onsite"><i class="fa fa-map-o"></i></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="offsites" href="/off_sites"><i class="fa fa-building"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="cost" href="/cost"><i class="fa fa-usd"></i></a>
+  </li>
+  <% end %>
+
+</ul>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get '/cost',             to: 'home#cost'
+  get '/settings',          to: 'admin#settings'
 
   get '/comuputertradein',  to: 'home#computer_trade_in'
   get '/useddisplay',       to: 'display#front_form'
@@ -36,6 +38,9 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+
+  # API stuff
+  # get :export_clients, to: 'clients#export_clients'
 
   get '/onsite_blank_form',   to: 'onsite#blank_form'
   get '/computer_blank_form', to: 'computer#blank_form'

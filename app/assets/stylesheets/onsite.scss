@@ -1,3 +1,30 @@
 // Place all the styles related to the onsite controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.calendar-header {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.calendar-cell {
+  border: 1px solid;
+  height: 150px;
+}
+
+.mini-calendar-cell {
+  height: 40px;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  width: 1000;
+  padding: 50px;
+  top: 0;
+  right: -1121px;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
