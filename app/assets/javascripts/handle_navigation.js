@@ -52,6 +52,6 @@ handleNavigation = function() {
   });
 
   $('#onsite-close').on('click', function() {
-    $('#onsite-menu').css('right', '-1121px');
+    $('#onsite-menu').css('right', '-100vw');
   });
 }
