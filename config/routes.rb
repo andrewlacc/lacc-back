@@ -20,19 +20,23 @@ Rails.application.routes.draw do
   # Used Display Forms
   resources :display, except: [:new, :show]
 
-  # Onsite Forms
+  # Onsites
   resources :onsite do
     member do
       get :delete
     end
   end
 
+  get '/get_clients',       to: 'onsite#get_clients'
+
+  # Clients
   resources :clients do
     member do
       get :delete
     end
   end
 
+  # Off Sites
   resources :off_sites do
     member do
       get :delete

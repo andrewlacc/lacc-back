@@ -18,9 +18,11 @@ class OnSite < ApplicationRecord
   # t.string   "invoice_number"
   # t.string   "tech"
 
+  attr_accessor :client_name
+
   belongs_to :client
 
   scope :sort_by_date_desc, -> { order( onsite_date: :DESC ) }
 
-  validates_presence_of :onsite_date
+  validates_presence_of :client, :onsite_date
 end

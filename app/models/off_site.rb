@@ -11,9 +11,11 @@ class OffSite < ApplicationRecord
   # t.string   "serial_number"
   # t.string   "tech"
 
+  attr_accessor :client_name
+
   belongs_to :client
 
   scope :sort_desc, -> { order( id: :DESC ) }
 
-  validates_presence_of :client
+  validates_presence_of :client, :checked_date
 end

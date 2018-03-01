@@ -2,14 +2,17 @@ class OnsiteController < ApplicationController
   before_action :confirm_logged_in
 
   def new
-    @onsite = OnSite.new()
-    @clients = Client.all
+    @onsite = OnSite.new
     @date = Date.today
+    @client_name = params[:client_name] || ''
   end
 
   def create
     onsite = OnSite.new(onsite_params)
+
     onsite.tech = session[:username]
+
+    onsite.client = Client.find_by(name: clean_value(onsite_params[:client_name]))
 
     if onsite.save
       redirect_to onsite_index_path
@@ -40,15 +43,20 @@ class OnsiteController < ApplicationController
 
   def edit
     @onsite = OnSite.find(params[:id])
-    @clients = Client.all
     @date = @onsite.onsite_date
+    @client_name = @onsite.client.name
   end
 
   def update
     @onsite = OnSite.find(params[:id])
-    if @onsite.update_attributes(onsite_params)
+
+    @onsite.update_attributes(onsite_params)
+    @onsite.client = Client.find_by(name: clean_value(onsite_params[:client_name]))
+
+    if @onsite.save
       redirect_to onsite_index_path
     else
+      flash[:alert] = 'Unable to save On Site, please input missing data.'
       render 'edit'
     end
   end
@@ -59,10 +67,14 @@ class OnsiteController < ApplicationController
     redirect_to onsite_index_path
   end
 
+  def get_clients
+    render json: Client.all
+  end
+
   private
 
   def onsite_params
-    params.require(:on_site).permit(:client_id, :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
+    params.require(:on_site).permit(:client_name, :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
     :resolution, :onsite_cost, :invoice_number, :tech)
   end
 
@@ -85,4 +97,5 @@ class OnsiteController < ApplicationController
   def cal_total(subtotal, tax)
     return subtotal + tax
   end
+
 end

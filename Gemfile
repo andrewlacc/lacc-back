@@ -23,6 +23,7 @@ gem "animate-rails"
 # JavaScript
 gem 'jbuilder', '~> 2.6', '>= 2.6.4'
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootbox-rails', '~> 0.5.0'
 gem 'momentjs-rails', '~> 2.17', '>= 2.17.1'

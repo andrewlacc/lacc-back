@@ -37,8 +37,8 @@
 <br />
 
 <h4>Off Sites</h4>
-<%= link_to 'Create Off Site', new_off_site_path, class: 'btn btn-success' %>
+<%= link_to 'Create Off Site', new_off_site_path(client_name: @client.name), class: 'btn btn-success' %>
 <%= render partial: 'off_sites' %>
 <h4>On Sites</h4>
-<%= link_to 'Create On Site', new_onsite_path, class: 'btn btn-success' %>
+<%= link_to 'Create On Site', new_onsite_path(client_name: @client.name), class: 'btn btn-success' %>
 <%= render partial: 'on_sites' %>
