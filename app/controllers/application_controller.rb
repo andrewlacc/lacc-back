@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  def clean_value(value)
+    return value.gsub(/[$%\#{}'"]/, '')
+  end
 end

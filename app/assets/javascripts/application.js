@@ -12,6 +12,7 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require jquery-ui
 //= require lodash
 //= require turbolinks
 //= require popper
@@ -24,10 +25,12 @@ var handleDelete;
 var handleBack;
 var handleNavigation;
 var handleCalendar;
+var handleClients;
 
 $(document).on("turbolinks:load", function() {
   handleDelete();
   handleBack();
   handleNavigation();
   handleCalendar();
+  handleClients();
 })
