@@ -12,4 +12,8 @@ handleClients = function() {
   $('#on_site_client_name').autocomplete({
     source: clientNames
   });
+
+  $('#off_site_client_name').autocomplete({
+    source: clientNames
+  });
 }
