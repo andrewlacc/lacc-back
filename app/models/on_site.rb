@@ -24,5 +24,5 @@ class OnSite < ApplicationRecord
 
   scope :sort_by_date_desc, -> { order( onsite_date: :DESC ) }
 
-  validates_presence_of :onsite_date
+  validates_presence_of :client, :onsite_date
 end

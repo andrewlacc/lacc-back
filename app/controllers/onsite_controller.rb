@@ -49,9 +49,14 @@ class OnsiteController < ApplicationController
 
   def update
     @onsite = OnSite.find(params[:id])
-    if @onsite.update_attributes(onsite_params)
+
+    @onsite.update_attributes(onsite_params)
+    @onsite.client = Client.find_by(name: clean_value(onsite_params[:client_name]))
+
+    if @onsite.save
       redirect_to onsite_index_path
     else
+      flash[:alert] = 'Unable to save On Site, please input missing data.'
       render 'edit'
     end
   end
