@@ -15,19 +15,27 @@
 <div class="row">
   <label class="col-2 text-right">Phone Number: </label>
   <div class="col-4">
-    <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
+    <%= f.telephone_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
   </div>
-  <label class="col-2 text-right">Street Address: </label>
+  <label class="col-2 text-right">Alternate Number: </label>
   <div class="col-4">
-    <%= f.text_field :street, class: 'form-control', placeholder: 'Street Address' %>
+    <%= f.telephone_field :alt_phone, class: 'form-control', placeholder: 'Alternate Phone Number' %>
   </div>
 </div>
 <br />
 
 <div class="row">
-  <label class="col-2 text-right">Alternate Number: </label>
+  <label class="col-2 text-right">Email: </label>
   <div class="col-4">
-    <%= f.text_field :alt_phone, class: 'form-control', placeholder: 'Alternate Phone Number' %>
+    <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <label class="col-2 text-right">Street Address: </label>
+  <div class="col-4">
+    <%= f.text_field :street, class: 'form-control', placeholder: 'Street Address' %>
   </div>
   <label class="col-2 text-right">City: </label>
   <div class="col-4">
@@ -37,19 +45,10 @@
 <br />
 
 <div class="row">
-  <label class="col-2 text-right">Email: </label>
-  <div class="col-4">
-    <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
-  </div>
   <label class="col-2 text-right">State: </label>
   <div class="col-4">
     <%= f.text_field :state, class: 'form-control col', placeholder: 'State' %>
   </div>
-</div>
-<br />
-
-<div class="row">
-  <div class="col-6"></div>
   <label class="col-2 text-right">Zip Code: </label>
   <div class="col-4">
     <%= f.text_field :zip, class: 'form-control col', placeholder: 'Zip Code' %>
