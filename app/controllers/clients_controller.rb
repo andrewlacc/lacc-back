@@ -1,10 +1,6 @@
 class ClientsController < ApplicationController
   before_action :confirm_logged_in
 
-  # def export_clients
-  #   render json: Client.all
-  # end
-
   def index
     per_page = 20
     @max_page = (Client.count / per_page) + 1
@@ -17,11 +13,13 @@ class ClientsController < ApplicationController
   end
 
   def create
-    @client = Client.new(client_params)
-    if @client.save
+    client = Client.new(client_params)
+
+    if client.save
       redirect_to clients_path
     else
-      render new_client_path
+      flash[:alert] = "Unable to create client, either duplicate or missing info"
+      render 'new'
     end
   end
 
@@ -37,16 +35,18 @@ class ClientsController < ApplicationController
 
   def update
     @client = Client.find(params[:id])
+
     if @client.update_attributes(client_params)
       redirect_to client_path(@client)
     else
-      render edit_client_path
+      flash[:alert] = "Unable to create client, either duplicate or missing info"
+      render 'edit'
     end
   end
 
   def destroy
-    @client = Client.find(params[:id])
-    @client.destroy
+    client = Client.find(params[:id])
+    client.destroy
     redirect_to clients_path
   end
 

@@ -19,4 +19,6 @@ class Client < ApplicationRecord
 
   validates_presence_of :name,
                         :phone
+
+  validates :email, uniqueness: true
 end
