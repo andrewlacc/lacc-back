@@ -19,17 +19,34 @@ class AdminController < ApplicationController
     end
 
     def settings
-      @user_settings = User.find( session[:user_id] ).setting
-      if @user_settings == nil
+      @user_setting = User.find( session[:user_id] ).setting
+      if @user_setting == nil
         new_setting = Setting.new( user_id: session[:user_id], tax: 0.00 )
         new_setting.save
+        @user_setting = new_setting
       end
     end
 
     def update_settings
-      @user_settings.find( params[:id] )
-      @user_settings.save
-      redirect_to root_path
+      @user_setting = User.find( session[:user_id] ).setting
+
+      new_setting = {
+        tax: params[:tax].to_f
+      }
+
+      new_setting = validate_settings(new_setting)
+
+      if new_setting == false
+        flash[:alert] = "Something went wrong"
+        redirect_to settings_path
+      elsif @user_setting.update_attributes( new_setting )
+        flash[:info] = "Settings saved!"
+        redirect_to settings_path
+      else
+        flash[:alert] = "Unable to save settings."
+        redirect_to settings_path
+      end
+
     end
 
     def index
@@ -81,7 +98,11 @@ class AdminController < ApplicationController
       params.require(:user).permit(:userid, :name, :email, :password, :access_level)
     end
 
-    def setting_params
-      params.require(:setting).permit(:tax)
+    def validate_settings(settings)
+      if settings[:tax].nil? || !settings[:tax].is_a?(Float)
+        return false
+      end
+
+      return settings
     end
 end
