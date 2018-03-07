@@ -5,7 +5,7 @@ class ComputerController < ApplicationController
   def front_form
     @desktop_values = parse_values(UsedComputer.search_subcategory("desktop").sort_by_sub_index)
     @laptop_values = parse_values(UsedComputer.search_subcategory("laptop").sort_by_sub_index)
-    @processor_speed = parse_values(UsedComputer.search_category("processor_speed").sort_by_sub_index)
+    @processor_speed = parse_values(UsedComputer.search_category("processor_speed")).sort
     @cpu_type = parse_values(UsedComputer.search_category("cpu_type").sort_by_sub_index)
     @screen_size = parse_values(UsedComputer.search_category("screen_size").sort_by_sub_index)
     @hdd = parse_values(UsedComputer.search_subcategory("hdd").sort_by_sub_index)

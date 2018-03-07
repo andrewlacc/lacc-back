@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
   root 'home#index'
   get '/cost',             to: 'home#cost'
-  get '/settings',          to: 'admin#settings'
 
   get '/comuputertradein',  to: 'home#computer_trade_in'
   get '/useddisplay',       to: 'display#front_form'
   get '/usedcomputer',      to: 'computer#front_form'
 
-  # Admin Login and Menu
+  # Admin Login and Menu / Settings
   get '/login',             to: 'admin#login'
   post '/attempt_login',    to: 'admin#attempt_login'
   delete '/logout',         to: 'admin#logout'
+  get '/settings',          to: 'admin#settings'
+  post '/update_settings',  to: 'admin#update_settings'
 
   resources :admin, except: [:show]
 
