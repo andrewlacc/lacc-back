@@ -27,7 +27,7 @@ class ComputerController < ApplicationController
 
   def index
     @computer_type = UsedComputer.search_category("computer_type").sort_by_sub_index
-    @processor_speed = UsedComputer.search_category("processor_speed").sort_by_sub_index
+    @processor_speed = UsedComputer.search_category("processor_speed").sort
     @cpu_type = UsedComputer.search_category("cpu_type").sort_by_sub_index
     @screen_size = UsedComputer.search_category("screen_size").sort_by_sub_index
     @hard_drive = UsedComputer.search_category("hard_drive").sort_by_sub_index
