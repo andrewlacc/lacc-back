@@ -18,6 +18,7 @@ module ComputerHelper
 
   def computer_tags
     [ { title: "Computer Type", header_id: "computer_type_heading", id: "computer_type", data: @computer_type },
+      { title: "Processor Speed", header_id: "processor_speed_heading", id: "processor_speed", data: @processor_speed },
       { title: "CPU Type", header_id: "cpu_type_heading", id: "cpu_type", data: @cpu_type },
       { title: "Screen Size", header_id: "screen_size_heading", id: "screen_size", data: @screen_size },
       { title: "Hard Drive", header_id: "hard_drive_heading", id: "hard_drive", data: @hard_drive },
