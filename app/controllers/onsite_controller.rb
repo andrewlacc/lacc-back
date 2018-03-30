@@ -74,28 +74,46 @@ class OnsiteController < ApplicationController
   private
 
   def onsite_params
-    params.require(:on_site).permit(:client_name, :onsite_date, :symptoms, :part_num_one, :part_one, :price_one, :part_num_two, :part_two, :price_two, :part_num_three, :part_three, :price_three,
-    :resolution, :onsite_cost, :invoice_number, :tech)
+    params.require(:on_site).permit(
+      :client_name,
+      :onsite_date,
+      :symptoms,
+      :part_num_one,
+      :part_one,
+      :price_one,
+      :part_num_two,
+      :part_two,
+      :price_two,
+      :part_num_three,
+      :part_three,
+      :price_three,
+      :resolution,
+      :onsite_cost,
+      :invoice_number,
+      :tech
+    )
   end
 
   def cal_parts_cost(price_part_one, price_part_two, price_part_three)
     price_part_one ||= 0.00
     price_part_two ||= 0.00
     price_part_three ||= 0.00
-    return (price_part_one + price_part_two + price_part_three).round(2)
+
+    (price_part_one + price_part_two + price_part_three).round(2)
   end
 
   def cal_subtotal(onsite_cost, parts_cost)
     onsite_cost ||= 0.0
-    return (onsite_cost + parts_cost).round(2)
+
+    (onsite_cost + parts_cost).round(2)
   end
 
   def cal_tax(subtotal)
-    return (subtotal * 0.0775).round(2)
+    (subtotal * 0.0775).round(2)
   end
 
   def cal_total(subtotal, tax)
-    return subtotal + tax
+    subtotal + tax
   end
 
 end

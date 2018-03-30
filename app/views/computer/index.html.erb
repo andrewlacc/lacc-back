@@ -4,9 +4,9 @@
 <div class="mx-auto page form-inline">
   <%= form_for :used_computer, url: { action: "create" } do |f| %>
     <%= 'Category: ' %>
-    <%= f.select :category, options_for_select(computer_categories), { }, { class: "form-control" } %>
+    <%= f.select :category, COMPUTER_CATEGORIES, { }, { class: "form-control" } %>
     <%= 'Sub Category: ' %>
-    <%= f.select :sub_category, computer_sub_categories, { }, { class: "form-control" } %>
+    <%= f.select :sub_category, COMPUTER_SUB_CATEGORIES, { }, { class: "form-control" } %>
     <%= f.text_field :value, class: "form-control", placeholder: "Value" %>
     <button submit class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
   <% end %>

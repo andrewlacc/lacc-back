@@ -4,7 +4,7 @@
 <div class="mx-auto page form-inline">
   <%= form_for :used_display, url: { action: "create" } do |f| %>
     <%= 'Category: ' %>
-    <%= f.select :category, options_for_select(display_categories), { }, { class: "form-control" } %>
+    <%= f.select :category, options_for_select(DISPLAY_CATEGORIES), { }, { class: "form-control" } %>
     <%= f.text_field :value, class: "form-control", placeholder: "Value" %>
     <button submit class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i></button>
   <% end %>

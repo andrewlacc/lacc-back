@@ -18,7 +18,7 @@
     </td>
     <td class="text-center Label" valign="middle">Year: </td>
     <td class="row" colspan="3">
-    	<%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select", class: "form-control col-6" %>
+    	<%= select_tag :pre_year, options_for_select(YEAR_SECTION), include_blank: "Select", class: "form-control col-6" %>
       <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true}, class: "form-control col-6" %>
     </td>
   </tr>
@@ -107,7 +107,7 @@
     </td>
     <td class="Label text-center" valign="middle">Batt. Test Results:</td>
     <td>
-      <%= select_tag :battery_test, options_for_select(battery), { class: "form-control", include_blank: "Select" } %>
+      <%= select_tag :battery_test, options_for_select(BATTERY), { class: "form-control", include_blank: "Select" } %>
     </td>
   </tr>
   <tr>
@@ -133,11 +133,11 @@
   <tr>
     <td class="Label text-center" valign="middle">WiFi:</td>
     <td>
-    	<%= select_tag :bluetooth, options_for_select(yes_no), { class: "form-control", include_blank: "Select" } %>
+    	<%= select_tag :bluetooth, options_for_select(YES_NO), { class: "form-control", include_blank: "Select" } %>
     </td>
     <td class="Label text-center" valign="middle">Bluetooth:</td>
     <td>
-    	<%= select_tag :bluetooth, options_for_select(yes_no), { class: "form-control", include_blank: "Select" } %>
+    	<%= select_tag :bluetooth, options_for_select(YES_NO), { class: "form-control", include_blank: "Select" } %>
     </td>
   </tr>
   <tr>

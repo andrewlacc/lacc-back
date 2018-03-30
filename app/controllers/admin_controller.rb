@@ -103,6 +103,6 @@ class AdminController < ApplicationController
         return false
       end
 
-      return settings
+      settings
     end
 end

@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
   def clean_value(value)
-    return value.gsub(/[$%\#{}'"]/, '')
+    value.gsub(/[$%\#{}'"]/, '')
   end
 end

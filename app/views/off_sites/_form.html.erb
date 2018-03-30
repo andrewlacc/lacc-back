@@ -15,7 +15,7 @@
   <p class="col-2" align="right">Serial Number: </p>
   <p class="col-3"><%= f.text_field :serial_number, { class: "form-control" } %></p>
   <p class="col" align="right">Location to send: </p>
-  <%= f.select :location, display_off_sites, { }, { class: "form-control col" } %>
+  <%= f.select :location, DISPLAY_OFF_SITES, { }, { class: "form-control col" } %>
 </div>
 
 <h6 class="Title">Initial Problem</h6>

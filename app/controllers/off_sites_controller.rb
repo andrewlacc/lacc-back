@@ -63,6 +63,14 @@ class OffSitesController < ApplicationController
   private
 
   def off_site_params
-    params.require(:off_site).permit(:location, :checked_date, :initial_problem, :service_order, :data, :is_done, :client_name, :serial_number)
+    params.require(:off_site).permit(
+      :location,
+      :checked_date,
+      :initial_problem,
+      :service_order,
+      :data, :is_done,
+      :client_name,
+      :serial_number
+    )
   end
 end
