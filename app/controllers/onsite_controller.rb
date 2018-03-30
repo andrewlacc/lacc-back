@@ -86,7 +86,7 @@ class OnsiteController < ApplicationController
   end
 
   def cal_subtotal(onsite_cost, parts_cost)
-    onsite_cost = onsite_cost || 0.0
+    onsite_cost ||= 0.0
     return (onsite_cost + parts_cost).round(2)
   end
 

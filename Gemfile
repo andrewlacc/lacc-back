@@ -14,9 +14,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'dalli', '~> 2.7', '>= 2.7.6'
 
 # CSS
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 gem 'uglifier', '>= 1.3.0'
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.0'
 gem "font-awesome-rails"
 gem "animate-rails"
 
