@@ -1,17 +1,6 @@
 class ClientsController < ApplicationController
   before_action :confirm_logged_in
 
-  def index
-    per_page = 20
-    @max_page = (Client.count / per_page) + 1
-    @page = params[:page].to_i
-    @clients = Client.all.sort_by_name.limit(per_page).offset((@page - 1) * per_page)
-
-    if @page > @max_page || @page < 1
-      redirect_to clients_path(page: 1)
-    end
-  end
-
   def create
     client = Client.new(client_params)
 
@@ -23,18 +12,29 @@ class ClientsController < ApplicationController
     end
   end
 
+  def index
+    per_page = 20
+    @max_page = (Client.count / per_page) + 1
+    @page = params[:page].to_i
+    @clients = Client.order(name: :asc).limit(per_page).offset((@page - 1) * per_page)
+
+    if @page > @max_page || @page < 1
+      redirect_to clients_path(page: 1)
+    end
+  end
+
   def show
-    @client = Client.find(params[:id])
+    @client = Client.find_by(id: params[:id])
     @on_sites = @client.on_sites
     @off_sites = @client.off_sites
   end
 
   def edit
-    @client = Client.find(params[:id])
+    @client = Client.find_by(id: params[:id])
   end
 
   def update
-    @client = Client.find(params[:id])
+    @client = Client.find_by(id: params[:id])
 
     if @client.update_attributes(client_params)
       redirect_to client_path(@client)

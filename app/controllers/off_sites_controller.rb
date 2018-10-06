@@ -1,16 +1,6 @@
 class OffSitesController < ApplicationController
   before_action :confirm_logged_in
 
-  def index
-    per_page = 20
-    @max_page = (OffSite.count / per_page) + 1
-    @page = params[:page].to_i
-    @off_sites = OffSite.all.sort_desc.limit(per_page).offset((@page - 1) * per_page)
-
-    if @page > @max_page || @page < 1
-      redirect_to off_sites_path(page: 1)
-    end
-  end
 
   def new
     @date = Date.today
@@ -27,6 +17,17 @@ class OffSitesController < ApplicationController
     else
       flash[:alert] = "Unable to create Onsite"
       render 'new'
+    end
+  end
+
+  def index
+    per_page = 20
+    @max_page = (OffSite.count / per_page) + 1
+    @page = params[:page].to_i
+    @off_sites = OffSite.all.sort_desc.limit(per_page).offset((@page - 1) * per_page)
+
+    if @page > @max_page || @page < 1
+      redirect_to off_sites_path(page: 1)
     end
   end
 

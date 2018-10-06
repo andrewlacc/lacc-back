@@ -14,9 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def confirm_logged_in
-    unless session[:user_id]
-      redirect_to login_path
-    end
+    redirect_to login_path unless session[:user_id]
   end
 
   def clean_value(value)

@@ -2,10 +2,8 @@ class AdminController < ApplicationController
     before_action :confirm_logged_in, except: [:login, :attempt_login]
 
     def attempt_login
-      found_user = User.where(userid: params[:userid]).first
-      if found_user
-        authorized_user = found_user.authenticate(params[:password])
-      end
+      found_user = User.find_by(userid: params[:userid])
+      authorized_user = found_user.authenticate(params[:password]) if found_user
 
       if authorized_user
         session[:user_id] = authorized_user.id
@@ -19,16 +17,17 @@ class AdminController < ApplicationController
     end
 
     def settings
-      @user_setting = User.find( session[:user_id] ).setting
-      if @user_setting == nil
-        new_setting = Setting.new( user_id: session[:user_id], tax: 0.00 )
+      @user_setting = User.find_by(id: session[:user_id]).setting
+
+      if @user_setting.nil?
+        new_setting = Setting.new(user_id: session[:user_id], tax: 0.00)
         new_setting.save
         @user_setting = new_setting
       end
     end
 
     def update_settings
-      @user_setting = User.find( session[:user_id] ).setting
+      @user_setting = User.find_by(id: session[:user_id]).setting
 
       new_setting = {
         tax: params[:tax].to_f

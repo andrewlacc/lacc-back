@@ -1,5 +1,6 @@
 class OnsiteController < ApplicationController
-  before_action :confirm_logged_in
+  before_action :confirm_logged_in, except: [:blank_form]
+
 
   def new
     @onsite = OnSite.new
@@ -71,6 +72,9 @@ class OnsiteController < ApplicationController
     render json: Client.all
   end
 
+  def blank_form
+  end
+
   private
 
   def onsite_params
@@ -115,5 +119,4 @@ class OnsiteController < ApplicationController
   def cal_total(subtotal, tax)
     subtotal + tax
   end
-
 end

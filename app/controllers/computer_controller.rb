@@ -1,6 +1,6 @@
 class ComputerController < ApplicationController
-
   before_action :confirm_logged_in, except: [:front_form, :blank_form]
+
 
   def front_form
     @desktop_values = parse_values(UsedComputer.search_subcategory("desktop").sort_by_sub_index)
@@ -25,6 +25,17 @@ class ComputerController < ApplicationController
     @video_port = parse_values(UsedComputer.search_category("video_port").sort_by_sub_index)
   end
 
+  def create
+    @computer = UsedComputer.new(used_computer_params)
+    if @computer.save
+      flash[:success] = "Computer tag created successfully!"
+      redirect_to computer_index_path
+    else
+      flash[:alert] = "Failed to create computer tag."
+      redirect_to computer_index_path
+    end
+  end
+
   def index
     @computer_type = UsedComputer.search_category("computer_type").sort_by_sub_index
     @processor_speed = UsedComputer.search_category("processor_speed").sort
@@ -40,17 +51,6 @@ class ComputerController < ApplicationController
     @video_card = UsedComputer.search_category("video_card").sort_by_sub_index
     @video_ram = UsedComputer.search_category("video_ram").sort_by_sub_index
     @video_port = UsedComputer.search_category("video_port").sort_by_sub_index
-  end
-
-  def create
-    @computer = UsedComputer.new(used_computer_params)
-    if @computer.save
-      flash[:success] = "Computer tag created successfully!"
-      redirect_to computer_index_path
-    else
-      flash[:alert] = "Failed to create computer tag."
-      redirect_to computer_index_path
-    end
   end
 
   def edit
@@ -72,6 +72,7 @@ class ComputerController < ApplicationController
     UsedComputer.find(params[:id]).destroy
     redirect_to computer_index_path
   end
+
 
   private
 

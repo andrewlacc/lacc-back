@@ -8,12 +8,6 @@ class DisplayController < ApplicationController
     @size = parse_values(UsedDisplay.search_category("size"))
   end
 
-  def index
-    @brand = UsedDisplay.search_category("brand")
-    @monitor_type = UsedDisplay.search_category("monitor_type")
-    @size = UsedDisplay.search_category("size")
-  end
-
   def create
     @display = UsedDisplay.new(used_display_params)
     if @display.save
@@ -23,6 +17,12 @@ class DisplayController < ApplicationController
       flash[:alert] = "Failed to create display tag."
       redirect_to display_index_path
     end
+  end
+  
+  def index
+    @brand = UsedDisplay.search_category("brand")
+    @monitor_type = UsedDisplay.search_category("monitor_type")
+    @size = UsedDisplay.search_category("size")
   end
 
   def edit
