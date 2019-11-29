@@ -119,4 +119,11 @@ class OnsiteController < ApplicationController
   def cal_total(subtotal, tax)
     subtotal + tax
   end
+
+  def get_month_range(datetime)
+    {
+      start_date: datetime.beginning_of_month,
+      end_date: datetime.end_of_month
+    }
+  end
 end

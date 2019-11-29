@@ -1,12 +1,13 @@
 handleCalendar = function() {
   var todayMoment = moment();
   var current = moment(todayMoment.month() + 1, "MM");
-  var todayId = "#day-" + ((Math.floor(todayMoment.date() / 7) * 7) + todayMoment.day());
   var onsites = $('.onsite-data');
 
   // Builds and fills in information for the calendar
   var buildCalendar = function(date) {
-    $(todayId).removeClass('bg-secondary');
+    var todayId = "#day-" + ((Math.floor(todayMoment.date() / 7) * 7) + todayMoment.day());
+
+    $('.bg-secondary').removeClass('bg-secondary');
     $('#month').text(date.format('MMMM YYYY'));
 
     _.each(_.range(1, 43), function(day) {
@@ -15,7 +16,7 @@ handleCalendar = function() {
       }
     });
 
-    if (date.isSame(todayMoment, 'year', 'month')) {
+    if (date.isSame(todayMoment, 'month')) {
       $(todayId).addClass('bg-secondary');
     }
   };

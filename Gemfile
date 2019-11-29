@@ -10,6 +10,7 @@ gem 'rails', '~> 5.1', '>= 5.1.6'
 gem 'puma', '~> 3.11', '>= 3.11.3'
 gem 'turbolinks', '~> 5'
 gem 'dalli', '~> 2.7', '>= 2.7.6'
+gem 'bcrypt', '~> 3.1.7'
 
 # CSS
 gem 'sass-rails', '~> 5.0', '>= 5.0.7'
@@ -26,8 +27,7 @@ gem 'momentjs-rails', '~> 2.20', '>= 2.20.1'
 gem 'lodash-rails'
 
 # Database
-gem 'mysql2', '~> 0.5.2'
-gem 'bcrypt', '~> 3.1.7'
+gem 'pg', '~> 0.18.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
